@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Locos por las piedras</title>
+    <link rel="stylesheet" type="text/css" href="repasoHTML5.css"/>
+    <!-- Script para cambiar el color del cuerpo -->
+    <script>
+      function darkMode() {
+        var element = document.body;
+        element.className = "dark-mode";
+      }
+      function lightMode() {
+        var element = document.body;
+        element.className = "light-mode";
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- Cabecera de la web -->
+    <header>
+      <nav>
+        <h1>Geología abreviada</h1>
+        <!-- Botones para el color del cuerpo -->
+        <button onclick="darkMode()">Dark</button>
+        <button onclick="lightMode()">Light</button>
+      </nav>
+    </header>
+
+    <!-- Sección principal -->
+    <section class="main">
+      <header>
+        <h2>Sección Principal, columna izquierda</h2>
+      </header>
+
+      <!-- Articulo 1 -->
+      <article class="uno">
+        <header>
+          <h3>El anillo de fuego</h3>
+        </header>
+        <p>El anillo de fuego es una región geológica con gran actividad sísmica y volcánica.</p>
+        <p class="left">Fuera de esta región también pueden haber volcanes, como en la dorsal oceánica del Atlántico.</p>
+        <aside>
+          <figure>
+            <img src="dorsal.png" alt="IMG dorsal" height="150" width="240">
+            <figcaption>Dorsal oceánica</figcaption>
+          </figure>
+        </aside>
+        <footer><small>Geólogos Company</small></footer>
+      </article>
+      <br>
+      <!-- Articulo 2 -->
+      <article class="dos">
+        <header>
+          <h3>Los continentes</h3>
+        </header>
+        <p>Dependiendo del ámbito, el número de continentes puede varias.</p>
+        <p>
+          Desde el geológico podríamos agruparlos por placas tectónicas o placas tectónicas emergidas.
+          Desde el político según cultura y afinidad.
+          O desde un ámbito mixto, buscando la certeza geológica pero dejandose influenciar por la cultura.
+        </p>
+        <footer><small>Para más información, consulte Wikipedia.</small></footer>
+      </article>
+      <br>
+
+      <!-- Sección extra -->
+      <section class="mini">
+        <header>
+          <h4>¡Mini sección!</h4>
+        </header>
+        <article class="politico">
+          <caption>Agrupación política de los continentes</caption>
+          <small><em>Desde un punto de vista Europeo</em></small>
+          <ol reversed type="a" start="4">
+            <li>Europa</li>
+            <li>África</li>
+            <li>Asia</li>
+            <li>Oceanía</li>
+            <li>Ámerica</li>
+            <li>Antártida</li>
+          </ol>
+        </article>
+      </section>
+      
+      <!-- Pie de la sección principal -->
+      <footer>Sección principal, geologéalo</footer>
+    </section>
+
+    <!-- Sección Aside -->
+    <section class="side">
+      <header>
+        <h2>Publicidad, columna derecha</h2>
+      </header>
+      <aside>
+        <figure>
+          <img src="" alt="IMG Opel Corsa nuevecito">
+          <figcaption>Vendo Opel Corsa</figcaption>
+        </figure>
+      </aside>
+    </section>
+
+    <!-- Pie de página -->
+    <footer><strong>Creado por Brendan, DAW226</strong></footer>
+  </body>
+</html>
