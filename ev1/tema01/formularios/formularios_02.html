@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <h1>Preferencias Grastronómicas</h1>
+    </header>
+    <section>
+      <form class="formulario" action="formularios_02.html" method="post">
+        <article class="nacionalidad">
+          <fieldset>
+            <legend>Comida favorita:</legend>
+            <input type="checkbox" name="nacionalidad" value="italiana">Italiana
+            <input type="checkbox" name="nacionalidad" value="francesa">Francesa
+            <input type="checkbox" name="nacionalidad" value="española">Española
+          </fieldset>
+        </article>
+        <article class="edad">
+          <fieldset>
+            <legend>Edad:</legend>
+            <input type="radio" name="edad" value="adolescente">de 12 a 17 años
+            <input type="radio" name="edad" value="joven">de 18 a 35 años
+            <input type="radio" name="edad" value="adulto">de 36 a 65 años
+            <input type="radio" name="edad" value="anciano">mayor de 65 años
+          </fieldset>
+        </article>
+        <article class="platos">
+          <fieldset>
+            <legend>Platos que te gustan:</legend>
+            <select name="platos" multiple>
+              <optgroup label="italiana">
+                <option value="1">pasta</option>
+                <option value="2">pizza</option>
+                <option value="3">picotta</option>
+              </optgroup>
+              <optgroup label="francesa">
+                <option value="4">baguette</option>
+                <option value="5">raclette</option>
+                <option value="6">ratatouille</option>
+              </optgroup>
+              <optgroup label="española">
+                <option value="7">paella</option>
+                <option value="8">cocido</option>
+                <option value="9">tortilla</option>
+              </optgroup>
+            </select>
+          </fieldset>
+        </article>
+        <input type="submit" name="enviar" value="Enviar">
+        <input type="reset" name="enviar" value="Borrar">
+      </form>
+    </section>
+  </body>
+  <footer><small>Trabajo por Brendan, DAW226</small></footer>
+</html>

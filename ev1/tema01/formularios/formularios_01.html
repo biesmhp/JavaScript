@@ -3,91 +3,81 @@
   <head>
     <meta charset="utf-8">
     <title>Formulario Personal</title>
-    <link rel="stylesheet" href="master.css">
   </head>
   <body>
     <header>
       <h1>Datos Personales 5 (Formulario)</h1>
     </header>
     <section class="formulario">
-      <form action="" method="post">
+      <form action="formularios_01.html" method="post">
         <fieldset>
           <legend >Escriba los datos siguientes:</legend>
           <!-- Nombre -->
           <article class="nombre">
-            <label for="nombre">Nombre:
-              <input type="text" name="nombre" placeholder="Juan">
-            </label>
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" placeholder="Juan">
           </article>
           <!-- Apellidos -->
           <article class="apellido">
-            <label for="apellido">Apellidos:
-              <input type="text" name="apellido" placeholder="García Ramírez">
-            </label>
+            <label for="apellido">Apellidos:</label>
+            <input type="text" name="apellido" placeholder="García Ramírez">
           </article>
           <!-- Edad -->
           <article class="edad">
-            <label for="edad">Edad:
-              <select name="edad">
-                <option value="menor">Menor de 18</option>
-                <option value="joven">De 18 a 30</option>
-                <option value="adulto">De 31 a 65</option>
-                <option value="mayor">De 66 a 80</option>
-                <option value="anciano">Mayor de 80</option>
-              </select>
-            </label>
+            <label for="edad">Edad:</label>
+            <select name="edad">
+              <option value="menor">Menor de 18</option>
+              <option value="joven">De 18 a 30</option>
+              <option value="adulto">De 31 a 65</option>
+              <option value="mayor">De 66 a 80</option>
+              <option value="anciano">Mayor de 80</option>
+            </select>
           </article>
           <!-- Peso -->
           <article class="peso">
-            <label for="peso">Peso:
-              <input type="number" name="peso" value="80" min="0" max="1000" step="0.1">kg
-            </label>
+            <label for="peso">Peso:</label>
+            <input type="number" name="peso" value="80" min="0" max="1000" step="0.1">kg
           </article>
-          </fieldset>
+        </fieldset>
 
-          <fieldset>
-            <legend>Genero:</legend>
-            <!-- Género -->
-            <article class="genero">
-              <label for="genero">
-                <input type="radio" name="genero" value="hombre">Hombre
-                <input type="radio" name="genero" value="mujer">Mujer
-                <input type="radio" name="genero" value="otro">Otro
-              </label>
-            </article>
-          </fieldset>
-
-          <fieldset>
-            <legend>Estado civil:</legend>
-            <!-- Estado civil -->
-            <article class="estado">
-              <label for="estado">
-                <input type="radio" name="estado" value="soltero" checked>Soltero
-                <input type="radio" name="estado" value="casado">Casado
-                <input type="radio" name="estado" value="otro">Otro
-              </label>
-            </article>
-          </fieldset>
-
-          <fieldset>
-            <legend>Aficiones</legend>
-            <!-- Aficiones -->
-            <article class="aficiones">
-              <label for="aficiones">
-                <input type="checkbox" name="aficiones" value="cine">Cine/Televisión
-                <input type="checkbox" name="aficiones" value="literatura">Literatura/Tebeos
-                <input type="checkbox" name="aficiones" value="deporte">Deporte
-                <input type="checkbox" name="aficiones" value="musica">Música
-                <input type="checkbox" name="aficiones" value="juegos">Videojuegos
-              </label>
-            </article>
-          </fieldset>
-
-          <article class="envio">
-            <input type="submit" name="enviar" value="Enviar">
-            <input type="reset" name="borrar" value="Borrar">
+        <fieldset>
+          <legend>Genero:</legend>
+          <!-- Género -->
+          <article class="genero">
+            <input type="radio" name="genero" value="hombre">Hombre
+            <input type="radio" name="genero" value="mujer">Mujer
+            <input type="radio" name="genero" value="otro" checked>Otro
           </article>
+        </fieldset>
+
+        <fieldset>
+          <legend>Estado civil:</legend>
+          <!-- Estado civil -->
+          <article class="estado">
+            <input type="radio" name="estado" value="soltero">Soltero/a
+            <input type="radio" name="estado" value="casado">Casado/a
+            <input type="radio" name="estado" value="otro">Otro
+          </article>
+        </fieldset>
+
+        <fieldset>
+          <legend>Aficiones:</legend>
+          <!-- Aficiones -->
+          <article class="aficiones">
+            <input type="checkbox" name="aficiones" value="cine">Cine/Televisión
+            <input type="checkbox" name="aficiones" value="literatura">Literatura/Tebeos
+            <input type="checkbox" name="aficiones" value="deporte">Deporte
+            <input type="checkbox" name="aficiones" value="musica">Música
+            <input type="checkbox" name="aficiones" value="juegos">Videojuegos
+          </article>
+        </fieldset>
+
+        <article class="envio">
+          <input type="submit" name="enviar" value="Enviar">
+          <input type="reset" name="borrar" value="Borrar">
+        </article>
       </form>
     </section>
   </body>
+  <footer><small>Trabajo por Brendan, DAW226</small></footer>
 </html>
