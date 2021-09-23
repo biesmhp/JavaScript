@@ -25,6 +25,7 @@ header {
   font-size: 20px;
 }
 
+/* Estilo de las secciones */
 section {
   background-color: olivedrab;
   margin: 5px;
@@ -46,6 +47,7 @@ section.side {
   width: 35%;
 }
 
+/* Sección especial añadida */
 section.mini {
   align-content: center;
   margin: 5px;
@@ -53,11 +55,20 @@ section.mini {
   width: 50%;
 }
 
+/* Estilo de los artículos */
 article {
   background-color: tomato;
   margin: 5px;
   border-color: dimgray;
   border-style: dotted;
+}
+
+/* Color de los enlaces */
+a:link {
+    color: cornflowerblue;
+}
+a:visited {
+  color: cornflowerblue;
 }
 
 /* Estilo del pie de página */
