@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <h1>MI VIDA ES LA MÚSICA</h1>
+      <sub>Por favor, rellene los datos...</sub>
+    </header>
+    <section>
+      <form action="ej1.html" method="post">
+        <fieldset>
+          <legend>Datos Personales</legend>
+          <article class="nombre">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" autofocus required placeholder="Introduzca su nombre" maxlength="40">
+          </article>
+          <article class="telefono">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" required placeholder="999-999999" maxlength="12" pattern="">
+          </article>
+          <article class="email">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required placeholder="Introduzca su dirección de correo" maxlength="30">
+          </article>
+          <article class="fecha">
+            <label for="fecha">Fecha</label>
+            <input type="date" id="fecha" name="fecha">
+          </article>
+        </fieldset>
+        <fieldset>
+          <legend>Grupos</legend>
+          <article class="listaGrupos">
+            <label for="browser">Escoge tu grupo favorito</label>
+            <input list="browsers" name="browser" id="browser">
+            <datalist id="browsers">
+              <option value="Grupo1">
+              <option value="Grupo2">
+              <option value="Grupo3">
+              <option value="Grupo4">
+              <option value="Grupo5">
+            </datalist>
+          </article>
+        </fieldset>
+        <fieldset>
+          <legend>Votación general de grupos</legend>
+          <input type="number" name="1" value="1" min="1" max="10" step="1" size="1">Grupo1
+          <input type="number" name="2" value="1" min="1" max="10" step="1" size="1">Grupo2
+          <input type="number" name="3" value="1" min="1" max="10" step="1" size="1">Grupo3
+          <input type="number" name="4" value="1" min="1" max="10" step="1" size="1">Grupo4
+          <input type="number" name="5" value="1" min="1" max="10" step="1" size="1">Grupo5
+        </fieldset>
+        <fieldset>
+          <legend>Subir fichero</legend>
+          <label for="fichero"></label>
+          <input type="file" name="fichero" placeholder="Elija uno de los archivos de su grupo favorito para incluirlo en nuestra base de datos">
+        </fieldset>
+      </form>
+    </section>
+  </body>
+  <footer><small>Ejercicio por Brendan, DAW226</small></footer>
+</html>
