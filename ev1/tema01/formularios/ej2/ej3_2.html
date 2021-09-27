@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Formulario 2</title>
+    <link rel="stylesheet" href="master.css">
+  </head>
+  <body>
+    <h1>Datos del titular</h1>
+    <form action="ej3_3.html" method="post">
+      <fieldset>
+        <legend><strong>Personal</strong></legend>
+        <label>Nombre: </label>
+        <input type="text" name="nombre" placeholder="Pedro" maxlength="32">
+        <label>Apellidos: </label>
+        <input type="text" name="apellidos" placeholder="García Qing" maxlength="64">
+      </fieldset>
+      <fieldset>
+        <legend><strong>Dirección</strong></legend>
+        <label>Dirección: </label>
+        <input type="text" name="direccion" placeholder="C\ Las acacias Nº 12" maxlength="64">
+        <label>Código Postal: </label>
+        <input type="number" name="codigo" placeholder="Código postal" title="ej. 39500" pattern="[0-9]{5}">
+        <label>Ciudad: </label>
+        <input type="text" name="ciudad" placeholder="Kerguelen" maxlength="32">
+        <label>País: </label>
+        <select name="pais">
+          <option value="francia">Francia</option>
+          <option value="españa">España</option>
+          <option value="italia">Italia</option>
+          <option value="portugal">Portugal</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend><strong>Contacto</strong></legend>
+        <label>Teléfono: </label>
+        <input type="tel" name="telefono" placeholder="999-666-333">
+        <label>E-mail: </label>
+        <input type="email" name="email" placeholder="correo@dominio.com">
+      </fieldset>
+      <fieldset>
+        <legend><strong>Observaciones</strong></legend>
+        <textarea name="observaciones" rows="8" cols="80"></textarea>
+        <br>
+        <label>¿Quiere una cuna en la habitación?</label>
+        <input type="radio" name="cuna" value="si">Sí
+        <input type="radio" name="cuna" value="no" checked>No
+      </fieldset>
+      <fieldset>
+        <input type="radio" name="terminos" checked><a href="#">Términos y condiciones del servicio</a>
+        <br>
+        <input type="submit" name="enviar" value="Pagar">
+      </fieldset>
+    </form>
+  </body>
+</html>

@@ -3,23 +3,26 @@
   <head>
     <meta charset="utf-8">
     <title>Formulario 1</title>
+    <link rel="stylesheet" href="master.css">
   </head>
   <body>
     <h1>Reserva</h1>
-    <form oninput="result.value = parseFloat(noches.value) * parseFloat(habitaciones.value) * parseFloat(10)" action="ej3_2.html.html" method="post">
+    <form oninput="result.value = parseFloat(noches.value) * parseFloat(habitaciones.value) * parseFloat(10)" action="ej3_2.html" method="post">
       <fieldset>
-        <legend>Rellene los campos</legend>
+        <legend>Precio por noche y habitación: 10€</legend>
         <label>Fecha de llegada</label>
         <input type="date">
 
         <label>Número de noches</label>
-        <input type="number" id="noches">
+        <input type="number" id="noches" value="1" min="1" size="1">
 
         <label>Cuantas habitaciones</label>
-        <input type="number" id="habitaciones">
+        <input type="number" id="habitaciones" value="1" min="1" size="1">
 
         <label><strong>Precio a pagar:</strong></label>
-        <output name="result" for="noches habitaciones"><strong>€</strong></output>
+        <output name="result" for="noches habitaciones"></output><strong>€</strong>
+        <br>
+        <input type="submit" name="enviar" value="Buscar">
       </fieldset>
     </form>
   </body>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Formulario 3</title>
+    <link rel="stylesheet" href="master.css">
+  </head>
+  <body>
+    <h1>Caja</h1>
+    <figure>
+      <img src="#" alt="IMG tarjetas de débito">
+    </figure>
+    <!-- Con tarjeta -->
+    <form action="ej3_1.html" method="post">
+      <fieldset>
+        <legend>Datos de la tarjetas</legend>
+        <label>Nº de Tarjeta: </label>
+        <input type="number" name="nTarjeta" placeholder="4000 1234 5676 4010" pattern="[0-9]{16}">
+        <label>Caducidad: </label>
+        <input type="date" name="caducidad">
+        <label>Código de seguridad/CVV2: </label>
+        <input type="number" name="seguridad" pattern="[0-9]{3}" size="1" value="111">
+      </fieldset>
+      <fieldset>
+        <label>Titular de la tarjeta: </label>
+        <input type="text" name="titular" placeholder="Pedro García Qing" maxlength="32">
+      </fieldset>
+      <input type="submit" name="enviar" value="Pagar y finalizar compra">
+    </form>
+    <hr>
+    <!-- Con Paypal -->
+    <form action="ej3_1.html" method="post">
+      <fieldset>
+        <legend>PayPal</legend>
+        <a href="paypal.com" target="_blank">PayPal</a>
+      </fieldset>
+      <input type="submit" name="enviar" value="Pagar y finalizar compra">
+    </form>
+  </body>
+</html>
