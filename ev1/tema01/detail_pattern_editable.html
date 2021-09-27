@@ -25,11 +25,11 @@
     <h2>Calculo de importe de horas extras</h2>
     <form oninput="result.value = parseFloat(horas.value) * parseFloat(precio.value) + parseFloat(suplemento.value)">
       <label for="horas">Horas</label>
-      <input type="number" id="horas" min="0" step="1" required>
+      <input type="number" id="horas" min="0" step="1" value="0" required>
       <label for="precio">Precio</label>
-      <input type="number" id="precio" min="0" step="1" required>
+      <input type="number" id="precio" min="0" step="1" value="0" required>
       <label for="suplemento">Suplemento</label>
-      <input type="number" id="suplemento" value=0.20 readonly>
+      <input type="number" id="suplemento" value=0.20 size="1" readonly>
       <label for="result"><strong>Total:</strong></label>
       <output name="result" for="horas precio"></output><strong>€</strong>
     </form>
