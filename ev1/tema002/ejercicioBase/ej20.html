@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ej20</title>
+    <script type="text/javascript">
+      // Inicializado a 1 para usarse en multiplicaciones
+      var prod = 1;
+      // Este booleano es para controlar el bucle
+      var bool = true;
+      do {
+        var numero = parseInt(prompt("Introduce un número para saber su factorial"));
+        // Este if() confirma si hemos introducido un número
+        if (!isNaN(numero)) {
+          // Este bucle calcula el factorial del número introducido
+          for (var i = numero; i > 0; i--) {
+            prod = prod * i;
+            // Marcamos el booleano a false para salir del bucle
+            bool = false;
+          }
+          alert(prod);
+        }else{
+          alert("Introduce un número, por favor");
+        }
+      } while (bool);
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

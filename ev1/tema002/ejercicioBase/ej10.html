@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ej10</title>
+    <script type="text/javascript">
+      var edad = parseInt(prompt("Introduce tus años"));
+      // El if() eliminado los números negativos y valores inadecuados
+      if (edad>=0) {
+        // Debemos poner un booleano en el switch, true si queremos que entre
+        switch (true) {
+          case edad<=12:
+            alert("Niño");
+            break;
+          case edad>=13&&edad<=26:
+            alert("Joven");
+            break;
+          case edad>=26&&edad<=60:
+            alert("Adulto");
+            break;
+          case edad>60:
+            alert("Jubilado");
+            break;
+          // Este es un mensaje por defecto por si se introduce una cifra no asignada a ningún caso
+          default:
+            alert("Tu edad no ha podido ser procesada");
+        }
+      }else{
+        alert("Introduce un número mayor o igual a 0");
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Ej10</h1>
+  </body>
+</html>
