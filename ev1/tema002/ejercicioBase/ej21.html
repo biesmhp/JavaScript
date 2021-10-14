@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ej21</title>
+    <script type="text/javascript">
+      var numero = 0;
+      do {
+        var num = parseInt(prompt("Introduce un número. (999 para sumar y salir.)"));
+        if (!(isNaN(num))&&num!=999) {
+          numero=numero+num;
+        }
+      }while (num!=999);
+      document.write(numero);
+    </script>
+  </head>
+  <body>
+    <footer><small>Brendan - DAW226</small></footer>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Par o Impar</title>
+    <script type="text/javascript">
+      /*La funcion*/
+      function par(num){
+        if (num%2==0) {
+          return true;
+        }else{
+          return false;
+        }
+      }
+      /*Introducir valor*/
+      var numero=parseInt(prompt("Introduce un numero para saber si es par o no"));
+      if (par(numero)) {
+        document.write(numero+" es PAR");
+      }else{
+        document.write(numero+" es IMPAR");
+      }
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
