@@ -11,22 +11,24 @@ function inicio(){
 function operar(){
   numPrimero = parseInt(document.getElementById('num1').value);
   numSegundo = parseInt(document.getElementById('num2').value);
-
-  switch (document.getElementById('operador').value) {
-    case 'sumar':
-      mostrar(numPrimero+numSegundo);
-      break;
-    case 'restar':
-      mostrar(numPrimero-numSegundo);
-      break;
-    case 'multiplicar':
-      mostrar(numPrimero*numSegundo);
-      break;
-    case 'dividir':
-      mostrar(numPrimero/numSegundo);
-      break;
-    default:
-
+  if (!(isNaN(numPrimero)||isNaN(numSegundo))) {
+    switch (document.getElementById('operador').value) {
+      case 'sumar':
+        mostrar(numPrimero+numSegundo);
+        break;
+      case 'restar':
+        mostrar(numPrimero-numSegundo);
+        break;
+      case 'multiplicar':
+        mostrar(numPrimero*numSegundo);
+        break;
+      case 'dividir':
+        mostrar(numPrimero/numSegundo);
+        break;
+      default:
+    }
+  }else{
+    alert("Introduce un número válido");
   }
 }
 
