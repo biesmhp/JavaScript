@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Operaciones</title>
+    <script type="text/javascript" src="pizzeria.js">
+
+    </script>
+  </head>
+  <body>
+    <label>Pedido</label>
+    <form name="fPedido">
+      <fieldset>
+        <caption>Datos del cliente:</caption>
+        <textarea name="datos" rows="1" cols="80"></textarea>
+      </fieldset>
+      <fieldset>
+        <caption>Tipo de masa:</caption>
+        <input type="radio" name="masa" value="fina">Fina
+        <input type="radio" name="masa" value="normal" checked>Normal
+        <input type="radio" name="masa" value="rellena">Rellena
+      </fieldset>
+      <fieldset>
+        <caption>Ingredientes:</caption>
+        <input type="checkbox" name="ingrediente" value="mozzarella" checked>Mozzarella
+        <input type="checkbox" name="ingrediente" value="tomate" checked>Tomate
+        <input type="checkbox" name="ingrediente" value="queso" checked>Queso
+        <input type="checkbox" name="ingrediente" value="jamon">Jamón
+        <input type="checkbox" name="ingrediente" value="anchoa">Anchoa
+      </fieldset>
+      <input type="button" id="pedir" value="PEDIDO">
+    </form>
+    <!-- Resultado -->
+    <label id="comprobante"></label>
+    <footer><small>Brendan - DAW226</small></footer>
+  </body>
+</html>
