@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="funciones.js"></script>
+    <script src="https://kit.fontawesome.com/f0e4ad5691.js" crossorigin="anonymous"></script>
+    <title>Jueguecito de Prueba</title>
+  </head>
+  <body>
+    <main>
+      <!-- La seción que contiene el combate -->
+      <section class="combate">
+        <!-- Mi personaje -->
+        <article class="myPj">
+          <ul>
+            <li class="nombre">Pastafari</li>
+            <li><i class="fas fa-pastafarianism"></i></li>
+            <li><progress value="80" max="100">0%</progress></li>
+          </ul>
+        </article>
+        <!-- El personaje del enemigo -->
+        <article class="enemyPj">
+          <ul>
+            <li class="nombre">Reddit</li>
+            <li><i class="fab fa-reddit-alien"></i></li>
+            <li><progress value="50" max="100">0%</progress></li>
+          </ul>
+        </article>
+        <!-- Ayudante del enemigo -->
+        <article class="enemy2Pj">
+          <ul>
+            <li class="nombre">Monstruo</li>
+            <li><i class="fab fa-optin-monster"></i></i></li>
+            <li><progress value="20" max="100">0%</progress></li>
+          </ul>
+        </article>
+      </section>
+      <!-- La sección que contiene la interfaz -->
+      <section class="interfazCombate">
+        <input type="button" name="luchar" value="Luchar">
+        <input type="button" name="mochila" value="Mochila">
+        <input type="button" name="otro" value="Otro">
+        <input type="button" name="huir" value="Huir">
+      </section>
+    </main>
+    <footer><small>Brendan - DAW226</small></footer>
+  </body>
+</html>

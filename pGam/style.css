@@ -1,0 +1,44 @@
+:root {
+  font-size: 16px;
+  font-family: 'Open Sans';
+  --text-primary: #fafafa;
+  --text-secondary: #ececec;
+  --bg-primary: #666666;
+  --bg-secondary: #aaaaaa;
+  --color-icon: #DF49A6;
+  --transition-speed: 600ms;
+}
+body {
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
+}
+section {
+  background-color: var(--bg-primary);
+  display: flex;
+}
+section.interfazCombate {
+  width: 50%;
+  background-color: var(--text-primary);
+  justify-content: center;
+}
+article {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+article.myPj {
+  margin-top: 8rem;
+}
+article.enemyPj {
+}
+li.nombre {
+  background-color: var(--text-secondary);
+  color: var(--bg-primary);
+}
+ul {
+  list-style: none;
+}
+i {
+  color: var(--color-icon);
+  font-size: 12rem;
+}
