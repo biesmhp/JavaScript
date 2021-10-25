@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Brendan - DAW226</title>
+    <script src="repaso.js"></script>
+  </head>
+  <body>
+    <form method="post">
+      <fieldset>
+        <legend>Datos</legend>
+        <label for="alumno">Nombre del alumno:</label>
+        <input type="text" id="alumno" placeholder="Alumno">
+      </fieldset>
+      <fieldset>
+        <label for="notas">Notas:</label>
+        <input type="number" id="nota1" size="1" min="0" max="10" value="5">
+        <input type="number" id="nota2" size="1" min="0" max="10" value="5">
+        <input type="number" id="nota3" size="1" min="0" max="10" value="5">
+        <input type="button" id="resultadoFinal" value="RESULTADO FINAL">
+      </fieldset>
+      <fieldset>
+        <legend>Resultados</legend>
+        <label for="notaFinal">Nota:</label>
+        <input type="text" id="notaFinal" size="1">
+        <input type="text" id="aprobado" size="10" value="APTO o NO APTO">
+      </fieldset>
+      <input type="reset" id="continuar" value="CONTINUAR">
+      <input type="button" id="salir" value="SALIR">
+    </form>
+  </body>
+</html>
