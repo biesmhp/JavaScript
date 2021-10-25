@@ -1,3 +1,4 @@
+// DAW226
 addEventListener('load',inicio,false);
 // Declaramos variables
 var num1, num2, num3, nombre;
@@ -18,10 +19,11 @@ function inicio(){
 }
 
 function intermedia(){
+  // alert(nombre.value);
   // Recoge los valores de las notas
-  num1 = parseInt(document.getElementById('nota1').value);
-  num2 = parseInt(document.getElementById('nota2').value);
-  num3 = parseInt(document.getElementById('nota3').value);
+  num1 = parseFloat(document.getElementById('nota1').value);
+  num2 = parseFloat(document.getElementById('nota2').value);
+  num3 = parseFloat(document.getElementById('nota3').value);
   // Aumentamos el contador de alumnos evaluados
   nAlumnosEv++;
   // Inserta los resultados de la función en sus respectivos INPUTS
@@ -29,7 +31,7 @@ function intermedia(){
 }
 
 // Calcula la nota media de 3 (notas), devuelve APTO o NO APTO y la media
-function calculoNota(nombre, num1, num2, num2){
+function calculoNota(nombre, num1, num2, num3){
   // Hacemos el calculo de la media
   let sumatorio = num1+num2+num3;
   let media = sumatorio/3;
