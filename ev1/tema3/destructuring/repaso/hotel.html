@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Brendan - DAW226</title>
+    <script src="hotel.js"></script>
+  </head>
+  <body>
+    <form method="post">
+      <fieldset>
+        <legend>Hotel</legend>
+        <!-- Coste Hotel -->
+        <!-- Numero de noches -->
+        <label for="nNoches">Número de noches: </label>
+        <input type="number" id="nNoches" min="0" value="10">
+        <!-- Precio -->
+        <label for="hotel">Tipo de hotel - Estrellas </label>
+        <select id="hotel">
+          <option value="1">1 Estrella</option>
+          <option value="2">2 Estrellas</option>
+          <option value="3">3 Estrellas</option>
+          <option value="4">4 Estrellas</option>
+          <option value="5">5 Estrellas</option>
+        </select>
+        <!-- Impuesto turístico: 2% -->
+        <label for="impTuristico">Impuesto turístico: 2% del coste de la habitación</label>
+        <!-- 5 precios de hoteles según sus estrellas -->
+      </fieldset>
+
+      <fieldset>
+        <legend>Vuelo</legend>
+        <!-- Coste vuelo -->
+        <!-- Ciudad -->
+        <select id="ciudad">
+          <option value="madrid">Madrid-200</option>
+          <option value="tokio">Tokio-500</option>
+          <option value="berlin">Berlín-70</option>
+          <option value="belgica">Bélgica-37</option>
+        </select>
+        <!-- Tipo de vuelo -->
+        <label for="tVuelo">Tipo de vuelo: </label>
+        <input type="radio" name="tVuelo" value="idaVuelta">Ida y vuelta
+        <input type="radio" name="tVuelo" value="soloIda">Solo ida
+        <!-- Para viajes de ida y vuelta habrá un descuento del 10% -->
+      </fieldset>
+
+      <fieldset>
+        <legend>Alquiler de coches</legend>
+        <!-- Numero de coches -->
+        <label for="nCoches">Número de coches:</label>
+        <input type="number" id="nCoches" min="0" value="0" size="1">
+        <!-- Dias de alquiler de coche -->
+        <label for="nDias">Número de días:</label>
+        <input type="number" id="nDias" min="1" value="1" size="1">
+          <!-- Cada día cuesta 40€ -->
+          <!-- Si lo alquilas por más de 3 días, hay un descuento de 20€ -->
+          <!-- Si lo alquilas por más de 7 días, hay un descuento de 50€, no acumulable -->
+      </fieldset>
+      <fieldset>
+        <legend>Costes</legend>
+        <label for="costeHotel">Total del hotel:</label>
+        <input type="text" id="costeHotel" readonly size="2">
+        <label for="costeVuelo">Total del vuelo:</label>
+        <input type="text" id="costeVuelo" readonly size="2">
+        <label for="costeCoches">Total del alquiler de coches:</label>
+        <input type="text" id="costeCoches" readonly size="2">
+        <br>
+        <label for="total"><strong>Total:</strong></label>
+        <input type="text" id="total" readonly size="3">
+      </fieldset>
+    </form>
+  </body>
+</html>
