@@ -68,7 +68,7 @@ function mostrarHotel(){
   let precio = costeHabitacion();
   numeroDeNoches = parseInt(document.getElementById('nNoches').value);
   let [textoHotel,textoImpuesto]=coste_hotel(numeroDeNoches, precio);
-  if (textoHotel!=0) {
+  if (!isNaN(textoHotel)&&textoHotel!=0) {
     document.getElementById("costeHotel").innerHTML=textoHotel+"€ (incluyendo los "+textoImpuesto+"€ de impuestos)";
   }else{
     document.getElementById("costeHotel").innerHTML=null;
