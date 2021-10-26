@@ -22,6 +22,10 @@ function inicio(){
   // Muestra al usuario el coste TOTAL del hotel
   inputForm=document.getElementById('calcularHotel');
   inputForm.addEventListener('click',mostrarHotel,false);
+
+  // Muestra al usuario el coste TOTAL del hotel
+  inputForm=document.getElementById('calcularVuelo');
+  inputForm.addEventListener('click',mostrarVuelo,false);
 }
 
 // Visualizar el coste de la habitación
@@ -32,27 +36,21 @@ function costeHabitacion(){
     case "estrellas0":
       document.getElementById("impTuristico").innerHTML="Debe seleccionar las estrellas del hotel";
       return null;
-      break;
     case "estrellas1":
       document.getElementById("impTuristico").innerHTML=estrellas1+"€ la noche (más 2% en impuestos)";
       return estrellas1;
-      break;
     case "estrellas2":
       document.getElementById("impTuristico").innerHTML=estrellas2+"€ la noche (más 2% en impuestos)";
       return estrellas2;
-      break;
     case "estrellas3":
       document.getElementById("impTuristico").innerHTML=estrellas3+"€ la noche (más 2% en impuestos)";
       return estrellas3;
-      break;
     case "estrellas4":
       document.getElementById("impTuristico").innerHTML=estrellas4+"€ la noche (más 2% en impuestos)";
       return estrellas4;
-      break;
     case "estrellas5":
       document.getElementById("impTuristico").innerHTML=estrellas5+"€ la noche (más 2% en impuestos)";
       return estrellas5;
-      break;
   }
 }
 
@@ -79,7 +77,20 @@ function mostrarHotel(){
 
 // El coste del vuelo
 function coste_avion(nombreCiudad, tipoDeVuelo){
+  // Por alguna extraña razón esta función devuelve False cuando coinciden los resultados, por eso está al reves
+  if (tipoDeVuelo.localeCompare('soloIda')) {
+    aPagar = nombreCiudad-(nombreCiudad*0.10);
+  } else {
+    aPagar = nombreCiudad;
+  }
   return aPagar;
+}
+
+function mostrarVuelo(){
+  ciudadElegida = document.getElementById('ciudad').value;
+  tipoDeVuelo = document.reserva.tVuelo.value;
+  alert(tipoDeVuelo);
+  document.getElementById("costeVuelo").innerHTML=coste_avion(ciudadElegida,tipoDeVuelo);
 }
 
 // El coste del coche
