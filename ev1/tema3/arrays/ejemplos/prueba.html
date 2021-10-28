@@ -3,46 +3,48 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <script type="text/javascript">
-      // para deletrear una palabra
-      function pais(){
-        var pais = ("España");
-        for (let i = 0; i < pais.length; i++) {
-          console.log(pais[i]+" - ");
-        }
-      }
-      // Un array normal
-      function paises(){
-        var paises = ['España','Mauritania','Nauru','Nepal','Honduras'];
-        for (let i = 0; i < paises.length; i++) {
-          console.log(paises[i]+" - ");
-        }
-      }
-      // Para obtener las posiciones
-      function paisesForIn(){
-        var paises = ['España','Mauritania','Nauru','Nepal','Honduras'];
-        for (let posicion in paises) {
-          console.log("Posición "+posicion+": "+paises[posicion]+", ");
-        }
-      }
-      // Callback
-      function callBack(){
-        var paises = ['España','Mauritania','Nauru','Nepal','Honduras'];
-        paises.forEach(function(valor,indice,array){
-          console.log("En el indice "+indice+" hay este valor: "+valor)
-          }
-        );
-      }
-    </script>
+    <script src="arrays_funciones.js"></script>
   </head>
   <body>
     <h1>Utiliza el F12 para visualizar la funcionalidad en la consola</h1>
-    <label onclick="pais()">&gt;Deletrea un pais</label>
-    <br>
-    <label onclick="paises()">&gt;Lista de paises</label>
-    <br>
-    <label onclick="paisesForIn()">&gt;Valores con ForIn</label>
-    <br>
-    <label onclick="callBack()">&gt;Callback en consola</label>
+    <h4>&#11015;Pulsa cualquiera de estas líneas para visualizarlas en la consola: Lista de paises&#11015;</h4>
+    <!-- <label onclick="paisD()">&#127802;Deletrea un pais</label> -->
+    <label onclick="paisesArray()">&#9203;Bucle for</label>
+    <label onclick="paisesForIn()">&#128378;Bucle ForIn</label>
+    <label onclick="callBack()">&#128715;funcion Callback</label>
+
+    <!-- Metodos con arrays -->
+    <h2>Métodos</h2>
+    <ul>
+      <li>
+        <p>El método <strong>array.push(valor)</strong> añade un nuevo elemento al array y nos devuelve su nueva longitud</p>
+        <form method="post">
+          <input type="text" id="textoAdd">
+          <input type="button" value="Añadir" onclick="arrayPush()">
+        </form>
+        <p><small>Utiliza los botones de arriba para ver el resultado&#10548;</small></p>
+      </li>
+
+      <li>
+        <p>El método <strong>array.concat(array)</strong> concatena los dos arrays</p>
+        <label>Array1: 'Serbia','Eritrea'.</label>
+        <label>Array2: 'Laos','Trinidad y Tovago'.</label>
+        <input type="button" value="Concatenar" onclick="arrayConcat()">
+      </li>
+
+      <li>
+        <p>El método <strong>array.join(texto)</strong> devuelve una cadena de texto con los elementos del array separados por el texto indicado entre paréntesis</p>
+        <form method="post">
+          <input type="text" id="textoUnion" placeholder=" and ">
+          <input type="button" value="Juntar" onclick="arrayJoin()">
+        </form>
+      </li>
+
+      <li>
+        <p>El método <strong>array.reverse()</strong> reescribe el array del revés</p>
+        <label onclick="paisesReverse()">&#9203;Array del revés</label>
+      </li>
+    </ul>
+
   </body>
 </html>
