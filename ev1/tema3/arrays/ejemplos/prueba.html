@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+      // para deletrear una palabra
+      function pais(){
+        var pais = ("España");
+        for (let i = 0; i < pais.length; i++) {
+          console.log(pais[i]+" - ");
+        }
+      }
+      // Un array normal
+      function paises(){
+        var paises = ['España','Mauritania','Nauru','Nepal','Honduras'];
+        for (let i = 0; i < paises.length; i++) {
+          console.log(paises[i]+" - ");
+        }
+      }
+      // Para obtener las posiciones
+      function paisesForIn(){
+        var paises = ['España','Mauritania','Nauru','Nepal','Honduras'];
+        for (let posicion in paises) {
+          console.log("Posición "+posicion+": "+paises[posicion]+", ");
+        }
+      }
+      // Callback
+      function callBack(){
+        var paises = ['España','Mauritania','Nauru','Nepal','Honduras'];
+        paises.forEach(function(valor,indice,array){
+          console.log("En el indice "+indice+" hay este valor: "+valor)
+          }
+        );
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Utiliza el F12 para visualizar la funcionalidad en la consola</h1>
+    <label onclick="pais()">&gt;Deletrea un pais</label>
+    <br>
+    <label onclick="paises()">&gt;Lista de paises</label>
+    <br>
+    <label onclick="paisesForIn()">&gt;Valores con ForIn</label>
+    <br>
+    <label onclick="callBack()">&gt;Callback en consola</label>
+  </body>
+</html>
