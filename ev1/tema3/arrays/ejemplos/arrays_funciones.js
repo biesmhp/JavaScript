@@ -45,3 +45,7 @@ function arrayJoin(){
   document.getElementById("textoUnion").value=null;
   document.getElementById("textoUnion").focus();
 }
+
+function arrayReverse(){
+  console.log(paises.reverse());
+}
