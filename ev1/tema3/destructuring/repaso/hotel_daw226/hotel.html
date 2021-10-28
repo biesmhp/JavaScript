@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Brendan - DAW226</title>
+    <script src="hotel.js"></script>
+  </head>
+  <body>
+    <form name="reserva" method="post">
+      <fieldset>
+        <legend>Hotel</legend>
+        <!-- Coste Hotel -->
+        <!-- Numero de noches -->
+        <label for="nNoches">Número de noches: </label>
+        <input type="number" id="nNoches" min="1" value="0">
+        <!-- Precio -->
+        <label for="hotel">Tipo de hotel:</label>
+        <select id="hotel">
+          <option value="estrellas0" >Sin Hotel</option>
+          <option value="estrellas1">1 Estrella</option>
+          <option value="estrellas2">2 Estrellas</option>
+          <option value="estrellas3">3 Estrellas</option>
+          <option value="estrellas4">4 Estrellas</option>
+          <option value="estrellas5">5 Estrellas</option>
+        </select>
+        <!-- Impuesto turístico: 2% -->
+        <label id="impTuristico"></label>
+        <!-- 5 precios de hoteles según sus estrellas -->
+        <br>
+        <!-- <input type="button" id="calcularHotel" value="Calcular"> -->
+        <label id="costeHotel"></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Vuelo</legend>
+        <!-- Coste vuelo -->
+        <!-- Ciudad -->
+        <label for="ciudad">Vuelo a:</label>
+        <select id="ciudad">
+          <option value="200">Madrid</option>
+          <option value="500">Tokio</option>
+          <option value="75">Berlín</option>
+          <option value="37">Bélgica</option>
+        </select>
+        <!-- Tipo de vuelo -->
+        <label for="tVuelo">Tipo de vuelo:</label>
+        <input type="radio" name="tVuelo" value="idaVuelta">Ida y vuelta (conlleva un descuento del 10%)
+        <input type="radio" name="tVuelo" value="soloIda">Solo ida
+        <input type="radio" name="tVuelo" value="sinVuelo" checked>Sin vuelo
+        <!-- Para viajes de ida y vuelta habrá un descuento del 10% -->
+        <br>
+        <!-- <input type="button" id="calcularVuelo" value="Calcular"> -->
+        <label id="costeVuelo"></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Alquiler de coches</legend>
+        <!-- Numero de coches -->
+        <label for="alquiler">¿Quiere alquilar un coche durante su estancia?</label>
+        <input type="radio" name="alquiler" value="alquilado">Alquilar
+        <input type="radio" name="alquiler" value="noAlquilado" checked>No alquilar
+        <!-- Dias de alquiler de coche -->
+        <br>
+        <!-- <input type="button" id="calcularCoche" value="Calcular"> -->
+        <label id="costeCoche"></label>
+          <!-- Cada día cuesta 40€ -->
+          <!-- Si lo alquilas por más de 3 días, hay un descuento de 20€ -->
+          <!-- Si lo alquilas por más de 7 días, hay un descuento de 50€, no acumulable -->
+      </fieldset>
+      <fieldset>
+        <legend>Costes</legend>
+        <input type="button" id="calcular" value="Calcular el Total">
+        <strong><label id="total"></label></strong>
+      </fieldset>
+    </form>
+    <table>
+      <tr>
+        <td>Madrid</td>
+        <td><meter id="madridMeter" min="0" max="10" low="3" optimum="5"></meter></td>
+      </tr>
+      <tr>
+        <td>Tokio</td>
+        <td><meter id="tokioMeter" min="0" max="10" low="3" optimum="5"></meter></td>
+      </tr>
+      <tr>
+        <td>Berlín</td>
+        <td><meter id="berlinMeter" min="0" max="10" low="3" optimum="5"></meter></td>
+      </tr>
+      <tr>
+        <td>Bélgica</td>
+        <td><meter id="belgicaMeter" min="0" max="10" low="3" optimum="5"></meter></td>
+      </tr>
+    </table>
+  </body>
+</html>
