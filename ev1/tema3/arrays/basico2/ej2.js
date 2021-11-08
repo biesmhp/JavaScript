@@ -1,10 +1,12 @@
 addEventListener('load',inicio,false);
-var numeros;
-var arrayDeNumeros=[];
+var numeros1,numeros2;
+var arrayDeNumeros1=[];
+var arrayDeNumeros2=[];
 
 function inicio(){
   // Extraemos los datos
-  numeros = document.getElementById('arrayNums');
+  numeros1 = document.getElementById('arrayNums1');
+  numeros2 = document.getElementById('arrayNums2');
 
 
   inputForm=document.getElementById('ejemplo1');
@@ -13,64 +15,31 @@ function inicio(){
   inputForm=document.getElementById('ejemplo2');
   inputForm.addEventListener('click',cargarArray2,false);
 
+  inputForm=document.getElementById('concatenar');
+  inputForm.addEventListener('click',concatena,false);
 }
 
-function cargarEnArray(){
-  numeros = document.getElementById('arrayNums').value;
-  // alert(numeros);
-  // La funcion string.split divide un string según el elemento indicado y lo recopila en un array
-  arrayDeNumeros = numeros.split(',');
-  if (Array.isArray(arrayDeNumeros)) {
-    console.log(arrayDeNumeros);
-  } else {
-    console.log('No es un array');
-  }
+function cargarArray1(){
+  numeros1 = document.getElementById('arrayNums1').value;
+  arrayDeNumeros1 = numeros1.split(',');
+  console.log(arrayDeNumeros1);
 }
 
-function calc(){
-  let resultados = calculo(arrayDeNumeros);
-  for (let posicion in resultados) {
-    console.log(resultados[posicion]);
+function cargarArray2(){
+  let longitud = arrayDeNumeros1.length;
+  for (var i = 0; i < longitud; i++) {
+    arrayDeNumeros2.push(parseInt(Math.random()*100));
   }
-  document.getElementById('sumaEs').innerHTML = "La suma es: "+resultados[0];
-  document.getElementById('mediaEs').innerHTML = "La media es: "+resultados[1];
-  document.getElementById('mayorEs').innerHTML = "El mayor es: "+resultados[2];
-  document.getElementById('menorEs').innerHTML = "El menor es: "+resultados[3];
+  console.log(arrayDeNumeros2);
+  arrayNums2.value = arrayDeNumeros2;
 }
 
-function calculo(aNums){
-  // Suma
-  let sum=0;
-  for (let x in aNums) {
-    sum += parseInt(aNums[x]);
+function concatena(){
+  let arrayConcatenado = [];
+  for (let x in arrayDeNumeros1) {
+    arrayConcatenado.push(arrayDeNumeros1[x]);
+    arrayConcatenado.push(arrayDeNumeros2[x]);
   }
-  // console.log(sum);
-
-  // Media
-  let media=0;let count = 0;
-  for (let x in aNums) {
-    media += parseInt(aNums[x]);
-    count++;
-  }
-  media=media/count;
-  // console.log(media);
-
-  // Mayor
-  let mayor=parseInt(aNums[0]);
-  for (let x in aNums) {
-    if (mayor<aNums[x]) {
-      mayor=parseInt(aNums[x]);
-    }
-  }
-  // console.log(mayor);
-
-  // Menor
-  let menor=parseInt(aNums[0]);
-  for (let x in aNums) {
-    if (menor>aNums[x]) {
-      menor=parseInt(aNums[x]);
-    }
-  }
-  // console.log(menor);
-  return [sum,media,mayor,menor];
+  console.log(arrayConcatenado);
+  document.getElementById('concatenado').innerHTML = arrayConcatenado;
 }
