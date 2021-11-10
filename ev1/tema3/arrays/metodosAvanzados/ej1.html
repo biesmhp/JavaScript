@@ -7,8 +7,24 @@
   </head>
   <body>
     <form method="post">
-      <input type="text" id="cajaArrayNums" placeholder="Introduce un array de numeros separados por comas" size="35">
-      <input type="button" id="btnCopia" value="COPIAR">
+      <fieldset>
+        <legend>Introduce un array separado por comas</legend>
+        <input type="text" id="cajaArrayNums" placeholder="Separado por comas" size="40">
+        <input type="button" id="btnCopia" value="COPIAR">
+      </fieldset>
+      <fieldset>
+        <legend>Cambiar los elementos del array por ceros</legend>
+        <u><label for="inpInicio" title="Recuerda que los arrays empiezan en la posición 0">Desde la posición inicial:</label></u>
+        <input type="number" id="inpInicio" value="0" min="0" size="5">
+        <label for="inpCuantos">¿Cuántos elementos quieres modificar?</label>
+        <input type="number" id="inpCuantos" value="0" min="0" size="5">
+        <input type="button" id="btnCambiar" value="CAMBIAR">
+
+      </fieldset>
+      <fieldset>
+        <legend>Visualizado por guiones</legend>
+        <label id="resVisual"></label>
+      </fieldset>
     </form>
   </body>
 </html>
