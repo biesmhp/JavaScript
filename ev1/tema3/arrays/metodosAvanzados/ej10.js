@@ -8,4 +8,6 @@ function inicio(){
 function ordenar(){
   const ciudades = ["Zaragoza", "Ávila", "madrid", "Barcelona"];
   document.getElementById('visArray').innerHTML = ciudades;
+  console.log(ciudades.sort((a, b) => a.localeCompare(b)));
+  document.getElementById('visArrayO').innerHTML = ciudades;
 }
