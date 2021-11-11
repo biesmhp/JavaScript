@@ -19,43 +19,21 @@ function recogeArray(){
 
 // Crear una copia de un array y devolver la copia
 function copia(){
-
   // Crea una copia del array
   let arrayIntroducidoC = recogeArray().slice();
+  // Bucle sumando 1
+  for (var position in arrayIntroducidoC) {
+    arrayIntroducidoC[position] = parseInt(arrayIntroducidoC[position])+1;
+  }
   // Muestra por consola
   console.log(arrayIntroducidoC);
-
-  // Lo escribo en su label
-  visual(promedioRango);
+  // Lo visualiza en su label
+  visualiza(arrayIntroducidoC);
   // Devuelve
   return arrayIntroducidoC;
 }
 
-function calcPromedio(arr,ini,cant){
-  inicio = parseInt(ini);
-  cantidad = parseInt(cant);
-  // Variable a devolver
-  let promedio = 0;
-  console.log(arr);
-  // Bucle
-  if (arr.length > 0 && cantidad > 0) {
-    let count = 0;
-    // Calculamos el promedio
-    for (var i = inicio; i < arr.length && i-inicio < cantidad; i++) {
-      promedio+=parseInt(arr[i]);
-      count++;
-    }
-    promedio = promedio/count;
-
-  }
-  // Si han introducido texto y no números
-  if (isNaN(promedio)) {
-    promedio=0;
-  }
-  return promedio;
-}
-
-function visual(texto){
+function visualiza(arr){
   // Lo escribo en su label
-  document.getElementById('resVisual').innerHTML = texto;
+  document.getElementById('resVisual').innerHTML = arr.join('-');
 }
