@@ -6,6 +6,12 @@ var cNumeros = numeros.slice();
 
 console.log("Array copiado: "+cNumeros);
 
+function menores10(numElement){
+  if (numElement<10) {
+    return numElement;
+  }
+}
+
 function cuadradosDeLosMenoresDe10(arr){
   let arrFilteredm10 = arr.filter(menores10);
   console.log("Array filtrado con los números menores de 10: "+arrFilteredm10);
@@ -18,14 +24,7 @@ function cuadradosDeLosMenoresDe10(arr){
   return arrFiltered;
 }
 
-function menores10(numElement){
-  if (numElement<10) {
-    return numElement;
-  }
-}
-
 function mostrar(){
   let res = cuadradosDeLosMenoresDe10(cNumeros);
-  document.getElementById('visResultado').innerHTML = res;
-  visResultado.value = res;
+  document.getElementById('visResultado').innerHTML = "Los números menores de 10 al cuadrado del array son: "+res;
 }
