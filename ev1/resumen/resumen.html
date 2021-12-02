@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Brendan - DAW226</title>
+    <script src="funciones.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Acceder al contenido de un formulario</h1>
+    <form method="post">
+      <fieldset>
+        <legend>Mandar datos</legend>
+        <label for="inputText">Introduce un texto</label>
+        <input type="text" id="inputText" placeholder="String">
+        <button type="button" id="btnAddTextLabel">Mostrar en un label</button>
+        <button type="button" id="btnAddTextInput">Mostrar en un input</button>
+      </fieldset>
+
+      <fieldset>
+        <legend>Arrays</legend>
+        <label for="inputArr">Introduce un array separado por comas</label>
+        <input type="text" id="inputArr" placeholder="Array">
+        <button type="button" id="btnAddArr">Mostrar en un label</button>
+      </fieldset>
+
+      <fieldset>
+        <legend>Visualizado</legend>
+        <label id="visTextLabel">Label</label>
+        <input type="text" id="visTextInput" placeholder="Input" readonly>
+      </fieldset>
+    </form>
+  </body>
+</html>
