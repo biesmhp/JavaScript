@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Brendan - DAW226</title>
+    <script src="ej1.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Ejercicio 1 - Matriz de tornillos</h1>
+    <form method="post">
+      <fieldset>
+        <legend>Generador - ejercicio 1</legend>
+        <!-- Este panel lo he usado para las comprobaciones iniciales -->
+        <!-- <label for="btnRellenar">Pulsa para generar una matriz de tornillos</label>
+        <button type="button" id="btnRellenar">Rellenar</button> -->
+        <label><strong>Se debe pulsar el botón de visualizar para generar la matriz.</strong></label>
+      </fieldset>
+      <fieldset>
+        <legend>Visualizador - ejercicio 2</legend>
+        <label for="btnVisualizar">Pulsa para ver la matriz de tornillos</label>
+        <button type="button" id="btnVisualizar">Visualizar</button>
+        <table border="1">
+          <tr>
+            <th></th>
+            <th>Cilíndrica</th>
+            <th>Hexagonal</th>
+            <th>Torx</th>
+            <th>Cruciforme</th>
+          </tr>
+          <tr>
+            <th>Acero</th>
+            <td id="vis00"></td>
+            <td id="vis01"></td>
+            <td id="vis02"></td>
+            <td id="vis03"></td>
+          </tr>
+          <tr>
+            <th>Inoxidable</th>
+            <td id="vis10"></td>
+            <td id="vis11"></td>
+            <td id="vis12"></td>
+            <td id="vis13"></td>
+          </tr>
+          <tr>
+            <th>Latón</th>
+            <td id="vis20"></td>
+            <td id="vis21"></td>
+            <td id="vis22"></td>
+            <td id="vis23"></td>
+          </tr>
+        </table>
+      </fieldset>
+      <fieldset>
+        <legend>Busqueda - ejercicio 3a</legend>
+        <label for="selMateriales">Materiales: </label>
+        <select id="selMateriales">
+          <option value="0">Acero</option>
+          <option value="1">Inoxidable</option>
+          <option value="2">Latón</option>
+        </select>
+        <span> / </span>
+        <label for="selRanura">Ranura: </label>
+        <select id="selRanura">
+          <option value="0">Cilíndrica</option>
+          <option value="1">Hexagonal</option>
+          <option value="2">Torx</option>
+          <option value="3">Cruciforme</option>
+        </select>
+        <button type="button" id="btnBusqueda">BUSQUEDA</button>
+        <input type="text" id="visTornillos" readonly>
+      </fieldset>
+      <fieldset>
+        <legend>Venta - ejercicio 3b</legend>
+        <button type="button" id="btnVenta">VENTA</button>
+      </fieldset>
+    </form>
+
+  </body>
+</html>
