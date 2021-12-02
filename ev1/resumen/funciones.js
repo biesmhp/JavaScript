@@ -1,3 +1,6 @@
+// Array asociativo
+var arrProductos = {'patatas':3, 'manzanas':8};
+console.log(arrProductos);
 // Añadir el .js tras el html mediante eventos
 addEventListener('load',inicio,false);
 
@@ -33,6 +36,7 @@ function mostrarTextoInput() {
 }
 
 // Input para trabajar con arrays
+// Función intermedia para asignar parámetros
 function mostrarArr() {
   let arrConvertido = stringToArr(lista.value,",");
   mostrarLabel(arrConvertido);
