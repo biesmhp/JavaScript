@@ -1,6 +1,8 @@
-// Array asociativo
+// Array asociativo || No existen arrays asociativos (por nombre) en JavaScript, son objetos.
 var arrProductos = {'patatas':3, 'manzanas':8};
 console.log(arrProductos);
+
+
 // Añadir el .js tras el html mediante eventos
 addEventListener('load',inicio,false);
 
