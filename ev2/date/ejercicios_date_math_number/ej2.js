@@ -25,7 +25,7 @@ function dateDiff(date1, date2) {
     var datediff = date1 - date2; //guarda la diferencia en milisegundos
     let dias = Math.abs((datediff / 86400000)); //Convierte los milisegundos en días
     let minutos = Math.abs((datediff / 60000)); //Convierte los milisegundos en minutos
-    let annos = Math.abs((datediff / 31536000000)); //Convierte los milisegundos en minutos
+    let annos = Math.abs((datediff / 31536000000)); //Convierte los milisegundos en años
     return [annos,dias,minutos];
 }
 
