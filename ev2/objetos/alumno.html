@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Brendan - DAW226</title>
+    <script src="alumnos.js" charset="utf-8"></script>
+    <script src="funciones.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Creador de alumnos</h1>
+    <form method="post">
+      <label for="inputNombre">Nombre del alumno:</label>
+      <input type="text" id="inputNombre" placeholder="Pepito"><br>
+      <label for="inputCurso">Curso:</label>
+      <input type="text" id="inputCurso" placeholder="DAW"><br>
+      <label for="inputMaterias">Materias:</label>
+      <input type="number" id="inputMaterias" min="1" value="1"><br>
+
+      <button type="button" id="btnConfirmar">Confirmar</button>
+    </form>
+    <textarea id="visAlumnos" rows="8" cols="80"></textarea>
+  </body>
+</html>
