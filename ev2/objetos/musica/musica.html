@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Brendan - DAW226</title>
+    <!-- musica.js tiene el objeto -->
+    <script src="musica.js" charset="utf-8"></script>
+    <!-- el ejercicio -->
+    <script src="ejercicio.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Creador de cd_musica</h1>
+    <form method="post">
+      <label for="inputTitulo">Titulo:</label>
+      <input type="text" id="inputTitulo" placeholder="Lullaby"><br>
+      <label for="inputGrupo">Grupo:</label>
+      <input type="text" id="inputGrupo" placeholder="Hansel&Gretel"><br>
+      <label for="inputFecha">Fecha de lanzamiento:</label>
+      <input type="date" id="inputFecha"><br>
+      <label for="inputImagen">Imagen:</label>
+      <input type="file" id="inputImagen"><br>
+
+      <button type="button" id="btnConfirmar">Confirmar</button>
+    </form>
+    <textarea id="visCds" rows="8" cols="80"></textarea>
+  </body>
+</html>
