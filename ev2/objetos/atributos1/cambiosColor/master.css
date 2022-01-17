@@ -1,0 +1,11 @@
+body {
+  /* background-color: brown; */
+}
+div {
+  height: 100px;
+  width: 100px;
+  border-width: medium;
+  border-color: aqua;
+  border-style: solid;
+  background-color: cadetblue;
+}
