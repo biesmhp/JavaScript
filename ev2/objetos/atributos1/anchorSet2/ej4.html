@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Brendan - DAW226</title>
+    <script type="text/javascript">
+      function fSetHref() {
+        var opciones = prompt("¿Cambiar enlace 1 o 2? 1 o 2");
+        var nuevoValor = prompt("Nueva dirección");
+        document.getElementById("enlaceId").setAttribute("href",nuevoValor);
+      }
+    </script>
+  </head>
+  <body>
+    <a id="enlaceId" href="#">Enlace sin dirección de referencia</a>
+    <a id="enlaceId2" href="#">Enlace sin dirección de referencia</a>
+    <button type="button" id="btnAnchorReference" onclick="fSetHref()">Cambiar</button>
+  </body>
+</html>
