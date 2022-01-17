@@ -5,15 +5,33 @@
     <title>Brendan - DAW226</title>
     <script type="text/javascript">
       function fSetHref() {
-        var opciones = prompt("¿Cambiar enlace 1 o 2? 1 o 2");
-        var nuevoValor = prompt("Nueva dirección");
-        document.getElementById("enlaceId").setAttribute("href",nuevoValor);
+        var opciones = prompt("¿Cambiar o eliminar? c o e");
+        if (opciones.toLowerCase()=="c") {
+          // MODIFICAR URL
+          var opciones = prompt("¿Enlace 1 o 2? 1 o 2");
+          if (opciones==1) {
+            var nuevoValor = prompt("Nueva dirección");
+            document.getElementById("enlaceId").setAttribute("href",nuevoValor);
+          } else if(opciones==2) {
+            var nuevoValor = prompt("Nueva dirección");
+            document.getElementById("enlaceId2").setAttribute("href",nuevoValor);
+          }
+        } else if(opciones.toLowerCase()=="e") {
+          // BORRAR URL
+          var opciones = prompt("¿Enlace 1 o 2? 1 o 2");
+          if (opciones==1) {
+            document.getElementById("enlaceId").setAttribute("href","#");
+          } else if(opciones==2) {
+            document.getElementById("enlaceId2").setAttribute("href","#");
+          }
+        }
+
       }
     </script>
   </head>
   <body>
-    <a id="enlaceId" href="#">Enlace sin dirección de referencia</a>
-    <a id="enlaceId2" href="#">Enlace sin dirección de referencia</a>
+    <a id="enlaceId" href="#">Enlace sin dirección de referencia</a><br>
+    <a id="enlaceId2" href="#">Enlace sin dirección de referencia2</a><br>
     <button type="button" id="btnAnchorReference" onclick="fSetHref()">Cambiar</button>
   </body>
 </html>
