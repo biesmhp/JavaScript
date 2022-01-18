@@ -1,0 +1,19 @@
+body {
+  /* background-color: brown; */
+}
+div {
+  height: 100px;
+  width: 100px;
+  /* border-width: medium;
+  border-color: aliceblue;
+  border-style: solid; */
+}
+#claro {
+  background-color: floralwhite;
+}
+#medio {
+  background-color: darkgray;
+}
+#oscuro {
+  background-color: grey;
+}

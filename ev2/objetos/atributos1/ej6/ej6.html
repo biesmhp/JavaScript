@@ -19,6 +19,15 @@
         seccion.style.fontSize = "initial";
         console.log("hola");
       }
+      function changeBC() {
+        let seccion = document.getElementById("seccion1");
+        let color = prompt("Introduce un color en hexadecimal: #AA00FF");
+        seccion.style.background = color;
+      }
+      function originalBC() {
+        let seccion = document.getElementById("seccion1");
+        seccion.style.background = "white";
+      }
     </script>
     <link rel="stylesheet" href="master6.css">
   </head>
@@ -29,8 +38,8 @@
       <button type="button" id="btnOriginalSize" onclick="originalSize()">Restaurar</button>
     </div>
     <div>
-      <button type="button" id="btnChangeBackColor">Cambiar color de fondo</button>
-      <button type="button" id="btnOriginalBackColor">Restaurar</button>
+      <button type="button" id="btnChangeBackColor" onclick="changeBC()">Cambiar color de fondo</button>
+      <button type="button" id="btnOriginalBackColor" onclick="originalBC()">Restaurar</button>
     </div>
     <section id="seccion1">
       <p>Texto de prueba 1.</p>
