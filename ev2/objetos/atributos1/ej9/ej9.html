@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Brendan - DAW226</title>
+    <script type="text/javascript">
+      var status = "less";
+      function toggleText()
+      {
+        var text="Texto a mostrar"; //Este es el texto que aparece y desaparece
+        if (status == "less") {
+            document.getElementById("textArea").innerHTML=text;
+            document.getElementById("toggleButton").innerText = "See Less";
+            status = "more";
+        } else if (status == "more") {
+            document.getElementById("textArea").innerHTML = "";
+            document.getElementById("toggleButton").innerText = "See More";
+            status = "less"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <p id="textArea"><!-- Texto adicional -->
+    </div>
+    <a href="javascript:void(0)" id="toggleButton" onclick="toggleText()">See More</a>
+  </body>
+</html>
