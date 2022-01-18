@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Brendan - DAW226</title>
+    <script type="text/javascript">
+      function duckA() {
+        document.getElementById("enlaceId").setAttribute("href","https://www.duckduckgo.com/");
+        cgColor("duckId");
+      }
+      function wikiA() {
+        document.getElementById("enlaceId").setAttribute("href","https://www.wikipedia.org/");
+        cgColor("wikiId");
+      }
+      function redditA() {
+        document.getElementById("enlaceId").setAttribute("href","https://www.reddit.com/");
+        cgColor("redditId");
+      }
+      function cgColor(objetivo) {
+        document.getElementById("duckId").style.color = "black";
+        document.getElementById("wikiId").style.color = "black";
+        document.getElementById("redditId").style.color = "black";
+        document.getElementById(objetivo).style.color = "red";
+      }
+    </script>
+  </head>
+  <body>
+    <title>Acceso a atributos y código css</title>
+    <p>Selecciona la web y luego pulsa el enlace para ser reenviado</p>
+    <button type="button" onclick="duckA()"><span id="duckId">DuckduckGo</span></button>
+    <button type="button" onclick="wikiA()"><span id="wikiId">Wikipedia</span></button>
+    <button type="button" onclick="redditA()"><span id="redditId">Reddit</span></button>
+    <a href="#" id="enlaceId" target="_blank">Enlace multidireccional</a>
+  </body>
+</html>
