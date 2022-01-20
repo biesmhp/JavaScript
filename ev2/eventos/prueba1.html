@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Brendan - DAW226</title>
+    <script type="text/javascript">
+      addEventListener('load',inicio,false);
+      function inicio() {
+        let len = document.getElementsByTagName("input").length;
+        // alert(len);
+        for (var i = 0; i < len; i++) {
+          document.getElementsByTagName("input")[i].addEventListener("mousedown", function(){
+            this.style.backgroundColor = "red"
+          });
+          document.getElementsByTagName("input")[i].addEventListener("mouseup", function(){
+            this.style.backgroundColor = "white"
+          });
+        }
+
+        var pulsame = document.getElementById("pulsame");
+        pulsame.addEventListener('click',function(e){e.target.innerHTML="He hecho click";},false);
+
+        var padre1 = document.getElementById("padre1");
+        result = document.getElementById("resultado");
+        padre1.addEventListener('mouseover',function(e){
+          result.innerHTML="El desencadenador del evento \"MouseOver\" tiene la id:"+e.target.id;
+          result.innerHTML+="    "+e.currentTarget.id;
+        },false);
+      }
+    </script>
+  </head>
+  <body>
+    <form id="formularioId" method="post">
+      <fieldset>
+        <legend>Datos personales</legend>
+        <label for="nombre">Nombre y apellidos: </label><br>
+        <input type="text" id="nombre"><br>
+        <label for="dir">Dirección: </label><br>
+        <input type="text" id="dir"><br>
+        <label for="poblacion">Población: </label><br>
+        <input type="text" id="poblacion"><br>
+        <label for="cp">Código Postal: </label><br>
+        <input type="text" id="cp"><br>
+      </fieldset>
+    </form>
+    <span id="pulsame">Pulsa aqui</span>
+    <p id="resultado"></p>
+    <div id="padre1">
+      Padre
+      <div id="child1">
+        Niño nº1
+      </div>
+      <div id="child2">
+        Niño nº2
+      </div>
+    </div>
+  </body>
+</html>
