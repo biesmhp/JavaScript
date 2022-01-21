@@ -1,15 +1,29 @@
-#zonaDibujo {
-  height: 300px;
-  width: 300px;
-  border-style: double;
-  overflow: scroll;
-  padding: 0px;
+.formulario {
+  float: left;
+  margin: 10px;
 }
+
+#zonaDibujo {
+  float: right;
+  border-style: double;
+  height: 800px;
+  width: 800px;
+  margin: 40px;
+}
+
 #zonaDibujo div {
-  border-style: dashed;
+    float: left;
+    border-width: thin;
+    border-color: #AAAAAA;
+}
+
+.centrado {
+  float: left;
+  border-style: solid;
   border-width: thin;
-  width: 30px;
-  height: 30px;
-  display: inline-grid;
-  /* grid-template-columns: auto auto auto; */
+  margin: 40px;
+}
+
+h3 {
+  text-align: center;
 }

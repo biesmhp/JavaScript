@@ -7,13 +7,39 @@
     <link rel="stylesheet" href="pizarra.css">
   </head>
   <body>
-    <form method="post">
-      <fieldset>
-        <label for="inpAncho">Número de columnas</label>
-        <input type="number" id="inpAncho" min="1" value="1" size="1">
-        <button type="button" id="btnCrear">Generar</button>
-      </fieldset>
-    </form>
+    <div class="centrado">
+      <h3>Opciones</h3>
+      <form class="formulario" method="post">
+        <fieldset>
+          <legend>Cuadrícula</legend>
+          <div>
+            <small>Utiliza menos de 30 columnas para un mejor rendimiento</small><br>
+            <label for="inpAncho">Número de columnas</label>
+            <input type="number" id="inpAncho" min="1" max="30" value="11" size="3">
+          </div>
+          <div>
+            <label for="inpRejilla">Rejilla:</label>
+            <input type="checkbox" id="inpRejilla" checked>
+          </div>
+          <button type="button" id="btnCrear">Generar</button>
+        </fieldset>
+        <fieldset>
+          <legend>Color y modo</legend>
+          <div>
+            <label for="inpColor">Color</label>
+            <input type="color" id="inpColor" value="#caf3a7" size="1">
+          </div>
+          <div>
+            <label id="labelMode" for="inpMode">Modo borrar</label>
+            <input type="checkbox" id="inpMode">
+          </div>
+          <div>
+            <button type="button" id="btnBorrar">Borrar Todo</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+
     <div id="zonaDibujo"></div>
   </body>
 </html>
