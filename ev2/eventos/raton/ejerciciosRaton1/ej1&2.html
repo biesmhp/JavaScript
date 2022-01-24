@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Brendan - DAW226</title>
+    <script type="text/javascript">
+      //Ejercicio 1
+      function movee() {
+        var x = event.screenX;     // Get the horizontal coordinate
+        var y = event.screenY;     // Get the vertical coordinate
+        var coor = "X coords: " + x + ", Y coords: " + y;
+        console.log(coor);
+      }
+      //Ejercico 2
+      function clicke() {
+        var x = event.screenX;     // Get the horizontal coordinate
+        var y = event.screenY;     // Get the vertical coordinate
+        var coor = "X coords: " + x + ", Y coords: " + y;
+        alert(coor);
+      }
+    </script>
+    <style media="screen">
+      body{
+        height: 1920px;
+        width: 1080px;
+      }
+    </style>
+  </head>
+  <body onmousemove="movee()" onclick="clicke()">
+    hi
+  </body>
+</html>

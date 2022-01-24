@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Brendan - DAW226</title>
+    <script type="text/javascript">
+      addEventListener('load',inicio,true);
+      function inicio() {
+        //Broma
+        var botonSi = document.querySelector("#btnSi");
+        var botonNo = document.querySelector("#btnNo");
+        botonNo.addEventListener('mouseover',function() {
+          this.style.position = "absolute";
+          this.style.top = Math.random()*300+"px";
+          this.style.left = Math.random()*300+"px";
+        });
+      }
+      function conseguido() {
+        alert("Has conseguido darle al NO, ¡¡ENHORABUENA!!");
+        alert("no sirve para nada");
+      }
+    </script>
+  </head>
+  <body>
+    <p>¿Me gusta hacer scripts?</p>
+    <button type="button" id="btnSi">Si</button>
+    <button type="button" id="btnNo" onclick="conseguido()">No</button>
+  </body>
+</html>

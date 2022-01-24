@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Brendan - DAW226</title>
+    <script type="text/javascript">
+      addEventListener('load',inicio,false);
+      function inicio() {
+        var x = event.clientX;     // Get the horizontal coordinate
+        var y = event.clientY;     // Get the vertical coordinate
+        var coor = "X coords: " + x + ", Y coords: " + y;
+        console.log(coor);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="pruebaRaton" onmouseover="inicio()">
+      probando la funcionalidad del mouseover
+    </div>
+  </body>
+</html>

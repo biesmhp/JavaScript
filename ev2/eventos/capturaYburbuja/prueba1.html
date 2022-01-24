@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Brendan - DAW226</title>
+    <script type="text/javascript">
+      addEventListener('load',inicio,true);
+      function inicio() {
+        var parent = document.querySelector('.parent');
+        var child = document.querySelector('.child');
+        child.addEventListener('click',function(e) {
+          e.stopPropagation();
+          alert("child clicked!");
+        });
+        parent.addEventListener('click',function(e) {
+          alert("parent clicked!");
+        });
+
+        document.getElementById("prueba1").addEventListener('click',function () {
+          alert("segundo.adios");
+        });
+        document.getElementById("prueba2").addEventListener('click',function () {
+          alert("primero.hola");
+        });
+
+        var divi3 = document.querySelector('.div3');
+        divi3.addEventListener('mouseover',function () {
+          console.log("pasando por encima");
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="prueba1">div
+      <span id="prueba2"> span </span>
+    </div>
+
+    <div class="parent">Div2
+      <span class="child">Span2</span>
+    </div>
+
+    <div class="div3">
+      mouseover
+    </div>
+  </body>
+</html>
