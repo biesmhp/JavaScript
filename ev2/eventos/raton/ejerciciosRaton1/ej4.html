@@ -4,8 +4,20 @@
     <meta charset="utf-8">
     <title>Brendan - DAW226</title>
     <script type="text/javascript">
-      addEventListener('load',inicio,true);
-
+      addEventListener('load',inicio,false);
+      function inicio() {
+        var caja = document.getElementById("mydiv");
+        caja.addEventListener('click',mover,false);
+      }
+      function mover() {
+        document.onmousemove = function(e) {
+          // alert(e);
+          var x = e.clientX;
+          var y = e.clientY;
+          document.getElementById('mydiv').style.left  = (x)+"px";
+          document.getElementById('mydiv').style.top  = (y)+"px";
+        }
+      }
     </script>
     <style media="screen">
       #mydiv{
