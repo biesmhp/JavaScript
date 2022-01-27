@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Brendan - DAW226</title>
+    <script type="text/javascript">
+      function animal(nombre, especie, numeroDePatas, tieneCola) {
+        this.nombre = nombre;
+        this.especie = especie;
+        this.numeroDePatas = numeroDePatas;
+        this.tieneCola = tieneCola;
+        this.verInfo = function () {
+          var cadena = "";
+          return cadena = this.nombre+", "+this.especie+", "+this.numeroDePatas+", "+this.tieneCola;
+        }
+      }
+      function tigre(nombre, especie, numeroDePatas, tieneCola, nVictimas) {
+        animal.call(this,nombre,especie,numeroDePatas,tieneCola);
+        this.nVictimas = nVictimas;
+        this.otraVictima = function () {
+          this.nVictimas++;
+        }
+      }
+      obj1 = new tigre("Leonidas","tigre",4,true,0);
+      obj1.otraVictima();
+      obj1.otraVictima();
+      console.log(obj1);
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
