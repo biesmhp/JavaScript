@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Brendan - DAW226</title>
+    <script type="text/javascript">
+      function prototipoTaxiRenault () {
+        this.fabricante = 'Renault, S.A.';
+        this.direccionFabricante = 'c/R, Paris';
+        this.getCapacidad = function () { if (tipoMotor == 'Diesel') {
+        return 40;} else {return 35;} }
+        this.variarCarga = function (variacion) {
+          this.carga = this.carga + variacion;
+        }
+        this.variarVelocidad = function (variacion) {
+          this.velocidad = this.velocidad + variacion;
+        }
+      }
+      function TaxiRenault (tipoMotor, numeroPasajeros, carga, velocidad) {
+        this.tipoMotor = tipoMotor;
+        this.numeroPasajeros = numeroPasajeros;
+        this.carga = carga;
+        this.velocidad = velocidad;
+      }
+      TaxiRenault.prototype = new prototipoTaxiRenault();
+
+      arrTaxis = [];
+      for (var i = 0; i < 5; i++) {
+        let obj1 = new TaxiRenault("Diesel",Math.round(Math.random()*20),Math.round(Math.random()*50+500),Math.round(Math.random()*100+20));
+        arrTaxis.push(obj1);
+      }
+      console.log(arrTaxis);
+      // Mostrar una propiedad heredada y utilizar sus métodos
+      console.log("La carga del objeto1: "+arrTaxis[1].carga);
+      var cantidadX = 25;
+      arrTaxis[1].variarCarga(cantidadX);
+      console.log("La nueva carga del objeto1 tras incrementarle "+cantidadX+": "+arrTaxis[1].carga);
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
