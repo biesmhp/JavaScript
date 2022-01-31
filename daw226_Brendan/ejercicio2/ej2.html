@@ -8,6 +8,14 @@
   </head>
   <body>
     <h1>Ejercicio 2, APALABRA</h1>
-    
+    <form method="post">
+      <label for="caracterAdivina">Introduce una letra</label>
+      <input id="caracterAdivina" type="text" size="1" maxlength="1">
+      <button type="button" id="btnEnviar">Adivinar</button>
+    </form>
+    <label>Fallos:</label><input type="number" id="numFallos" value="0" size="3" readonly>
+    <div id="juego">
+      <textarea id="cajaFallos" rows="3" cols="20" readonly></textarea>
+    </div>
   </body>
 </html>
