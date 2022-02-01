@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Brendan - DAW226</title>
+    <script src="Empleado.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="informatica.css">
+  </head>
+  <body>
+    <h1>Empresa de Informática</h1>
+    <section>
+      <h2>Dar de alta</h2>
+      <form method="post">
+        <fieldset id="datos">
+          <legend>Datos</legend>
+          <label for="inpNombre">Nombre:</label>
+          <input type="text" id="inpNombre" placeholder="Nombre">
+          <label for="inpCedula">Cédula:</label>
+          <input type="text" id="inpCedula" placeholder="Cedula">
+          <label for="inpEdad">Edad:</label>
+          <input type="number" id="inpEdad" min="10" max="125" value="20">
+          <label for="inpCasado">Casado/a:</label>
+          <input type="checkbox" id="inpCasado">
+        </fieldset>
+        <fieldset>
+          <legend>Grupo</legend>
+          <label>Analista</label>
+          <input type="radio" name="grupo" class="inpGrupo" value="analista">
+          <label>Programador</label>
+          <input type="radio" name="grupo" class="inpGrupo" value="programador">
+        </fieldset>
+      </form>
+      <div id="opcionesExtra">
+
+      </div>
+    </section>
+  </body>
+</html>
