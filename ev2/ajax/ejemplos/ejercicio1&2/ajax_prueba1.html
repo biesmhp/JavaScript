@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Brendan - DAW226</title>
+    <script type="text/javascript">
+      function envioform() {
+        var xhr;
+        if (window.XMLHttpRequest) {
+          xhr = new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+          xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        // Ejercicio 2
+        // console.log(xhr);
+        var valorOpcion = document.getElementById("selOpciones").value;
+
+        xhr.open ('GET', valorOpcion,true);
+        xhr.send (null);
+
+        xhr.onreadystatechange = muestracontenido;
+
+        function muestracontenido ()
+        {
+        if(xhr.readyState == 4)
+        {
+          if(xhr.status == 200)
+          {
+            document.getElementById('dyn').value="";
+            document.getElementById('dyn').value="Recibido:" + xhr.responseText;
+          }
+          else{
+            document.getElementById('dyn').value="Codigo de error " + xhr.status;
+          }
+        }
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <h1>Prueba AJAX</h1>
+    <form name="ajax" method="get">
+      <input type="BUTTON" value="Enviar" onclick="envioform()">
+      Asociamos el evento click del botón y le enviamos a la
+      función envioform()
+      <input type="text" id="dyn" value="" size="30">
+      <select id="selOpciones" name="opcionesSel">
+        <option value="datos.txt">Datos</option>
+        <option value="prueba1.txt">Prueba 1</option>
+        <option value="prueba2.txt">Prueba 2</option>
+      </select>
+    </form>
+  </body>
+</html>

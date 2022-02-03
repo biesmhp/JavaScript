@@ -55,7 +55,7 @@ function inicio() {
   inputForm = document.querySelectorAll(".inpGrupo");
   for (var i = 0; i < inputForm.length; i++) {
     inputForm[i].addEventListener('click',function(e) {
-      
+
     });
   }
 }

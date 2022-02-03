@@ -29,10 +29,24 @@
           <label>Programador</label>
           <input type="radio" name="grupo" class="inpGrupo" value="programador">
         </fieldset>
+        <fieldset class="analistaForm">
+          <legend>Analista</legend>
+          <label for="inpDescripcion">Descripción de proyectos</label>
+          <input type="text" id="inpDescripcion" placeholder="separado por comas">
+        </fieldset>
+        <fieldset class="programadorForm">
+          <legend>Programador</legend>
+          <label for="inpNumLineas">Número de lineas por hora</label>
+          <input type="number" id="inpNumLineas" min="1" value="20">
+          <label for="selLenguaje">Lenguaje</label>
+          <select name="selLenguajeName">
+            <option value="java">Java</option>
+            <option value="php">PhP</option>
+            <option value="javaScript">JavaScript</option>
+            <option value="python">Python</option>
+          </select>
+        </fieldset>
       </form>
-      <div id="opcionesExtra">
-
-      </div>
     </section>
   </body>
 </html>
