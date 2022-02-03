@@ -4,13 +4,32 @@
     <meta charset="utf-8">
     <title>Brendan - DAW226</title>
     <script type="text/javascript">
-
+      function loadDoc1() {
+        const xhttp = new XMLHttpRequest();
+        console.log(xhttp);
+        xhttp.onload = function() {
+          document.getElementById("dyn").innerHTML = this.responseText;
+        }
+        xhttp.open("GET", "fichero1.html", true);
+        xhttp.send();
+      }
+      function loadDoc2() {
+        const xhttp = new XMLHttpRequest();
+        console.log(xhttp);
+        xhttp.onload = function() {
+          document.getElementById("dyn").innerHTML = this.responseText;
+        }
+        xhttp.open("GET", "fichero2.html", true);
+        xhttp.send();
+      }
     </script>
   </head>
   <body>
     <h1>Contenido asíncrono</h1>
-    <div class="">
-      
+    <a href="#" id="btnA1" onclick="loadDoc1()">Enlace 1</a>
+    <a href="#" id="btnA2" onclick="loadDoc2()">Enlace 2</a>
+    <div id="dyn">
+
     </div>
   </body>
 </html>
