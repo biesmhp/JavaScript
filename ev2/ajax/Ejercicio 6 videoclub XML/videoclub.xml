@@ -1,0 +1,32 @@
+<VideoClub>
+  <Pelicula>
+    <Titulo>El rey Leon</Titulo>
+    <Duracion>87 Min</Duracion>
+    <Genero>Animacion infantil</Genero>
+  </Pelicula>
+  <Pelicula>
+    <Titulo>Aladin</Titulo>
+    <Duracion>86 Min</Duracion>
+    <Genero>Animacion infantil</Genero>
+  </Pelicula>
+  <Pelicula>
+    <Titulo>Siempre a tu lado Hachiko</Titulo>
+    <Duracion>93 Min</Duracion>
+    <Genero>Drama</Genero>
+  </Pelicula>
+  <Pelicula>
+    <Titulo>Greenland El ultimo refugio</Titulo>
+    <Duracion>119 Min</Duracion>
+    <Genero>Acción</Genero>
+  </Pelicula>
+  <Pelicula>
+    <Titulo>Passengers</Titulo>
+    <Duracion>116 Min</Duracion>
+    <Genero>Ciencia Ficcion</Genero>
+  </Pelicula>
+  <Pelicula>
+    <Titulo>The Host (La huesped)</Titulo>
+    <Duracion>125 Min</Duracion>
+    <Genero>Ciencia Ficcion</Genero>
+  </Pelicula>
+</VideoClub>
