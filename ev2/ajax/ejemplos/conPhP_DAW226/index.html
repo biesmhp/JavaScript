@@ -7,7 +7,7 @@
   </head>
   <body>
     <h1>Validación</h1>
-    <form method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <form method="get" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
       <fieldset>
         <legend>Datos</legend>
         <label for="inpEmail">Email:</label>
@@ -17,9 +17,8 @@
         <label for="inpPass2">Repetir contraseña:</label>
         <input type="password" name="envioContra2" id="inpPass2" placeholder="Repetir contraseña">
         <input type="button" name="btnEnviar" value="Comprobar">
-        <!-- <button type="button" name="button"></button> -->
       </fieldset>
     </form>
-    <p id="visRespuesta"></p>
+    <div id="visRespuesta"></p>
   </body>
 </html>

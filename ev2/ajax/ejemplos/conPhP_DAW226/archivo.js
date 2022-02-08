@@ -31,6 +31,6 @@ function funcionX() {
 function muestracontenido() {
   if (xhr.readyState == 4 && xhr.status == 200) {
     let textoPhp = xhr.responseText;
-    alert(textoPhp);
+    document.querySelector("#visRespuesta").innerHTML = textoPhp;
   }
 }
