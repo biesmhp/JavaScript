@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Brendan</title>
+    <script src="archivo.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Validación</h1>
+    <form method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+      <fieldset>
+        <legend>Datos</legend>
+        <label for="inpEmail">Email:</label>
+        <input type="email" name="envioEmail" id="inpEmail" placeholder="Correo electrónico">
+        <label for="inpPass1">Contraseña:</label>
+        <input type="password" name="envioContra1" id="inpPass1" placeholder="Contraseña">
+        <label for="inpPass2">Repetir contraseña:</label>
+        <input type="password" name="envioContra2" id="inpPass2" placeholder="Repetir contraseña">
+        <input type="button" name="btnEnviar" value="Comprobar">
+        <!-- <button type="button" name="button"></button> -->
+      </fieldset>
+    </form>
+    <p id="visRespuesta"></p>
+  </body>
+</html>
