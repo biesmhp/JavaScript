@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Apuntes para Montse</title>
+    <script src="unidades.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="estilo.css">
+  </head>
+  <body>
+    <h1>Convertidor de unidades</h1>
+    <form method="post">
+      <fieldset>
+        <legend>Generador de ejercicios de conversión de unidades</legend>
+        De
+        <select id="selTipo1" name="tipo1">
+          <option value="binario">Binario</option>
+          <option value="decimal">Decimal</option>
+          <option value="octal">Octal</option>
+          <option value="hexadecimal">Hexadecimal</option>
+        </select>
+        a
+        <select id="selTipo2" name="tipo2">
+          <option value="binario">Binario</option>
+          <option value="decimal">Decimal</option>
+          <option value="octal">Octal</option>
+          <option value="hexadecimal">Hexadecimal</option>
+        </select>
+        <!-- <input type="number" id="inpFilas" min="5" size="4"> -->
+        <button type="button" id="btnGenerar">Generar Ejercicios</button>
+      </fieldset>
+    </form>
+    <table border="1" id="tableID" class="even">
+      <tbody id="tableBodyId">
+
+      </tbody>
+    </table>
+  </body>
+</html>

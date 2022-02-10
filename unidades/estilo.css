@@ -1,0 +1,42 @@
+body{
+  background-color: #241f31;
+  color: #dc8add;
+
+}
+select{
+  background-color: #dc8add;
+  color: #241f31;
+  font-weight: bold;
+  font-size: 15px;
+}
+button{
+  background-color: white;
+  font-weight: bold;
+  font-size: 15px;
+  /* Efecto ovalado de los botones */
+  border-radius: 15%;
+}
+/* ###Estilo de las tablas### */
+table{
+  border-style: solid;
+  border-width: thin;
+  /*flexbox*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Colores por pares */
+table.even{
+	border-collapse:collapse;
+}
+table.even tr:nth-child(2n+2){
+	background: #613583;
+}
+/* Cuerpo de la tabla */
+th{
+  font-weight: bold;
+  font-size: 22px;
+}
+td{
+  text-align: center;
+}
