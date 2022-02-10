@@ -16,14 +16,19 @@ function funcionX() {
     xhr = new ActiveXObject("Microsoft.XMLHTTP");
   }
 
-  let ruta="index.php";
-  let envio1="envioEmail="+email;
-  let envio2="envioContra1="+pass1;
-  let envio3="envioContra2="+pass2;
-  let url=ruta+"?"+envio1+"&"+envio2+"&"+envio3;
+  let datos = new FormData();
+  datos.append("envioEmail",email);
+  datos.append("envioContra1",pass1);
+  datos.append("envioContra2",pass2);
+  console.log(datos);
 
-  xhr.open ('GET', url,true);
-  xhr.send (null);
+  xhr.open("POST", "index.php", true);
+
+  // xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  // xhr.setRequestHeader("Content-length", datos.length);
+  // xhr.setRequestHeader("Connection", "close");
+
+  xhr.send(datos);
 
   xhr.onreadystatechange = muestracontenido;
 }
