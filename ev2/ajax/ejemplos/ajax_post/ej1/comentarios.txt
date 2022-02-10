@@ -1,0 +1,7 @@
+Nombre:Prueba
+Edad:15
+DNI:aaegv3r345r23532
+Genero:Hombre
+Peso:68
+Altura:179
+
