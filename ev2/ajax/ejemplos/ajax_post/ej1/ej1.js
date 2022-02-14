@@ -1,5 +1,7 @@
 addEventListener('load',inicio,false);
 var xhr;
+var xhr2;
+var arrayPersonas=[];
 function inicio() {
   let btnEnviar = document.querySelector("[name='btnEnviar']");
   btnEnviar.addEventListener('click',funcionX,false);
@@ -30,13 +32,43 @@ function funcionX() {
 
   xhr.open("post", "pagina1.php", true);
   xhr.send(datos);
+  // xhr.onreadystatechange = muestracontenido;
 
-  xhr.onreadystatechange = muestracontenido;
+  extraeXML();
 }
 
 function muestracontenido() {
-  if (xhr.readyState == 4 && xhr.status == 200) {
-    let textoPhp = xhr.responseText;
+  if (this.readyState == 4 && this.status == 200) {
+    let textoPhp = this.responseText;
     document.querySelector("#visRespuesta").innerHTML = textoPhp;
+  }
+}
+
+function extraeXML() {
+  // Leer el xml
+  if (window.XMLHttpRequest) {
+    xhr2 = new XMLHttpRequest();
+  } else if (window.ActiveXObject) {
+    xhr2 = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xhr2.open("GET", "comentarios.xml", true);
+  xhr2.send(null);
+  xhr2.onreadystatechange = muestracontenido2;
+}
+
+function muestracontenido2() {
+  if (xhr2.readyState==4 && xhr2.status==200) {
+    let textoXML=xhr2.responseXML;
+    let nombre=textoXML.querySelectorAll("nombre");
+    let edad=textoXML.querySelectorAll("edad");
+    let dni=textoXML.querySelectorAll("dni");
+    let genero=textoXML.querySelectorAll("genero");
+    let peso=textoXML.querySelectorAll("peso");
+    let altura=textoXML.querySelectorAll("altura");
+    for (let i = 0; i < nombre.length; i++) {
+      let nuevaPersona=new Persona(nombre[i], edad[i], dni[i], genero[i], peso[i], altura[i]);
+      arrayPersonas.push(nuevaPersona);
+    }
+    console.log(arrayPersonas);
   }
 }

@@ -1,12 +1,14 @@
 <?php
 header('Content-Type: text/html; charset=ISO-8859-1');
-$ar=fopen("comentarios.txt","a") or
+$ar=fopen("comentarios.xml","a") or
   die("No se pudo abrir el archivo");
-fputs($ar,"Nombre:".$_REQUEST['nombre']."\n");
-fputs($ar,"Edad:".$_REQUEST['edad']."\n");
-fputs($ar,"DNI:".$_REQUEST['dni']."\n");
-fputs($ar,"Genero:".$_REQUEST['genero']."\n");
-fputs($ar,"Peso:".$_REQUEST['peso']."\n");
-fputs($ar,"Altura:".$_REQUEST['altura']."\n\n");
+fputs($ar,"<Persona>"."\n");
+  fputs($ar,"\t"."<nombre>".$_REQUEST['nombre']."</nombre>"."\n");
+  fputs($ar,"\t"."<edad>".$_REQUEST['edad']."</edad>"."\n");
+  fputs($ar,"\t"."<dni>".$_REQUEST['dni']."</dni>"."\n");
+  fputs($ar,"\t"."<genero>".$_REQUEST['genero']."</genero>"."\n");
+  fputs($ar,"\t"."<peso>".$_REQUEST['peso']."</peso>"."\n");
+  fputs($ar,"\t"."<altura>".$_REQUEST['altura']."</altura>"."\n");
+fputs($ar,"</Persona>"."\n");
 fclose($ar);
 ?>

@@ -1,0 +1,16 @@
+body{
+  background-color: #2e3440;
+  color: #88c0d0;
+  /*  */
+  text-align: center;
+}
+form {
+  text-align: justify;
+  /*flexbox*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input {
+  display: flex;
+}
