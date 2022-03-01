@@ -1,0 +1,19 @@
+#imagenDisco{
+    width: 300px;
+    height: 300px;
+    left: 45%;
+    position: relative;
+    border: 2px solid black;
+}
+.boton{
+    left: 47%;
+    position: relative; 
+}
+
+div{
+    width: 300px;
+    height: 100px;
+    border: 2px solid black;
+    left: 45%;
+    position: relative;
+}

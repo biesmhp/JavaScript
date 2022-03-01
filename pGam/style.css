@@ -12,33 +12,3 @@ body {
   color: var(--text-primary);
   background-color: var(--bg-secondary);
 }
-section {
-  background-color: var(--bg-primary);
-  display: flex;
-}
-section.interfazCombate {
-  width: 50%;
-  background-color: var(--text-primary);
-  justify-content: center;
-}
-article {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-article.myPj {
-  margin-top: 8rem;
-}
-article.enemyPj {
-}
-li.nombre {
-  background-color: var(--text-secondary);
-  color: var(--bg-primary);
-}
-ul {
-  list-style: none;
-}
-i {
-  color: var(--color-icon);
-  font-size: 12rem;
-}
