@@ -1,0 +1,10 @@
+body{
+  background-color: #CCCCCC;
+  /*flexbox*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div#listProductos{
+  flex-flow: column;
+}
