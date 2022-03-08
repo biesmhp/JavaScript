@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        addEventListener("load", inicio, false);
+        function inicio() {
+            document.querySelector("#keyPress").addEventListener("keypress", function (e) {
+                alert("charcode: "+e.charCode);
+                alert("which: "+e.which);
+                alert(e.type)
+            }, false);
+            document.querySelector("#keyUp").addEventListener("keyup", function (e) {
+                alert("charcode: "+e.charCode);
+                alert("which: "+e.which);
+                alert(e.type)
+            }, false);
+            document.querySelector("#keyDown").addEventListener("keydown", function (e) {
+                alert("charcode: "+e.charCode);
+                alert("which: "+e.which);
+                alert(e.type)
+            }, false);
+        }
+    </script>
+</head>
+<body>
+<input type="text" id="keyPress" placeholder="Keypress">
+<input type="text" id="keyUp" placeholder="KeyUp">
+<input type="text" id="keyDown" placeholder="KeyDown">
+</body>
+</html>

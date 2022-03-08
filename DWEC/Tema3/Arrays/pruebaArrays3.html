@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function random(length) {
+            let array = Array(length);
+            for (let i = 0; i < array.length; i++) {
+                array[i] = Math.round(Math.random() * 10);
+            }
+            return array;
+        }
+        arrayAleatorio = Array();
+        arrayAleatorio = random(5);
+        document.write(arrayAleatorio);
+        document.write("<br>");
+        arrayFiltrado = arrayAleatorio.map(cuadrado);
+        document.write(arrayFiltrado);
+        document.write("<br>");
+        arrayFiltrado = arrayAleatorio.reduce(sumaArray);
+        document.write(arrayFiltrado);
+
+        function sumaArray(total, elemento) {
+            return total + elemento;
+        }
+        
+        function cuadrado(num) {
+            return num * num;
+        }
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="dados.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="jumbotron container mt-3">
+    <form action="#" method="post">
+        <div class="row pt-2 pb-2 rounded" style="height: 129px">
+            <div class="col">
+                <img class="img-fluid border border-danger rounded">
+            </div>
+            <div class="col">
+                <img class="img-fluid border border-danger rounded">
+            </div>
+            <div class="col">
+                <img class="img-fluid border border-danger rounded">
+            </div>
+            <div class="col">
+                <img class="img-fluid border border-danger rounded">
+            </div>
+            <div class="col">
+                <img class="img-fluid border border-danger rounded">
+            </div>
+        </div>
+        <div class="row justify-content-center mt-5">
+            <input type="button" class="btn btn-primary m-2" id="inputBoton" value="Tirar Dado">
+            <input type="button" class="btn btn-primary m-2" id="comenzarBoton" value="Empezar a Jugar">
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-1 form-group">
+                <label for="tirada">Tirada: </label>
+                <input class="form-control" type="text" id="tirada" value="0" readonly>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col form-group">
+                <label for="sumaUno">Suma de Unos: </label>
+                <input class="form-control" type="text" name="sumaCara" id="sumaUno" value="0" readonly>
+            </div>
+            <div class="col form-group">
+                <label for="sumaDos">Suma de Doses: </label>
+                <input class="form-control" type="text" name="sumaCara" id="sumaDos" value="0" readonly>
+            </div>
+            <div class="col form-group">
+                <label for="sumaTres">Suma de Treses: </label>
+                <input class="form-control" type="text" name="sumaCara" id="sumaTres" value="0" readonly>
+            </div>
+            <div class="col form-group">
+                <label for="sumaCuatro">Suma de Cuatros: </label>
+                <input class="form-control" type="text" name="sumaCara" id="sumaCuatro" value="0" readonly>
+            </div>
+            <div class="col form-group">
+                <label for="sumaCinco">Suma de Cincos: </label>
+                <input class="form-control" type="text" name="sumaCara" id="sumaCinco" value="0" readonly>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-3 form-group">
+                <label for="poker">Poker: </label>
+                <input class="form-control" type="text" name="sumaCara" id="poker" value="0" readonly>
+            </div>
+            <div class="col-3 form-group">
+                <label for="repoker">Repoker: </label>
+                <input class="form-control" type="text" name="sumaCara" id="repoker" value="0" readonly>
+            </div>
+        </div>
+        <div class="row justify-content-center font-weight-bold">
+            <div class="form-group">
+                <label for="textArea"> CLASIFICACION</label>
+                <textarea class="form-control" id="textArea" cols="30" rows="10" readonly></textarea>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+</html>

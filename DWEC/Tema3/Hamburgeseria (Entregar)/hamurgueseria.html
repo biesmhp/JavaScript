@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="hamburgeseria.css">
+    <link rel="icon" href="img/hamburguesa.png">
+    <script src="hamburgueseria.js"></script>
+    <title>Hamburguesa a tu gusto</title>
+</head>
+
+<body>
+<div class="container">
+    <h1 class="text-center mt-5">HAMBURGUESERÍA</h1>
+    <form action="#" method="post">
+        <!-- MENU -->
+        <div class="row mt-5">
+            <!-- CARNE -->
+            <div class="columna col d-flex flex-column rounded m-2">
+                <h2 class="text-center">Tipo de carne</h2>
+                <!-- Radiobutton Carne -->
+                <div class="row">
+                    <fieldset class="col">
+                        <div class="form-check">
+                            <label class="form-check-label offset-2">
+                                <input type="radio" class="form-check-input" name="carne" id="ternera">
+                                Ternera
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label offset-2">
+                                <input type="radio" class="form-check-input" name="carne" id="cerdo">
+                                Cerdo
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label offset-2">
+                                <input type="radio" class="form-check-input" name="carne" id="pollo">
+                                Pollo
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label offset-2">
+                                <input type="radio" class="form-check-input" name="carne" id="vaca">
+                                Vaca
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label offset-2 mb-4">
+                                <input type="radio" class="form-check-input" name="carne" id="mixto">
+                                Mixto
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="row form-group justify-content-center">
+                    <input class="btn btn-primary" type="button" id="calcularCarneBoton" value="Calcular">
+                </div>
+                <!-- Subtotal carne -->
+                <div class="row form-group justify-content-center mt-auto">
+                    <label class="col-form-label">Subtotal</label>
+                    <div class="col-4">
+                        <input class="form-control" type="text" id="subtotalCarne" value="0" readonly>
+                    </div>
+                </div>
+            </div>
+            <!-- INGREDIENTES -->
+            <div class="columna col d-flex flex-column rounded m-2">
+                <h2 class="text-center">Ingredientes</h2>
+                <!-- Elegir Ingredientes -->
+                <fieldset class="col">
+                    <div class="form-check">
+                        <label class="form-check-label offset-2">
+                            <input type="checkbox" class="form-check-input" name="ingredientes" id="lechuga" value="lechuga">
+                            Lechuga
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label offset-2">
+                            <input type="checkbox" class="form-check-input" name="ingredientes" id="cebolla" value="cebolla">
+                            Cebolla
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label offset-2">
+                            <input type="checkbox" class="form-check-input" name="ingredientes" id="queso" value="queso">
+                            Queso
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label offset-2">
+                            <input type="checkbox" class="form-check-input" name="ingredientes" id="jamon" value="jamon">
+                            Jamón
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label offset-2">
+                            <input type="checkbox" class="form-check-input" name="ingredientes" id="bacon" value="bacon">
+                            Bacon
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label offset-2">
+                            <input type="checkbox" class="form-check-input" name="ingredientes" id="huevo" value="huevo">
+                            Huevo
+                        </label>
+                    </div>
+                    <div class="row form-group justify-content-center">
+                        <input class="btn btn-primary" type="button" id="calcularIngredientesBoton" value="Calcular">
+                    </div>
+                </fieldset>
+                <!-- Subtotal Ingredientes -->
+                <div class="row form-group justify-content-center mt-auto">
+                    <label class="col-form-label">Subtotal</label>
+                    <div class="col-4">
+                        <input class="form-control" value="0" type="text" id="subtotalIngredientes" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="columna col d-flex flex-column rounded m-2">
+                <!-- PAN -->
+                <h2 class="text-center">Tipo de pan</h2>
+                <!-- Elegir Pan -->
+                <fieldset class="col">
+                    <div class="form-group">
+                        <select class="form-control" id="pan">
+                            <option value="trigo">Trigo</option>
+                            <option value="centeno">Centeno</option>
+                            <option value="integral">Integral</option>
+                            <option value="crujiente">Crujiente</option>
+                        </select>
+                    </div>
+                    <div class="row form-group justify-content-center">
+                        <input class="btn btn-primary" type="button" id="calcularPanBoton" value="Calcular">
+                    </div>
+                </fieldset>
+                <!-- Subtotal Pan -->
+                <div class="row form-group justify-content-center mt-auto">
+                    <label class="col-form-label">Subtotal</label>
+                    <div class="col-4">
+                        <input class="form-control" value="0" type="text" id="subtotalPan" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <!-- TOTAL -->
+        <div class="row form-group justify-content-center">
+            <input class="btn btn-primary col-6 ml-6" type="button" id="total" value="IMPRIMIR TICKET">
+        </div>
+    </form>
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+body {
+    background-color: #f3f3f3;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+hr {
+    border-color: dimgrey;
+}
+
+.columna {
+    background-color: #FFFFFF;
+}
+
+#pan {
+    margin-bottom: 6.6em;
+}

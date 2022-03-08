@@ -1,0 +1,107 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.secciones {
+    display: flex;
+    margin: 2% 0%;
+    flex-wrap: wrap;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: yellow;
+    border: 1px solid black;
+}
+
+header>h1 {
+    margin: 20px;
+}
+
+header>nav>ul {
+    list-style: none;
+    margin: 10px;
+}
+
+nav {
+    margin: 10px;
+    background-color: green;
+    border: 1px solid black;
+}
+
+nav>ul>a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav>ul>a :hover {
+    color: red;
+}
+
+/* SECCIONES */
+
+article {
+    border: 1px solid black;
+}
+
+section {
+    background-color: aqua;
+    padding: 1.5%;
+    border: 1px solid black;
+    width: 30%;
+}
+
+h1, h2, h3 {
+    margin: 0.5em 0.5em;
+}
+
+p {
+    margin: 1em 1em;
+}
+
+.section-publi {
+    width: auto;
+}
+
+.break {
+    background-color: white;
+    width: 100%;
+    border: none;
+}
+
+.foto-ejemplo {
+    width: 20%;
+}
+
+/* TABLA */
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td:nth-child(1), td:nth-child(2) {
+    background-color: blue;
+    color: white;
+}
+
+td:nth-child(3), td:nth-child(4) {
+    background-color: orangered;
+    color: white;
+}
+
+/* FOOTER */
+
+section>footer {
+    margin-top: 30px;
+}
+
+footer {
+    background-color: pink;
+    border: 1px solid black;
+}

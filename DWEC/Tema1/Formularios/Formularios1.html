@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="Formularios1.css">
+</head>
+
+<body>
+
+    <p>Escriba los siguientes datos:</p>
+    <form action="#" method="GET">
+
+        <div class="row-1">
+            <div class="input">
+                <p>Nombre</p>
+                <input type="text">
+            </div>
+            <div class="input">
+                <p>Apellidos</p>
+                <input type="text">
+            </div>
+            <div class="input">
+                <p>Edad</p>
+                <select name="edad">
+                    <option value="1">De 12 a 17 años</option>
+                    <option value="2">De 18 a 35 años</option>
+                    <option value="3">De 36 a 65 años</option>
+                    <option value="4">Más de 65 años</option>
+                </select>
+            </div>
+        </div>
+        <div class="row-2">
+            <div class="input">
+                <p>Peso</p>
+                <input type="number">Kgs
+            </div>
+            <div class="input">
+                <p>Sexo</p>
+                <input type="radio" name="sexo" value="H">Hombre
+                <input type="radio" name="sexo" value="M">Mujer
+            </div>
+
+            <div class="input">
+                <p>Estado civil</p>
+                <input type="radio" name="estadoCivil" id="estadoCivil" value="Casado">Casado
+                <input type="radio" name="estadoCivil" id="estadoCivil" value="Soltero">Soltero
+                <input type="radio" name="estadoCivil" id="estadoCivil" value="Otro">Otro
+
+            </div>
+        </div>
+
+        <div class="row-3">
+            <div class="row-aficiones">
+                <p>Aficiones</p>
+                <div class="row-aficiones-checkbox">
+                    <input type="checkbox" name="aficiones" id="aficiones" value="cine">Cine
+                    <input type="checkbox" name="aficiones" id="aficiones" value="Literatura">Literatura
+                    <input type="checkbox" name="aficiones" id="aficiones" value="Tebeos">Tebeos
+                </div>
+                <div class="row-aficiones-checkbox">
+                    <input type="checkbox" name="aficiones" id="aficiones" value="Deporte">Deporte
+                    <input type="checkbox" name="aficiones" id="aficiones" value="Musica">Musica
+                    <input type="checkbox" name="aficiones" id="aficiones" value="Television">Television
+                </div>
+            </div>
+        </div>
+        <div class="submit">
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Borrar">
+        </div>
+    </form>
+</body>
+
+</html>

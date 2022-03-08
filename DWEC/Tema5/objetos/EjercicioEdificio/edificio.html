@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="ClaseEdificio.js"></script>
+    <script src="edificio.js"></script>
+    <style>
+        fieldset {
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+<fieldset>
+    <legend>Introducir un edificio nuevo</legend>
+    Calle: <input type="text" id="calle" placeholder="Calle"><br>
+    Numero: <input type="text" id="numero" placeholder="Numero"><br>
+    CP: <input type="text" id="cp" placeholder="Codigo Postal"><br>
+    Nº Puertas: <input type="number" id="npuertas" placeholder="Numero de puertas"><br>
+    Nº Plantas: <input type="number" id="nplantas" placeholder="Numero de plantas"><br><br>
+    <input type="button" id="addEdificio" value="Añadir Edificio"><br>
+</fieldset>
+<fieldset>
+    <legend>Añadir un propietario</legend>
+    Edificio: <input type="number" name="" id="nEdificio" placeholder="Numero de edificio"><br>
+    Propietario: <input type="text" id="nombre" placeholder="Nombre Propietario"><br>
+    Planta: <input type="number" name="" id="planta" placeholder="Numero de planta"><br>
+    Puerta: <input type="number" name="" id="puerta" placeholder="Numero de puerta"><br><br>
+    <input type="button" id="addPropietario" value="Añadir Propietario"><br>
+</fieldset>
+<br>
+<hr>
+<input type="button" id="mostrar" value="Mostrar"><br>
+<textarea id="resultado" cols="90" rows="10" readonly></textarea>
+
+</body>
+</html>

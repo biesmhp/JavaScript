@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="Formulario_validacion.css">
+</head>
+
+<body>
+    <div class="formulario-block">
+        <header>
+            <h1>WEBPET</h1>
+            <picture class="imagen">
+                <img src="foto.jpg" alt="Logo del formulario">
+            </picture>
+        </header>
+            
+        
+        <form action="" method="post">
+            <p>Si desea información, rellene los datos por favor</p>
+            <div class="datosPersonales">
+                <div class="dP-elemento">
+                    <label for="nombre">Nombre: </label>
+                    <input type="text" name="nombre" id="nombre" autofocus required placeholder="Introduzca su nombre">
+                </div>
+                <div class="dP-elemento">
+                    <label for="nombre">Telefono: </label>
+                    <input type="tel" name="telefono" id="telefono" required pattern="[0-9]{3}-[0-9]{6}"
+                        placeholder="Ej: 999-999999">
+                </div>
+                <div class="dP-elemento">
+                    <label for="apellidos">Email: </label>
+                    <input type="email" name="email" id="email" maxlength="30">
+                </div>
+                <div class="dP-elemento">
+                    <label for="apellidos">Fecha: </label>
+                    <input type="date" name="fecha" id="fecha">
+                </div>
+            </div>
+
+            <div class="razas">
+                <p>Razas favoritas</p>
+                <input type="text" list="raza-list" name="razas" id="razas">
+                <datalist id="raza-list">
+                    <option value="Teckel">Teckel</option>
+                    <option value="Pastor Aleman">Pastor Aleman</option>
+                    <option value="Border Collie">Border Collie</option>
+                    <option value="Golden Retriever">Golden Retriever</option>
+                    <option value="Beagle">Beagle</option>
+                </datalist>
+            </div>
+
+            <div class="votaciones">
+
+                <p>Votación general de razas</p>
+                <div class="votacion-raza">
+                    <div class="votacion-raza-elemento">
+                        <p>Teckel</p>
+                        <input type="number" name="teckel" id="teckel" min="1" max="10">
+                    </div>
+                    <div class="votacion-raza-elemento">
+                        <p>Pastor Aleman</p>
+                        <input type="number" name="pastorAleman" id="pastorAleman" min="1" max="10">
+                    </div>
+                    <div class="votacion-raza-elemento">
+                        <p>Border Collie</p>
+                        <input type="number" name="borderCollie" id="borderCollie" min="1" max="10">
+                    </div>
+                    <div class="votacion-raza-elemento">
+                        <p>Golden Retriever</p>
+                        <input type="number" name="goldenRetriever" id="goldenRetriever" min="1" max="10">
+                    </div>
+                    <div class="votacion-raza-elemento">
+                        <p>Beagle</p>
+                        <input type="number" name="beagle" id="beagle" min="1" max="10">
+                    </div>
+                </div>
+            </div>
+
+            <div class="subir-archivo">
+                <p>Subir fichero</p>
+                <input type="file" name="archivo" id="archivo" multiple>
+            </div>
+
+            <input class="boton" type="submit" value="Enviar Formulario">
+
+        </form>
+    </div>
+</body>
+
+</html>

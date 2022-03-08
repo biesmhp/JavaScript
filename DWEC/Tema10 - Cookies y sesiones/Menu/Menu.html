@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="Plantilla.js"></script>
+    <script src="menu.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <fieldset class="form-group bg-secondary mt-3">
+        <h2>Elija el menú</h2>
+        <table class="table">
+            <tr>
+                <th>Platos</th>
+                <th>Cantidad</th>
+                <th>Precio/ud</th>
+                <th>Subtotal</th>
+            </tr>
+            <tr>
+                <td name="producto">Pizza Cuatro Estaciones</td>
+                <td><input type="text" name="cantidad" id="pizzaCtd" value="0"></td>
+                <td><input type="text" name="precio" id="pizzaPrecio" readonly value="6.5"></td>
+                <td><input type="text" name="subtotal" id="pizzaSub" readonly value="0"></td>
+            </tr>
+            <tr>
+                <td name="producto">Tortellini</td>
+                <td><input type="text" name="cantidad" id="tortelliniCtd" value="0"></td>
+                <td><input type="text" name="precio" id="tortelliniPrecio" readonly value="16.5"></td>
+                <td><input type="text" name="subtotal" id="tortelliniSub" readonly value="0"></td>
+            </tr>
+            <tr>
+                <td name="producto">Lasagna</td>
+                <td><input type="text" name="cantidad" id="lasagnaCtd" value="0"></td>
+                <td><input type="text" name="precio" id="lasagnaPrecio" readonly value="12.5"></td>
+                <td><input type="text" name="subtotal" id="lasagnaSub" readonly value="0"></td>
+            </tr>
+            <tr>
+                <td colspan="3" class="text-right">Total</td>
+                <td><input type="text" name="total" id="total" readonly></td>
+            </tr>
+            <tr>
+                <td colspan="4" class="text-center">
+                    Forma de pago:
+                    <label for="visa">Visa </label> <input type="radio" name="pago" id="visa">
+                    <label for="mastercard">Mastercard</label> <input type="radio" name="pago" id="mastercard">
+                    <label for="transferencia">Transferencia</label> <input type="radio" name="pago" id="transferencia">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" class="text-center">
+                    <input class="btn btn-info" type="button" id="registrar" value="Registrar">
+                    <input class="btn btn-info" type="button" id="borrar" value="Borrar datos">
+                    <input class="btn btn-info" type="button" id="almacenar" value="Almacenar en local">
+                    <input class="btn btn-info" type="button" id="mostrarTotal" value="Mostrar € de todos los pedidos">
+                    <input class="btn btn-info" type="button" id="mostrarInfo" value="Mostrar info pedidos">
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <div class="row">
+        <div class="col">
+            <h4>Información de pedidos</h4>
+            <div id="info">
+
+            </div>
+        </div>
+
+            <div class="col">
+                <h4>Elige un pedido</h4>
+                <select id="pedido"></select>
+            </div>
+
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

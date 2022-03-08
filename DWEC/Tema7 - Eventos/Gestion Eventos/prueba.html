@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="Hola">
+<input type="button" value="Adios">
+<input type="button" value="Que tal">
+<script>
+    let input = document.querySelectorAll("input");
+    for (let i = 0; i < input.length; i++) {
+        input[i].addEventListener("click", function () {
+            alert(this.value);
+        })
+    }
+
+</script>
+</body>
+</html>

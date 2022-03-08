@@ -1,0 +1,53 @@
+.formulario-block {
+    display: flex;
+    flex-flow: column;
+    background-color: burlywood;
+    width: 900px;
+    height: 650px;
+    padding: 25px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+header {
+    display: flex;
+    justify-content: space-evenly
+}
+
+img {
+    width: 200px;
+}
+
+.datosPersonales {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin: 50px 0;
+}
+
+
+
+.razas {
+    margin: 20px 0;
+    justify-content: space-between;
+}
+
+.votaciones {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column nowrap;
+}
+
+.votacion-raza {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+}
+
+.votacion-raza-elemento {
+    margin-right: 20px;
+}
+
+.boton {
+    margin: 50px 0
+}

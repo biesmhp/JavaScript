@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ees">
+<head>
+    <meta charset="UTF-8">
+    <title>Pizarra</title>
+    <script src="Pizarra.js"></script>
+    <link rel="stylesheet" href="Pizarra.css">
+</head>
+<body>
+<div class="contenedor" style="width: 800px; height: 800px; border: black 1px solid"></div>
+
+<div class="configuracion">
+    <h3>Menú</h3>
+    <label for="color">Color del pincel</label><input type="color" style="width: 30px; height: 30px" id="color"><br><img style="height: 50px" src="pincel.png"><br>
+    <input class="btn" type="button" id="dibujar" value="Pincel" disabled><br>
+    <input class="btn" type="button" id="goma" value="Goma"><br>
+    <input class="btn" type="button" id="borrarDibujo" value="Borrar Dibujo"><br>
+    <label for="modoRejilla">Modo rejilla: </label><input type="checkbox" id="modoRejilla"><br>
+    <label for="cambiarNcasillas">Cambiar tamaño de rejilla: </label><input type="number" min="4" max="50" id="cambiarNcasillas" value="4"><br>
+    <input type="button" id="cambiarNcasillasBoton" value="Cambiar">
+</div>
+</body>
+</html>

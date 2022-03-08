@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /* INICIALIZAR EL ARRAY */
+        let array = [
+            Array("Provincia", "Ene", "Feb", "Mar"),
+            Array("Galicia", 34, 2, 6),
+            Array("Asturias",6, 7, 7),
+            Array("Cantabria",7, 9, 5)];
+
+        /* CREAR EL TOTAL PARA CADA MES */
+        let enero = 0;
+        let febrero = 0;
+        let marzo = 0;
+        for (let i = 1; i < array.length; i++) {
+            enero += array[i][1];
+            febrero += array[i][2];
+            marzo += array[i][3];
+        }
+
+        /* AÑADIR TOTAL AL ARRAY INICIAL */
+        array.push(Array("Total",enero, febrero, marzo));
+
+        /* VISUALIZAR ARRAY */
+        for (const ciudades in array) {
+            for (const value of array[ciudades]) {
+                document.write(value + " ");
+            }
+            document.write("<br>");
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

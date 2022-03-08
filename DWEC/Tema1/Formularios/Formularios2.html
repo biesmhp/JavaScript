@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios 2</title>
+    <link rel="stylesheet" href="Formularios2.css">
+</head>
+
+<body>
+    <header>
+        <h1>Preferencias Gastronómicas</h1>
+    </header>
+
+    <form action="" method="post">
+
+        <div class="row">
+            <h2>Comida favorita</h2>
+            <input type="checkbox" name="comidaFav" id="comidaFav">Italiana
+            <input type="checkbox" name="comidaFav" id="comidaFav">Francesa
+            <input type="checkbox" name="comidaFav" id="comidaFav">Española
+        </div>
+        <div class="row">
+            <h2>Edad</h2>
+            <input type="radio" name="edad" id="edad">12-17 años
+            <input type="radio" name="edad" id="edad">18-35 años
+            <input type="radio" name="edad" id="edad">36-65 años
+            <input type="radio" name="edad" id="edad">+65 años
+        </div>
+        <div class="row">
+            <h2>Platos que gustan</h2>
+            <select name="platos" id="platos">
+                <option value="">Elige una opción</option>
+                <optgroup label="Comida italiana">
+                    <option value="Spaguetti">Spaguetti</option>
+                    <option value="Pizza">Pizza</option>
+                    <option value="Provolone">Provolone</option>
+                </optgroup>
+                <optgroup label="Comida francesa">
+                    <option value="Ratatouille">Ratatouille</option>
+                    <option value="Patatas">Patatas gratinadas</option>
+                    <option value="Quiche">Quiche Lorraine</option>
+                </optgroup>
+                <optgroup label="Comida española">
+                    <option value="Tortilla">Tortilla</option>
+                    <option value="Paella">Paella</option>
+                    <option value="Cocido">Cocido</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <div class="button">
+            <input type="submit" value="Enviar">
+        </div>
+    </form>
+
+</body>
+
+</html>

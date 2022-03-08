@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="videoclub.js"></script>
+    <style>
+        #titulos {
+            float: left;
+            width: 300px;
+            height: 700px;
+            outline: 1px solid black;
+        }
+        #generos {
+            float: left;
+        }
+        h2 {
+            cursor: pointer;
+        }
+        #caratulas {
+            position: absolute;
+            top: 30%;
+            left: 70%;
+            width: 300px;
+            height: 400px;
+            outline: 1px solid black;
+        }
+        img {
+            width: inherit;
+            height: inherit;
+        }
+        .tituloSelected{
+            color: red;
+            text-shadow: 2px 2px black;
+        }
+        .divFlotante {
+            position: absolute;
+            background-color: white;
+            width: 250px;
+            height: 150px;
+            top: 200px;
+            left: 400px;
+            outline: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<div id="titulos"></div>
+<select id="generos"></select>
+<div id="caratulas"></div>
+</body>
+</html>

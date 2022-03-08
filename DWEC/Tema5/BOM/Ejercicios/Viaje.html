@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="Viaje.js"></script>
+</head>
+<body>
+<h2>Elige viaje</h2>
+<img src="1.png">
+<img src="2.png">
+<img src="3.png">
+<form action="" method="post">
+    <label for="salida">Lugar de salida: </label>
+    <select id="salida">
+        <option value="0">Oviedo</option>
+        <option value="1">Madrid</option>
+        <option value="2">Santander</option>
+        <option value="3">Bilbao</option>
+    </select><br>
+    <label for="llegada">Lugar de llegada: </label>
+    <select id="llegada">
+        <option value="0">Roma</option>
+        <option value="1">Paris</option>
+        <option value="2">Londres</option>
+    </select><br>
+    Medio de transporte:
+    <label for="avion">
+        <input type="radio" name="transporte" id="avion" value="Avion"> Avion
+    </label>
+    <label for="tren">
+        <input type="radio" name="transporte" id="tren" value="Tren"> Tren
+    </label>
+    <label for="autobus">
+        <input type="radio" name="transporte" id="autobus" value="Autobus"> Autobus
+    </label><br>
+    <input type="button" id="ver" value="Ver resumen del viaje">
+    <input type="button" id="hacer" value="Hacer viaje">
+</form>
+<label id="resultado"></label>
+</body>
+</html>

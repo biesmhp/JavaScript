@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="style.css" />
+		<script src="hamburgueseria.js"></script>
+		<link rel="icon" href="img/hamburguesa.png">
+		<title>Crea tu propia hamburguesa</title>
+	</head>
+
+	<body>
+		<div class="section">
+			<div class="container">
+				<h2 class="page-title">Hamburguesería</h2>
+				<div class="block-wrapper">
+					<div class="block">
+						<div class="block-header">
+							<h3 class="block-title">Tipo de carne</h3>
+						</div>
+						<div class="block-body">
+							<div class="input-radio">
+								<input id="ternera" name="meat" type="radio" />
+								<label for="ternera" class="input-radio-content">
+									<div class="input-radio-outer">
+										<div class="input-radio-button"></div>
+										<div class="input-radio-inner"></div>
+									</div>
+									<span class="input-radio-title">Ternera</span>
+								</label>
+							</div>
+							<div class="input-radio">
+								<input id="cerdo" name="meat" type="radio" />
+								<label for="cerdo" class="input-radio-content">
+									<div class="input-radio-outer">
+										<div class="input-radio-button"></div>
+										<div class="input-radio-inner"></div>
+									</div>
+									<span class="input-radio-title">Cerdo</span>
+								</label>
+							</div>
+							<div class="input-radio">
+								<input id="pollo" name="meat" type="radio" />
+								<label for="pollo" class="input-radio-content">
+									<div class="input-radio-outer">
+										<div class="input-radio-button"></div>
+										<div class="input-radio-inner"></div>
+									</div>
+									<span class="input-radio-title">Pollo</span>
+								</label>
+							</div>
+							<div class="input-radio">
+								<input id="vaca" name="meat" type="radio" />
+								<label for="vaca" class="input-radio-content">
+									<div class="input-radio-outer">
+										<div class="input-radio-button"></div>
+										<div class="input-radio-inner"></div>
+									</div>
+									<span class="input-radio-title">Vaca</span>
+								</label>
+							</div>
+							<div class="input-radio">
+								<input id="mixto" name="meat" type="radio" />
+								<label for="mixto" class="input-radio-content">
+									<div class="input-radio-outer">
+										<div class="input-radio-button"></div>
+										<div class="input-radio-inner"></div>
+									</div>
+									<span class="input-radio-title">Mixto</span>
+								</label>
+							</div>
+						</div>
+						<div class="block-footer">
+							<a class="button st1"><span class="lab">Calcular</span></a>
+							<label class="input-field st1">
+								<div class="input-field-header">
+									<span class="input-field-title">
+										<span>Subtotal</span>
+									</span>
+								</div>
+								<div class="input-field-body">
+									<input id="subtotalCarne" type="text" value="0" placeholder="0" readonly>
+								</div>
+							</label>
+						</div>
+					</div>
+					<div class="block">
+						<div class="block-header">
+							<h3 class="block-title">Ingredientes</h3>
+						</div>
+						<div class="block-body">
+							<div class="input-checkbox">
+								<input id="lechuga" name="ingredientes" type="checkbox" />
+								<label for="lechuga" class="input-checkbox-content">
+									<div class="input-checkbox-outer">
+										<div class="input-checkbox-button"></div>
+										<div class="input-checkbox-inner"></div>
+									</div>
+									<span class="input-checkbox-title">Lechuga</span>
+								</label>
+							</div>
+							<div class="input-radio">
+								<input id="radio-meat-2" name="meat" type="radio" />
+								<label for="radio-meat-2" class="input-radio-content">
+									<div class="input-radio-outer">
+										<div class="input-radio-button"></div>
+										<div class="input-radio-inner"></div>
+									</div>
+									<span class="input-radio-title">Cerdo</span>
+								</label>
+							</div>
+							<div class="input-radio">
+								<input id="radio-meat-3" name="meat" type="radio" />
+								<label for="radio-meat-3" class="input-radio-content">
+									<div class="input-radio-outer">
+										<div class="input-radio-button"></div>
+										<div class="input-radio-inner"></div>
+									</div>
+									<span class="input-radio-title">Pollo</span>
+								</label>
+							</div>
+							<div class="input-radio">
+								<input id="radio-meat-4" name="meat" type="radio" />
+								<label for="radio-meat-4" class="input-radio-content">
+									<div class="input-radio-outer">
+										<div class="input-radio-button"></div>
+										<div class="input-radio-inner"></div>
+									</div>
+									<span class="input-radio-title">Vaca</span>
+								</label>
+							</div>
+							<div class="input-radio">
+								<input id="radio-meat-5" name="meat" type="radio" />
+								<label for="radio-meat-5" class="input-radio-content">
+									<div class="input-radio-outer">
+										<div class="input-radio-button"></div>
+										<div class="input-radio-inner"></div>
+									</div>
+									<span class="input-radio-title">Mixto</span>
+								</label>
+							</div>
+						</div>
+						<div class="block-footer">
+							<a class="button st1"><span class="lab">Calcular</span></a>
+							<label class="input-field st1" for="input-meat-1">
+								<div class="input-field-header">
+									<span class="input-field-title">
+										<span>Subtotal</span>
+									</span>
+								</div>
+								<div class="input-field-body">
+									<input id="input-meat-1" type="text" value="0" placeholder="0">
+								</div>
+							</label>
+						</div>
+					</div>
+					<div class="block">
+						<div class="block-header">
+							<h3 class="block-title">Tipo de carne</h3>
+						</div>
+						<div class="block-body">
+							<div class="input-radio">
+								<input id="radio-meat-1" name="meat" type="radio" />
+								<label for="radio-meat-1" class="input-radio-content">
+									<div class="input-radio-outer">
+										<div class="input-radio-button"></div>
+										<div class="input-radio-inner"></div>
+									</div>
+									<span class="input-radio-title">Ternera</span>
+								</label>
+							</div>
+							<div class="input-radio">
+								<input id="radio-meat-2" name="meat" type="radio" />
+								<label for="radio-meat-2" class="input-radio-content">
+									<div class="input-radio-outer">
+										<div class="input-radio-button"></div>
+										<div class="input-radio-inner"></div>
+									</div>
+									<span class="input-radio-title">Cerdo</span>
+								</label>
+							</div>
+							<div class="input-radio">
+								<input id="radio-meat-3" name="meat" type="radio" />
+								<label for="radio-meat-3" class="input-radio-content">
+									<div class="input-radio-outer">
+										<div class="input-radio-button"></div>
+										<div class="input-radio-inner"></div>
+									</div>
+									<span class="input-radio-title">Pollo</span>
+								</label>
+							</div>
+							<div class="input-radio">
+								<input id="radio-meat-4" name="meat" type="radio" />
+								<label for="radio-meat-4" class="input-radio-content">
+									<div class="input-radio-outer">
+										<div class="input-radio-button"></div>
+										<div class="input-radio-inner"></div>
+									</div>
+									<span class="input-radio-title">Vaca</span>
+								</label>
+							</div>
+							<div class="input-radio">
+								<input id="radio-meat-5" name="meat" type="radio" />
+								<label for="radio-meat-5" class="input-radio-content">
+									<div class="input-radio-outer">
+										<div class="input-radio-button"></div>
+										<div class="input-radio-inner"></div>
+									</div>
+									<span class="input-radio-title">Mixto</span>
+								</label>
+							</div>
+						</div>
+						<div class="block-footer">
+							<a class="button st1"><span class="lab">Calcular</span></a>
+							<label class="input-field st1" for="input-meat-1">
+								<div class="input-field-header">
+									<span class="input-field-title">
+										<span>Subtotal</span>
+									</span>
+								</div>
+								<div class="input-field-body">
+									<input id="input-meat-1" type="text" value="0" placeholder="0">
+								</div>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

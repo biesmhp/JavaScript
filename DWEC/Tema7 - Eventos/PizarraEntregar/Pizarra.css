@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    margin-top: 5px;
+}
+
+.contenedor {
+    margin: 40px 0 0 40px;
+    float: left;
+    outline: black 1px solid;
+}
+
+.color {
+    outline: 1px #bababa solid;
+}
+
+div div {
+    float: left;
+}
+
+.configuracion {
+    float: right;
+    padding: 1%;
+    margin: 9%;
+    margin-right: 20%;
+    border: black 1px solid;
+}
+
+h3 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.btn {
+    width: 10em;
+    height: 2em;
+    text-align: center;
+}

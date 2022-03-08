@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="Empleado.js"></script>
+    <script src="Programador.js"></script>
+    <script src="Analista.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+<label>
+    <input type="radio" name="tipo" id="Programador">Programador
+</label><br>
+<label>
+    <input type="radio" name="tipo" id="Analista">Analista
+</label><hr>
+<label for="nombre">Nombre:</label><input type="text" id="nombre"><br>
+<label for="cedula">Cedula:</label><input type="text" id="cedula"><br>
+<label for="edad">Edad:</label><input type="text" id="edad"><br>
+<label for="casado">Casado:</label>
+<select id="casado">
+    <option value="true">Si</option>
+    <option value="false">No</option>
+</select>
+<br>
+<label for="salario">Salario:</label><input type="text" id="salario"><br>
+<div id="lineas" style="display: none">
+    <label for="lineasInput">Numero Lineas/dia: </label>
+    <input type="text" id="lineasInput"><br>
+    <label for="lenguaje">Lenguaje</label>
+    <select id="lenguaje">
+        <option value="java">Java</option>
+        <option value="php">PHP</option>
+        <option value="nodejs">NodeJS</option>
+    </select>
+</div>
+<div id="proyectos" style="display: none">
+    <label for="proyectosInput">Proyecto: </label>
+    <textarea id="proyectosInput"></textarea>
+    <input type="button" id="addProyecto" value="Añadir proyecto">
+</div>
+<input type="button" id="addEmpleado" value="Añadir empleado">
+<hr>
+<input type="button" id="mostrarResultado" value="Visualizar Empleados"><br>
+
+<textarea id="resultado" cols="30" rows="10"></textarea>
+<hr>
+<input type="button" id="mostrarPrincipiantes" value="Visualizar principiantes">
+<input type="button" id="subirSueldo" value="Subir sueldo a Senior">
+<input type="button" id="mostrarLineas" value="Visualizar lineas de los programadores">
+<input type="button" id="visualizarTopLineas" value="Visualizar mejor programador del mes">
+<hr>
+<select id="nombresSelect">
+</select><br>
+<input type="button" id="mostrarProyecto" value="Mostrar proyectos del empleado">
+</body>
+</html>

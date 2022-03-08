@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Pago</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'
+        integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
+</head>
+
+<body class="container">
+    <header class="row bg-dark align-items-center justify-content-center text-light rounded mb-2 pb-1">
+        <div class="col-3 col-md-1">
+            <a href="datosPersonales.html">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="48px" height="48px">
+                    <path d="M0 0h24v24H0z" fill="none" />
+                    <path d="M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z" />
+                </svg>
+            </a>
+        </div>
+        <div class="col-8 col-md-10">
+            <h1 class="text-center">El Gran Hotel</h1>
+            <h2 class="text-center">Reserva ya tu estancia</h2>
+        </div>
+        <div class="col-3 col-md-1">
+        
+        </div>
+    </header>
+    <section class="border border-secondary rounded mt-5 p-4 bg-light">
+        <div class="row justify-content-around">
+            <div class="col-md-5">
+                <img class="img-fluid" title="Pagos aceptados" src="img/Payment.png" alt="Pagos aceptados">
+            </div>
+            <div class="col-md-4 ">
+                <form action="" method="post">
+                    <div class="form-group">
+                        <label for="tarjeta">Nº de Tarjeta</label>
+                        <input class="form-control" type="text" name="tarjeta" id="tarjeta"
+                            placeholder="9999-9999-9999-9999" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="caducidad">Caducidad</label>
+                        <input class="form-control" type="date" name="caducidad" id="caducidad" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv2">CVV2</label>
+                        <input class="form-control" type="number" name="cvv2" placeholder="Ej: 123" id="cvv2" min="0"
+                            max="999" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="titular">Titula de la tarjeta</label>
+                        <input class="form-control" type="text" name="titular" placeholder="Nombre completo del titular"
+                            id="titular" maxlength="50" required>
+                    </div>
+                    <div class="row justify-content-center mt-5">
+                        <input class="btn btn-dark" type="submit" value="Pagar">
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </section>
+</body>
+<script src='https://code.jquery.com/jquery-3.2.1.slim.min.js'
+    integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN'
+    crossorigin='anonymous'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js'
+    integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q'
+    crossorigin='anonymous'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'
+    integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl'
+    crossorigin='anonymous'></script>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 style="font-size: 50px" id="contador"></h1><br>
+<input type="button" id="iniciar" value="Iniciar">
+<input type="button" id="parar" value="Parar">
+<script>
+    let iniciar = document.getElementById("iniciar");
+    let parar = document.getElementById("parar");
+    let label = document.getElementById("contador");
+    let contador = 0;
+    let reloj;
+    iniciar.addEventListener("click", function () {
+        reloj = setInterval(function () {
+            contador++;
+            label.innerText = contador;
+        }, 1000);
+    })
+    parar.addEventListener("click", function () {
+        clearInterval(reloj);
+    }, false);
+
+
+</script>
+</body>
+</html>

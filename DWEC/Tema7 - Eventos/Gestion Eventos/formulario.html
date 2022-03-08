@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        addEventListener("load", inicio, false);
+
+        function inicio() {
+            let inputs = document.querySelectorAll("input");
+            let labels = document.querySelectorAll("label");
+
+
+            for (const input of inputs) {
+                input.addEventListener("focus", function (e) {
+                    this.style.backgroundColor = "yellow";
+                }, false);
+            }
+
+
+            for (const input of inputs) {
+                input.addEventListener("blur", function (e) {
+                    this.style.backgroundColor = "white";
+                }, false);
+            }
+
+            for (const label of labels) {
+                label.addEventListener("mouseover", function (e) {
+                    alert(e.target.nodeName);
+                    this.style.fontSize = "120%";
+                }, false);
+            }
+
+            for (const label of labels) {
+                label.addEventListener("mouseout", function () {
+                    this.style.fontSize = "100%";
+                }, false);
+            }
+        }
+    </script>
+</head>
+<body>
+<div style="border: 1px solid black">
+    <label for="nombre">Apellidos y nombre:<br>
+        <input id="nombre" type="text">
+    </label><br>
+    <label for="direccion">Direccion:<br>
+        <input id="direccion" type="text">
+    </label><br>
+    <label for="poblacion">Poblacion:<br>
+        <input id="poblacion" type="text">
+    </label><br>
+    <label for="cp">Codigo Postal:<br>
+        <input id="cp" type="text">
+    </label>
+</div>
+</body>
+</html>
