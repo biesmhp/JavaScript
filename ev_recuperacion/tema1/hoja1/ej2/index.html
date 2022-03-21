@@ -10,15 +10,8 @@
     <form method="post">
       <fieldset>
         <legend>Calculadora</legend>
-        <input type="number" id="inpNum1" placeholder="número 1" value="0">
-        <select name="operador" id="selOperador">
-          <option value="mas">+</option>
-          <option value="menos">-</option>
-          <option value="multiplicar">*</option>
-          <option value="dividir">/</option>
-        </select>
-        <input type="number" id="inpNum2" placeholder="número 2" value="0">
-        <button type="button" id="btnReset">Resetear</button>
+        <label for="inpNum1">Número de hasta 3 cifras</label>
+        <input type="number" id="inpNum1" min="0" value="0">
       </fieldset>
       <label for="vis">Resultado:</label>
       <textarea id="vis" rows="1" cols="10" readonly="true"></textarea>
