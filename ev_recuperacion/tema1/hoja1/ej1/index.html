@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Brendan - DAW226</title>
+    <link rel="stylesheet" href="master.css">
+    <script src="js.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <form method="post">
+      <fieldset>
+        <legend>Calculadora</legend>
+        <input type="number" id="inpNum1" placeholder="número 1" value="0">
+        <select name="operador" id="selOperador">
+          <option value="mas">+</option>
+          <option value="menos">-</option>
+          <option value="multiplicar">*</option>
+          <option value="dividir">/</option>
+        </select>
+        <input type="number" id="inpNum2" placeholder="número 2" value="0">
+        <button type="button" id="btnReset">Resetear</button>
+      </fieldset>
+      <label for="vis">Resultado:</label>
+      <textarea id="vis" rows="1" cols="10"></textarea>
+    </form>
+  </body>
+</html>
