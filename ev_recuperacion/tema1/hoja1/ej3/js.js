@@ -15,9 +15,10 @@ function inicio() {
     let nombre = document.querySelector("#inpNombre").value
     let pRealizadas = document.querySelector("#inpRealizadas").value
     let pCorrectas = document.querySelector("#inpCorrectas").value
-    let arrCand = [nombre,pRealizadas,pCorrectas]
     if (parseInt(pRealizadas)>=parseInt(pCorrectas)) {
-      arrCandidatos.push(arrCand)
+      let arrCandidato = [nombre,pRealizadas,pCorrectas]
+      let arrNivel = nivel(arrCandidato)
+      arrCandidatos.push(arrNivel)
       mostrar(arrCandidatos)
     }else{
       mostrar()
@@ -35,13 +36,41 @@ function soloNumeros(e) {
   }
 }
 
+// El array cuenta con [0] --> Nombre, [1] --> Preguntas realizadas, [2] --> Preguntas correctas
+function nivel(arr) {
+  var porcentaje = 0;
+  var nivel = 'Fuera de nivel'
+  // Obtenemos el porcentaje
+  if (arr[1]!=0) {
+    porcentaje = arr[2]/arr[1]*100
+  }
+  switch (true) {
+    case (porcentaje>=90):
+      nivel = 'Superior';
+      break;
+      case (porcentaje>=75):
+        nivel = 'Medio';
+        break;
+        case (porcentaje>=50):
+          nivel = 'Bajo';
+          break;
+  }
+  // Formamos el nuevo array del candidato valorado
+  var arrValorado = []
+  arrValorado.push(arr[0])
+  arrValorado.push(nivel)
+  arrValorado.push(porcentaje)
+
+  return arrValorado
+}
+
 function mostrar(arr) {
   var texto = ''
   if (Array.isArray(arr)) {
     // Columnas
     for (let i in arr) {
-      texto += `Candidato: ${arr[i][0]}`
-        texto += `, preguntas correctas de las realizadas: ${arr[i][2]}/${arr[i][1]}`
+      texto += `Candidato; ${arr[i][0]}`
+        texto += `, Nivel: ${arr[i][1]}, con porcentaje del ${arr[i][2]}%`
       texto += `\n`
     }
   }else{
