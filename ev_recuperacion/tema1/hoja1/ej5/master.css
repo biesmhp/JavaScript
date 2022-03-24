@@ -38,13 +38,17 @@ form {
   background-color: var(--bg-primary);
   padding: 10px;
 }
+form div{
+  display: flex;
+  flex-flow: row;
+}
 .lateral {
   display: flex;
   flex-flow: row;
 }
 fieldset {
   display: flex;
-  flex-flow: column;
+  flex-flow: row;
   margin-bottom: 30px;
   color: var(--text-primary);
   border-top-left-radius: inherit;
@@ -85,6 +89,7 @@ p {
   color: var(--text-secondary)
 }
 button {
+  margin: 5px;
   padding: 5px;
   background-color: var(--color-3);
   border-radius: 6px;
@@ -107,4 +112,11 @@ select {
   align-self: center;
   text-align: center;
   vertical-align: middle;
+}
+table {
+  background-color: var(--bg-terciary);
+  color: var(--text-secondary)
+}
+table th {
+  color: var(--color-4)
 }

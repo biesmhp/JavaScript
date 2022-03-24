@@ -8,15 +8,41 @@
   </head>
   <body>
     <form method="post">
-      <fieldset>
-        <legend>Operario</legend>
-        <input type="text" placeholder="Nombre" id="inpNombre">
-        <input type="number" placeholder="sueldo" min="0" id="inpSueldo">
-        <input type="number" placeholder="antigüedad" min="0" id="inpAntiguo">
-        <button type="button" id="btnGenerar">Generar</button>
-      </fieldset>
-      <label for="vis">Resultado:</label>
-      <textarea id="vis" rows="10" cols="40" readonly="true"></textarea>
+      <div class="operario0">
+        <input type="text" name="nombre" placeholder="Nombre" id="inpNombre0">
+        <input type="number" name="sueldo" placeholder="sueldo" min="0" id="inpSueldo0" step="100">
+        <input type="number" name="antiguo" placeholder="antigüedad" min="0" id="inpAntiguo0">
+      </div>
+
+      <div class="operario1">
+        <input type="text" name="nombre" placeholder="Nombre" id="inpNombre1">
+        <input type="number" name="sueldo" placeholder="sueldo" min="0" id="inpSueldo1" step="100">
+        <input type="number" name="antiguo" placeholder="antigüedad" min="0" id="inpAntiguo1">
+      </div>
+
+      <div class="operario2">
+        <input type="text" name="nombre" placeholder="Nombre" id="inpNombre2">
+        <input type="number" name="sueldo" placeholder="sueldo" min="0" id="inpSueldo2" step="100">
+        <input type="number" name="antiguo" placeholder="antigüedad" min="0" id="inpAntiguo2">
+      </div>
+
+      <div class="operario3">
+        <input type="text" name="nombre" placeholder="Nombre" id="inpNombre3">
+        <input type="number" name="sueldo" placeholder="sueldo" min="0" id="inpSueldo3" step="100">
+        <input type="number" name="antiguo" placeholder="antigüedad" min="0" id="inpAntiguo3">
+      </div>
+
+      <div class="botones">
+        <button type="button" id="btnCalcular">Recalcular sueldos</button>
+        <button type="button" id="btnMultidimensional">Generar array multidimensional</button>
+        <button type="button" id="btnMedia">Media de los sueldos</button>
+      </div>
+
+      <table id="tableVis" hidden="true">
+
+      </table>
+
+      <p id="visualizado"></p>
     </form>
   </body>
 </html>

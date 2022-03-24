@@ -1,77 +1,97 @@
 addEventListener('load',inicio,false)
 function inicio() {
-  arrOperarios = []
-  evento = document.querySelector("#inpSueldo")
-  evento.addEventListener('keypress',function (e) {
-    soloNumeros(e)
-  },false)
-  evento = document.querySelector("#inpAntiguo")
-  evento.addEventListener('keypress',function (e) {
-    soloNumeros(e)
-  },false)
 
-  evento = document.querySelector("#btnGenerar")
+  // Botón para recalcular los sueldos
+  evento = document.querySelector("#btnCalcular")
   evento.addEventListener('click',function (e) {
-    let nombre = document.querySelector("#inpNombre").value
-    let oSueldo = document.querySelector("#inpSueldo").value
-    let oAntiguo = document.querySelector("#inpAntiguo").value
-
-    let arrOperario = [nombre,oSueldo,oAntiguo]
-
-    arrOperarios.push(arrOperario)
-    mostrar(arrOperarios)
+    // Recogemos los valores en arrays
+    let arrSueldo = document.querySelectorAll("input[name=sueldo]")
+    let arrAntiguo = document.querySelectorAll("input[name=antiguo]")
+    // Recorremos el array
+    for (let i = 0; i < arrSueldo.length; i++) {
+      // Ejecutamos y mostramos el resultado
+      document.querySelector(`#inpSueldo${i}`).value = recalcularSueldo(parseInt(arrSueldo[i].value),parseInt(arrAntiguo[i].value))
+    }
+    document.querySelector("#btnCalcular").hidden = true
+    // console.table(arrSueldo)
+    // console.table(arrAntiguo)
   },false)
+
+  // Mostrar array multidimensional
+  evento = document.querySelector("#btnMultidimensional")
+  evento.addEventListener('click',function (e) {
+    // Llamo a la función mostrar del array
+    mostrar(arrayMultidimensional());
+  })
+
+  // Muestra la Media
+  evento = document.querySelector("#btnMedia")
+  evento.addEventListener('click',function (e) {
+    // Llamo a la función de la media y la muestro
+    document.querySelector("#visualizado").innerHTML = calcularMedia()
+  })
 }
 
-function soloNumeros(e) {
-  if (e.keyCode >= 48 && e.keyCode <= 57 || e.keyCode == 44) {
-    // Números del 0 al 9
-    return true
-  } else {
-    e.preventDefault()
-    return false
+function recalcularSueldo(sueldo,antigüedad) {
+  if (sueldo<500&&antigüedad>=10) {
+    return sueldo+sueldo*0.20
+  } else if (sueldo<500&&antigüedad<=10) {
+    return sueldo+sueldo*0.05
+  } else if (sueldo>=500) {
+    return sueldo
   }
 }
 
-// El array cuenta con [0] --> Nombre, [1] --> Preguntas realizadas, [2] --> Preguntas correctas
-function nivel(arr) {
-  var porcentaje = 0;
-  var nivel = 'Fuera de nivel'
-  // Obtenemos el porcentaje
-  if (arr[1]!=0) {
-    porcentaje = arr[2]/arr[1]*100
+function arrayMultidimensional() {
+  // Creo el array multidimensional vacío
+  let arrOperarios = []
+  // Recojo los valores en arrays
+  let arrNombre = document.querySelectorAll("input[name=nombre]")
+  let arrSueldo = document.querySelectorAll("input[name=sueldo]")
+  let arrAntiguo = document.querySelectorAll("input[name=antiguo]")
+  // Creo el array para 1 operario
+  let arrOperario = []
+  // Recorro los arrays de los inputs, convirtiendolos en un array normal y luego los añado al multidimensional
+  for (var i = 0; i < arrNombre.length; i++) {
+    // Array de 1 operario
+    arrOperario.push(arrNombre[i].value)
+    arrOperario.push(arrSueldo[i].value)
+    arrOperario.push(arrAntiguo[i].value)
+    // Añado cada array al multidimensional
+    arrOperarios.push(arrOperario)
+    // Vacio el array multidimensional
+    arrOperario = []
   }
-  switch (true) {
-    case (porcentaje>=90):
-      nivel = 'Superior';
-      break;
-      case (porcentaje>=75):
-        nivel = 'Medio';
-        break;
-        case (porcentaje>=50):
-          nivel = 'Bajo';
-          break;
-  }
-  // Formamos el nuevo array del candidato valorado
-  var arrValorado = []
-  arrValorado.push(arr[0])
-  arrValorado.push(nivel)
-  arrValorado.push(porcentaje)
-
-  return arrValorado
+  return arrOperarios
 }
 
 function mostrar(arr) {
-  var texto = ''
-  if (Array.isArray(arr)) {
-    // Columnas
-    for (let i in arr) {
-      texto += `Operario; ${arr[i][0]}`
-        texto += `, Sueldo: ${arr[i][1]}, con antigüedad de ${arr[i][2]} años`
-      texto += `\n`
-    }
-  }else{
-    texto = "Error, array incorrecto"
+  let texto = `<tr>
+    <th>Nombre</th>
+    <th>Sueldo</th>
+    <th>Antigüedad</th>
+  </tr>`
+  for (var i = 0; i < arr.length; i++) {
+    texto += `<tr>
+      <td>${arr[i][0]}</td>
+      <td>${arr[i][1]}€</td>
+      <td>${arr[i][2]} años</td>
+    </tr>`
   }
-  document.querySelector("#vis").innerHTML = texto;
+  document.querySelector("#tableVis").hidden = false
+  document.querySelector("#tableVis").innerHTML = texto
+}
+
+function calcularMedia() {
+  let arrOperarios = arrayMultidimensional()
+  console.log(arrOperarios);
+  let media = parseInt(0)
+  let count = 0
+  for (var i = 0; i < arrOperarios.length; i++) {
+    media += parseInt(arrOperarios[i][1])
+    count++
+  }
+  console.log(count);
+  media = media/count;
+  return media;
 }
