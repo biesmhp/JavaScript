@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Brendan - DAW226</title>
+    <link rel="stylesheet" href="master.css">
+    <script src="js.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Mini proyecto de dados</h1>
+      <form method="post">
+        <div id="cajaJugador">
+          <fieldset>
+            <legend>Introduce el jugador</legend>
+            <input type="text" id="inpNombre" placeholder="Apodo del jugador">
+            <button type="button" id="btnAddPlayer">Añadir jugador</button>
+          </fieldset>
+        </div>
+
+        <div id="cajaDados" hidden>
+          <fieldset>
+            <legend>Tirada de dados</legend>
+            <span id="visTirada"></span>
+            <button type="button" id="btnRollDice">Tirar dados (<span id="numTiradas">6</span>)</button>
+          </fieldset>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
