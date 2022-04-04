@@ -9,10 +9,18 @@
   <body>
     <form method="post">
       <fieldset>
-        <legend>Calculadora</legend>
+        <legend>Calculadora simple de matrices</legend>
         <button type="button" id="btnMostrar">Mostrar</button>
+        <button type="button" id="btnSumar" hidden>Sumar</button>
+        <button type="button" id="btnRestar" hidden>Restar</button>
       </fieldset>
-      <span id="visualizado"></span>
+      <div id="matrices">
+        <p>Matrices:</p>
+        <span id="visualizado1"></span>
+        <span id="operador"></span>
+        <span id="visualizado2"></span>
+      </div>
+        <span id="resultado1"></span>
     </form>
   </body>
 </html>
