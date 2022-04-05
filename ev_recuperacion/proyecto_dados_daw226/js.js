@@ -2,6 +2,7 @@ addEventListener('load',inicio,false)
 function inicio() {
   // Inicializa el nick que tendrá el jugador
   let jugador = ''
+  let sumTiradas = 0
 
   // evento, añadir jugador y mostrar el resto
   evento = document.querySelector("#btnAddPlayer")
@@ -35,7 +36,7 @@ function inicio() {
     let arrTirada = tirada()
     // Lo visualiza
     mostrarTirada(arrTirada)
-    tablaTiradas(arrTirada,jugador,numTiradas)
+    sumTiradas = tablaTiradas(arrTirada,jugador,numTiradas,sumTiradas)
   },false)
 }
 
@@ -50,7 +51,7 @@ function addPlayer(nick) {
 }
 
 // Visualiza una tabla con las mejores puntuaciones de un jugador
-function tablaTiradas(arr,nick,num) {
+function tablaTiradas(arr,nick,num,sumTirada) {
   num = 8-num
   let count = 0
   // Rellenar el contenido de la tabla
@@ -106,6 +107,8 @@ function tablaTiradas(arr,nick,num) {
     }
     // Rellenamos la columna de puntos
     columnaPuntos.innerText = `${valorM}`
+    // Añadimos los puntos a la suma total
+    sumTirada += valorM
     // Rellenamos la columna de Puntos Máximos
     columnaPMax.innerText = `${anteriorRecord[num-1]=='' ? 0 : anteriorRecord[num-1]}/${num*5}`
   }else if (num>=7) {
@@ -116,10 +119,12 @@ function tablaTiradas(arr,nick,num) {
       // Si es la tirada 7 y ha hecho poker
       if (numRepetido>=4&&num==7) {
         puntua = 60
+        sumTirada += puntua
       }
       // Si es la tirada 8 y ha hecho repoker
       if (numRepetido>=5&&num==8) {
         puntua = 80
+        sumTirada += puntua
       }
     }
     // Rellenamos la columna de puntos
@@ -142,7 +147,41 @@ function tablaTiradas(arr,nick,num) {
   fila.appendChild(columnaDesc)
   fila.appendChild(columnaPuntos)
   fila.appendChild(columnaPMax)
-  return document.querySelector("#tablaResultados").appendChild(fila)
+  document.querySelector("#tablaResultados").appendChild(fila)
+
+  // Añadimos una fila extra en la última tirada
+  if (num==8) {
+    filaTotal(sumTirada,nick)
+  }
+  return sumTirada
+}
+
+function filaTotal(num,nick) {
+  // Fila final
+  let filaT = document.createElement("tr")
+  filaT.style.color = 'var(--color-5)'
+  filaT.style.fontWeight = 'bold'
+  // TD descripción
+  let columnaDesc = document.createElement("td")
+  columnaDesc.innerText = 'TOTAL'
+  filaT.appendChild(columnaDesc)
+  // TD puntos totales de estas tiradas
+  let columnaPuntos = document.createElement("td")
+  columnaPuntos.innerText = num
+  filaT.appendChild(columnaPuntos)
+  // TD puntos totales entre todas tus tiradas
+  let columnaPMax = document.createElement("td")
+  let arr = recogerArray(nick)
+  let numT = 0
+  for (let i = 0; i < arr.length; i++) {
+    if (!isNaN(parseInt(arr[i]))) {
+      numT += parseInt(arr[i])
+    }
+  }
+  columnaPMax.innerText = `${numT}/245`
+  filaT.appendChild(columnaPMax)
+  // Se añaden todos a la tabla
+  document.querySelector("#tablaResultados").appendChild(filaT)
 }
 
 // Extraer el array del localStorage
@@ -173,11 +212,12 @@ function tirada() {
       count++
     }
   }
-  // if (count==5) {
+  if (count==5) {
     let cuerpo = document.querySelector("body")
-    cuerpo.setAttribute('style', 'color: red');
-    cuerpo.setAttribute('style', 'background: red');
-  // }
+    cuerpo.style.color = 'var(--color-6)'
+    cuerpo.style.backgroundColor = 'var(--color-6)'
+    alert('¡Evento de los dados rojos!')
+  }
 
   // Fin de evento
   return tiradasInd

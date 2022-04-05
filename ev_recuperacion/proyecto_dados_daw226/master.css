@@ -23,6 +23,7 @@ body {
   align-items: center;
 }
 main {
+  color: inherit;
   background-color: var(--bg-primary);
   padding: 10px;
   text-align: center;
@@ -51,7 +52,7 @@ fieldset {
   display: flex;
   flex-flow: row;
   margin-bottom: 30px;
-  color: var(--text-primary);
+  color: inherit;
   border-top-left-radius: 14px;
   border-bottom-right-radius: 14px;
   justify-content: center;
@@ -118,10 +119,13 @@ table {
   border-radius: 6px;
   border-style: none;
   background-color: var(--bg-terciary);
-  color: var(--text-secondary);
+  color: var(--text-primary);
   margin: 10px;
   border-spacing: 10px;
 }
 table th {
   color: var(--color-4);
+}
+td {
+  color: inherit;
 }
