@@ -59,9 +59,10 @@ function tablaTiradas(arr,nick,num) {
   let columnaDesc = document.createElement("td")
   let columnaPuntos = document.createElement("td")
   let columnaPMax = document.createElement("td")
-  // Contamos los aciertos
+
+  // Contamos los aciertos (los unos en la primera, los doses en la segunda...)
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i]==num) {
+    if (arr[i]==num&&arr[i]<=5) {
       count++
     }
   }
@@ -92,13 +93,12 @@ function tablaTiradas(arr,nick,num) {
     columnaDesc.innerText = `Repoker`
     break;
   }
-  // Valor total de esa tirada
-  let valorM = count*num
   // Recogemos el valor del almacenamiento local del jugador correspondiente
   let anteriorRecord = recogerArray(nick)
-
-  // Columna de puntos y puntos máximos
+  // Rellenamos la columna de puntos y puntos máximos para las 6 primeras filas
   if (num<=6) {
+    // Valor total de esa tirada
+    let valorM = count*num
     // Añadimos los valores al almacenamiento local si han superado el anterior record de ese usuario
     if (anteriorRecord[num-1]<valorM) {
       anteriorRecord[num-1] = valorM
@@ -108,44 +108,35 @@ function tablaTiradas(arr,nick,num) {
     columnaPuntos.innerText = `${valorM}`
     // Rellenamos la columna de Puntos Máximos
     columnaPMax.innerText = `${anteriorRecord[num-1]=='' ? 0 : anteriorRecord[num-1]}/${num*5}`
-  }else if (num==7) {
-    // Contamos los aciertos para poker entre los 5 dados de 6 caras
-    let repetido = false
+  }else if (num>=7) {
+    // Recogemos la puntuación si ha hecho poker o repoker en sus respectivas tiradas
+    let puntua = 0
     for (let i = 0; i < arr.length; i++) {
       let numRepetido = arr.filter(x => x===i).length
-      if (numRepetido>=4) {
-        repetido = true
+      // Si es la tirada 7 y ha hecho poker
+      if (numRepetido>=4&&num==7) {
+        puntua = 60
+      }
+      // Si es la tirada 8 y ha hecho repoker
+      if (numRepetido>=5&&num==8) {
+        puntua = 80
       }
     }
     // Rellenamos la columna de puntos
-    columnaPuntos.innerText = `${repetido ? 60 : 0}`
+    columnaPuntos.innerText = `${puntua}`
     // Añadimos los valores al almacenamiento local si han superado el anterior record de ese usuario
-    if (repetido) {
-      anteriorRecord[num-1] = 60
+    if (puntua!=0) {
+      anteriorRecord[num-1] = puntua
       localStorage.setItem(nick,anteriorRecord)
     }
-    // Rellenamos la columna de Puntos Máximos
+    // Volvemos a recoger los valores del localStorage
     let maxPoker = recogerArray(nick)
-    columnaPMax.innerText = `${maxPoker[num-1]==60 ? 60 : 0}/${60}`
-  }else if (num==8) {
-    // Contamos los aciertos para poker entre los 5 dados de 6 caras
-    let repetido = false
-    for (let i = 0; i < arr.length; i++) {
-      let numRepetido = arr.filter(x => x===i).length
-      if (numRepetido==5) {
-        repetido = true
-      }
-    }
-    // Rellenamos la columna de puntos
-    columnaPuntos.innerText = `${repetido ? 80 : 0}`
-    // Añadimos los valores al almacenamiento local si han superado el anterior record de ese usuario
-    if (repetido) {
-      anteriorRecord[num-1] = 80
-      localStorage.setItem(nick,anteriorRecord)
-    }
     // Rellenamos la columna de Puntos Máximos
-    let maxPoker = recogerArray(nick)
-    columnaPMax.innerText = `${maxPoker[num-1]==80 ? 80 : 0}/${80}`
+    if (num==7) {
+      columnaPMax.innerText = `${maxPoker[num-1]==60 ? 60 : 0}/${60}`
+    }else if (num==8) {
+      columnaPMax.innerText = `${maxPoker[num-1]==80 ? 80 : 0}/${80}`
+    }
   }
   // Añadir las filas y columnas a la tabla
   fila.appendChild(columnaDesc)
@@ -167,7 +158,7 @@ function mostrarTirada(arr) {
   for (var i = 0; i < arr.length; i++) {
     texto += `<span>Dado ${i+1}: <img src='dados/dice-${arr[i]}.svg' width=30 hight=30></span> \n`
   }
-  document.querySelector("#visTirada").innerHTML = texto
+  return document.querySelector("#visTirada").innerHTML = texto
 }
 
 function tirada() {
@@ -175,5 +166,19 @@ function tirada() {
   for (var i = 0; i < 5; i++) {
     tiradasInd.push(Math.floor(Math.random()*6+1))
   }
+  // Evento especial, dados ROJOS
+  let count = 0;
+  for (var i = 0; i < tiradasInd.length; i++) {
+    if (tiradasInd[i]==1||tiradasInd[i]==3) {
+      count++
+    }
+  }
+  // if (count==5) {
+    let cuerpo = document.querySelector("body")
+    cuerpo.setAttribute('style', 'color: red');
+    cuerpo.setAttribute('style', 'background: red');
+  // }
+
+  // Fin de evento
   return tiradasInd
 }
