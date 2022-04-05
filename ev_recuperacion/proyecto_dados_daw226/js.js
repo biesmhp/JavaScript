@@ -42,16 +42,16 @@ function addPlayer(nick) {
   if (nick==''||nick===null) {
     nick = 'Ejemplo'
   }
-  localStorage.setItem(nick,[])
+  if (localStorage.getItem(nick)==null) {
+    localStorage.setItem(nick,new Array(6))
+  }
   return nick
 }
 
 // Visualiza una tabla con las mejores puntuaciones de un jugador
 function tablaTiradas(arr,nick,num) {
   num = 6-num
-  console.log(num);
   let count = 0
-  console.log(arr);
   // Rellenar el contenido de la tabla
   // Creamos los nodos
   let fila = document.createElement("tr")
@@ -87,25 +87,24 @@ function tablaTiradas(arr,nick,num) {
   }
   // Valor total de esa tirada
   let valorM = count*num
-  // WIP #################################
-  // Añadimos los valores al almacenamiento local si han superado el anterior record de ese usuario
+  // Recogemos el valor del almacenamiento local del jugador correspondiente
   let anteriorRecord = localStorage.getItem(nick)
-  console.log(anteriorRecord);
-  if (anteriorRecord<count*num) {
-    localStorage.setItem(nick,valorM)
+  anteriorRecord = anteriorRecord.split(',')
+  // Añadimos los valores al almacenamiento local si han superado el anterior record de ese usuario
+  if (anteriorRecord[num-1]<valorM) {
+    anteriorRecord[num-1] = valorM
+    localStorage.setItem(nick,anteriorRecord)
   }
   // Rellenamos la columna de puntos
   columnaPuntos.innerText = `${valorM}`
   // Rellenamos la columna de Puntos Máximos
-  columnaPMax.innerText = localStorage.getItem(nick[num])
-  // #################################
+  columnaPMax.innerText = `${anteriorRecord[num-1]=='' ? 0 : anteriorRecord[num-1]}/${num*5}`
 
   // Añadir las filas y columnas a la tabla
   fila.appendChild(columnaDesc)
   fila.appendChild(columnaPuntos)
   fila.appendChild(columnaPMax)
-  document.querySelector("#tablaResultados").appendChild(fila)
-  return true
+  return document.querySelector("#tablaResultados").appendChild(fila)
 }
 
 function mostrarTirada(arr) {
