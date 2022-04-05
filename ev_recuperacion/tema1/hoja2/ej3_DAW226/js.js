@@ -4,7 +4,7 @@ function inicio() {
   let salas = matriz(5)
   let num = 0
   // Cargamos las opciones iniciales
-  cargarSalas(salas)
+  cargarSalas(salas,1)
   cargarEquipos(salas,num)
 
   // Evento para mostrar los equipos disponibles
@@ -20,7 +20,7 @@ function inicio() {
     let equipo = document.querySelector("#selEquipo").value
     if (salas[sala][equipo]) {
       salas[sala][equipo] = false
-      cargarSalas(salas)
+      cargarSalas(salas,sala)
       cargarEquipos(salas,sala)
       let ocupados = parseInt(document.querySelector("#visEquiposOcupados").innerText)
       document.querySelector("#visEquiposOcupados").innerText = ocupados+1
@@ -37,7 +37,7 @@ function inicio() {
     let equipo = document.querySelector("#selEquipo").value
     if (!(salas[sala][equipo])) {
       salas[sala][equipo] = true
-      cargarSalas(salas)
+      cargarSalas(salas,sala)
       cargarEquipos(salas,sala)
       let ocupados = parseInt(document.querySelector("#visEquiposOcupados").innerText)
       document.querySelector("#visEquiposOcupados").innerText = ocupados-1
@@ -49,7 +49,7 @@ function inicio() {
 }
 
 // Generamos las OPTION del SELECT de salas
-function cargarSalas(matriz) {
+function cargarSalas(matriz,sala) {
   let opciones = ``
   for (var i = 0; i < matriz.length; i++) {
     let count = 0
@@ -58,7 +58,11 @@ function cargarSalas(matriz) {
         count++
       }
     }
-    opciones += `<option value=${i}>Sala${i+1} (${count})</option>`
+    if (sala==i) {
+      opciones += `<option value=${i} selected>Sala${i+1} (${count})</option>`
+    }else{
+      opciones += `<option value=${i}>Sala${i+1} (${count})</option>`
+    }
   }
   // Escribe las opciones en el SELECT de salas
   document.querySelector("#selSala").innerHTML = opciones
