@@ -28,7 +28,10 @@ main {
   border-radius: 14px;
   max-width: 600px;
 }
-
+div.center {
+  display: flex;
+  justify-content: center;
+}
 form {
   border-radius: 14px;
   /*flexbox*/
@@ -50,6 +53,7 @@ fieldset {
   color: var(--text-primary);
   border-top-left-radius: 14px;
   border-bottom-right-radius: 14px;
+  justify-content: center;
 }
 input {
   border: 0;
@@ -108,4 +112,15 @@ select {
   align-self: center;
   text-align: center;
   vertical-align: middle;
+}
+table {
+  border-radius: 6px;
+  border-style: none;
+  background-color: var(--bg-terciary);
+  color: var(--text-secondary);
+  margin: 10px;
+  border-spacing: 10px;
+}
+table th {
+  color: var(--color-4);
 }

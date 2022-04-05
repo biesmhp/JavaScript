@@ -1,26 +1,40 @@
 addEventListener('load',inicio,false)
 function inicio() {
+  let jugador = ''
 
   // evento, añadir jugador y mostrar el resto
   evento = document.querySelector("#btnAddPlayer")
   evento.addEventListener('click',function (e) {
     let nombre = document.querySelector("#inpNombre").value
-    addPlayer(nombre)
+    jugador = addPlayer(nombre)
+    // Oculta el formulario para introducir el usuario y muestra el botón de las tiradas
     document.querySelector("#cajaJugador").hidden = true
     document.querySelector("#cajaDados").hidden = false
+    // Añade el nombre del jugador a las cajas donde debe verse
+    let arrJugadorVis = document.querySelectorAll(".jugador")
+    for (var i = 0; i < arrJugadorVis.length; i++) {
+      arrJugadorVis[i].innerText = jugador
+    }
+    // Muestra la tabla
+    document.querySelector("#tablaRes").hidden = false
   },false)
 
   // evento, tirada de dados
   evento = document.querySelector("#btnRollDice")
   evento.addEventListener('click',function (e) {
+    // Muestra el número de tiradas restantes
     let tiradasDOM = document.querySelector("#numTiradas")
     let numTiradas = tiradasDOM.textContent-1
     tiradasDOM.textContent = numTiradas
+    // Si no le quedan tiradas desaparece el botón y toda la caja
     if (numTiradas<=0) {
-      tiradasDOM.hidden = true
-      btnRollDice.hidden = true
+      document.querySelector("#cajaDados").hidden = true
     }
-    mostrarTirada(tirada())
+    // Genera el array con la tirada
+    let arrTirada = tirada()
+    // Lo visualiza
+    mostrarTirada(arrTirada)
+    tablaTiradas(arrTirada,jugador,numTiradas)
   },false)
 }
 
@@ -29,14 +43,77 @@ function addPlayer(nick) {
     nick = 'Ejemplo'
   }
   localStorage.setItem(nick,[])
+  return nick
+}
+
+// Visualiza una tabla con las mejores puntuaciones de un jugador
+function tablaTiradas(arr,nick,num) {
+  num = 6-num
+  console.log(num);
+  let count = 0
+  console.log(arr);
+  // Rellenar el contenido de la tabla
+  // Creamos los nodos
+  let fila = document.createElement("tr")
+  let columnaDesc = document.createElement("td")
+  let columnaPuntos = document.createElement("td")
+  let columnaPMax = document.createElement("td")
+  // Contamos los aciertos
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i]==num) {
+      count++
+    }
+  }
+  // Rellenamos la columna de descripción
+  switch (num) {
+    case 1:
+    columnaDesc.innerText = `Unos (${count})`
+    break;
+    case 2:
+    columnaDesc.innerText = `Doses (${count})`
+    break;
+    case 3:
+    columnaDesc.innerText = `Treses (${count})`
+    break;
+    case 4:
+    columnaDesc.innerText = `Cuatros (${count})`
+    break;
+    case 5:
+    columnaDesc.innerText = `Cincos (${count})`
+    break;
+    case 6:
+    columnaDesc.innerText = `Seises (${count})`
+    break;
+  }
+  // Valor total de esa tirada
+  let valorM = count*num
+  // WIP #################################
+  // Añadimos los valores al almacenamiento local si han superado el anterior record de ese usuario
+  let anteriorRecord = localStorage.getItem(nick)
+  console.log(anteriorRecord);
+  if (anteriorRecord<count*num) {
+    localStorage.setItem(nick,valorM)
+  }
+  // Rellenamos la columna de puntos
+  columnaPuntos.innerText = `${valorM}`
+  // Rellenamos la columna de Puntos Máximos
+  columnaPMax.innerText = localStorage.getItem(nick[num])
+  // #################################
+
+  // Añadir las filas y columnas a la tabla
+  fila.appendChild(columnaDesc)
+  fila.appendChild(columnaPuntos)
+  fila.appendChild(columnaPMax)
+  document.querySelector("#tablaResultados").appendChild(fila)
+  return true
 }
 
 function mostrarTirada(arr) {
   let texto = ``
   for (var i = 0; i < arr.length; i++) {
-    texto += `Dado ${i+1}: ${arr[i]} \n`
+    texto += `<span>Dado ${i+1}: <img src='dados/dice-${arr[i]}.svg' width=30 hight=30></span> \n`
   }
-  document.querySelector("#visTirada").innerText = texto
+  document.querySelector("#visTirada").innerHTML = texto
 }
 
 function tirada() {

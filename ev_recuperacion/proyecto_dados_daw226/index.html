@@ -17,15 +17,32 @@
             <button type="button" id="btnAddPlayer">Añadir jugador</button>
           </fieldset>
         </div>
-
         <div id="cajaDados" hidden>
           <fieldset>
-            <legend>Tirada de dados</legend>
-            <span id="visTirada"></span>
+            <legend>Tirada de dados: <span class="jugador"></span></legend>
+            <span>Funcionamiento: Primera tirada sumamos los unos, segunda tirada sumamos los doses y así sucesivamente.</span>
             <button type="button" id="btnRollDice">Tirar dados (<span id="numTiradas">6</span>)</button>
           </fieldset>
         </div>
       </form>
+      <div id="visTirada"></div>
+      <div class="center">
+        <table id="tablaRes" hidden>
+          <thead>
+            <tr>
+              <th colspan=3><span class="jugador"></span></th>
+            </tr>
+            <tr>
+              <th>Descripción</th>
+              <th>Puntos</th>
+              <th>P. Max</th>
+            </tr>
+          </thead>
+          <tbody id="tablaResultados">
+
+          </tbody>
+        </table>
+      </div>
     </main>
   </body>
 </html>
