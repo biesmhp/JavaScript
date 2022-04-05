@@ -1,5 +1,6 @@
 addEventListener('load',inicio,false)
 function inicio() {
+  // Inicializa el nick que tendrá el jugador
   let jugador = ''
 
   // evento, añadir jugador y mostrar el resto
@@ -43,14 +44,14 @@ function addPlayer(nick) {
     nick = 'Ejemplo'
   }
   if (localStorage.getItem(nick)==null) {
-    localStorage.setItem(nick,new Array(6))
+    localStorage.setItem(nick,new Array(8))
   }
   return nick
 }
 
 // Visualiza una tabla con las mejores puntuaciones de un jugador
 function tablaTiradas(arr,nick,num) {
-  num = 6-num
+  num = 8-num
   let count = 0
   // Rellenar el contenido de la tabla
   // Creamos los nodos
@@ -84,27 +85,81 @@ function tablaTiradas(arr,nick,num) {
     case 6:
     columnaDesc.innerText = `Seises (${count})`
     break;
+    case 7:
+    columnaDesc.innerText = `Poker`
+    break;
+    case 8:
+    columnaDesc.innerText = `Repoker`
+    break;
   }
   // Valor total de esa tirada
   let valorM = count*num
   // Recogemos el valor del almacenamiento local del jugador correspondiente
-  let anteriorRecord = localStorage.getItem(nick)
-  anteriorRecord = anteriorRecord.split(',')
-  // Añadimos los valores al almacenamiento local si han superado el anterior record de ese usuario
-  if (anteriorRecord[num-1]<valorM) {
-    anteriorRecord[num-1] = valorM
-    localStorage.setItem(nick,anteriorRecord)
-  }
-  // Rellenamos la columna de puntos
-  columnaPuntos.innerText = `${valorM}`
-  // Rellenamos la columna de Puntos Máximos
-  columnaPMax.innerText = `${anteriorRecord[num-1]=='' ? 0 : anteriorRecord[num-1]}/${num*5}`
+  let anteriorRecord = recogerArray(nick)
 
+  // Columna de puntos y puntos máximos
+  if (num<=6) {
+    // Añadimos los valores al almacenamiento local si han superado el anterior record de ese usuario
+    if (anteriorRecord[num-1]<valorM) {
+      anteriorRecord[num-1] = valorM
+      localStorage.setItem(nick,anteriorRecord)
+    }
+    // Rellenamos la columna de puntos
+    columnaPuntos.innerText = `${valorM}`
+    // Rellenamos la columna de Puntos Máximos
+    columnaPMax.innerText = `${anteriorRecord[num-1]=='' ? 0 : anteriorRecord[num-1]}/${num*5}`
+  }else if (num==7) {
+    // Contamos los aciertos para poker entre los 5 dados de 6 caras
+    let repetido = false
+    for (let i = 0; i < arr.length; i++) {
+      let numRepetido = arr.filter(x => x===i).length
+      if (numRepetido>=4) {
+        repetido = true
+      }
+    }
+    // Rellenamos la columna de puntos
+    columnaPuntos.innerText = `${repetido ? 60 : 0}`
+    // Añadimos los valores al almacenamiento local si han superado el anterior record de ese usuario
+    if (repetido) {
+      anteriorRecord[num-1] = 60
+      localStorage.setItem(nick,anteriorRecord)
+    }
+    // Rellenamos la columna de Puntos Máximos
+    let maxPoker = recogerArray(nick)
+    columnaPMax.innerText = `${maxPoker[num-1]==60 ? 60 : 0}/${60}`
+  }else if (num==8) {
+    // Contamos los aciertos para poker entre los 5 dados de 6 caras
+    let repetido = false
+    for (let i = 0; i < arr.length; i++) {
+      let numRepetido = arr.filter(x => x===i).length
+      if (numRepetido==5) {
+        repetido = true
+      }
+    }
+    // Rellenamos la columna de puntos
+    columnaPuntos.innerText = `${repetido ? 80 : 0}`
+    // Añadimos los valores al almacenamiento local si han superado el anterior record de ese usuario
+    if (repetido) {
+      anteriorRecord[num-1] = 80
+      localStorage.setItem(nick,anteriorRecord)
+    }
+    // Rellenamos la columna de Puntos Máximos
+    let maxPoker = recogerArray(nick)
+    columnaPMax.innerText = `${maxPoker[num-1]==80 ? 80 : 0}/${80}`
+  }
   // Añadir las filas y columnas a la tabla
   fila.appendChild(columnaDesc)
   fila.appendChild(columnaPuntos)
   fila.appendChild(columnaPMax)
   return document.querySelector("#tablaResultados").appendChild(fila)
+}
+
+// Extraer el array del localStorage
+function recogerArray(nick) {
+  // Recogemos el valor del almacenamiento local del jugador correspondiente
+  let arr = localStorage.getItem(nick)
+  arr = arr.split(',')
+  return arr
 }
 
 function mostrarTirada(arr) {
