@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Brendan - DAW226</title>
+    <link rel="stylesheet" href="master.css">
+    <script src="js.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <form method="post">
+      <div id="cajaArray">
+        <fieldset>
+          <legend>Lista de alumnos, separados por comas</legend>
+          <input type="text" id="inpAlumnos" placeholder="Fatimah,Jing,Aya,Odval,Lucia">
+          <button type="button" id="btnAddLista">Añadir lista</button>
+        </fieldset>
+      </div>
+      <div id="cajaSorteo" hidden>
+        <fieldset>
+          <legend>Sorteo</legend>
+          <input type="text" id="inpVisAlumnos" readonly>
+          <button type="button" id="btnSortear">Sortear (<b id="numIntentos">0</b>)</button>
+          <button type="button" id="btnSalir">Salir</button>
+        </fieldset>
+      </div>
+    </form>
+    <span id="visualizado"></span>
+  </body>
+</html>

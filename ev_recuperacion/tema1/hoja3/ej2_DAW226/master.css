@@ -22,10 +22,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-div {
-  display: flex;
-  flex-flow: row;
-}
 span {
   margin: 10px;
 }
@@ -55,8 +51,8 @@ fieldset {
   flex-flow: row;
   margin-bottom: 30px;
   color: var(--text-primary);
-  border-top-left-radius: inherit;
-  border-bottom-right-radius: inherit;
+  border-top-left-radius: 14px;
+  border-bottom-right-radius: 14px;
 }
 input {
   border: 0;
