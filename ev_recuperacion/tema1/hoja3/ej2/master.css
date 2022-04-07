@@ -1,0 +1,127 @@
+:root {
+  font-size: 16px;
+  font-family: 'Open Sans';
+  --text-primary: #eceff4;
+  --text-secondary: #d8dee9;
+  --bg-primary: #2e3440;
+  --bg-secondary: #3b4252;
+  --bg-terciary: #434c5e;
+  --color-1: #5e81ac;
+  --color-2: #81a1c1;
+  --color-3: #88c0d0;
+  --color-4: #b48ead;
+  --color-5: #d08770;
+  --color-6: #bf616a;
+}
+body {
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
+  /*flexbox*/
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+div {
+  display: flex;
+  flex-flow: row;
+}
+span {
+  margin: 10px;
+}
+main {
+  background-color: var(--bg-primary);
+  padding: 10px;
+  text-align: center;
+  border-radius: 14px;
+  max-width: 600px;
+}
+form {
+  border-radius: 14px;
+  /*flexbox*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  background-color: var(--bg-primary);
+  padding: 5px;
+}
+.lateral {
+  display: flex;
+  flex-flow: row;
+}
+fieldset {
+  display: flex;
+  flex-flow: row;
+  margin-bottom: 30px;
+  color: var(--text-primary);
+  border-top-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
+input {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 1rem auto;
+  text-align: center;
+  border: 0.1rem solid var(--text-primary);
+  padding: 14px 10px;
+  width: 80%;
+  outline: none;
+  color: var(--text-secondary);
+  border-radius: 24px;
+  transition: 0.25s;
+  box-sizing: border-box;
+  background-color: var(--bg-terciary);
+}
+input:focus{
+  /* width: 100%; */
+  border-color: var(--color-1);
+  border-width: thin;
+}
+input#inpVis{
+  width: 20%;
+}
+input#inpVis:focus{
+  width: 30%;
+}
+button {
+  margin-bottom: 5px;
+}
+p {
+  font-weight: normal;
+  color: var(--text-secondary);
+  flex-flow: row;
+}
+button {
+  padding: 5px;
+  background-color: var(--color-3);
+  border-radius: 6px;
+  border-style: none;
+  color: var(--bg-secondary);
+  font-size: 16px;
+  transition: 0.25s;
+  outline: none;
+  margin: 10px;
+}
+button:focus, button:hover {
+  background-color: var(--color-2);
+}
+textarea {
+  background-color: var(--bg-terciary);
+  color: var(--text-primary);
+  text-align: center;
+}
+select {
+  background-color: var(--color-4);
+  color: var(--bg-primary);
+  border-radius: 6px;
+  border-style: none;
+  outline: none;
+  width: 50%;
+  font-size: 16px;
+  align-self: center;
+  text-align: center;
+  vertical-align: middle;
+  margin: 10px;
+}
