@@ -1,46 +1,13 @@
-// import Cadenita from "./cadenita.class";
+// import Cadenita from "./fechita.class";
 addEventListener('load',inicio,false)
 
 function inicio() {
-  // arr de Cadenitas
-  let arrCadenitas = rellenarCadenas()
-  optionsSel(arrCadenitas)
-
   // Mostrar
   evento = document.querySelector("#btnMostrar")
   evento.addEventListener('click',function (e) {
-    let nodoSel = document.querySelector("#selObjetos")
-    let cadenita1 = arrCadenitas[nodoSel.value-1]
-    let texto = `La RISTRA del objeto Cadenita: ${cadenita1.ristra()}\n
-      En orden inverso: ${cadenita1.reves()}\n
-      Con la primera mayúscula y separado por guiones: ${cadenita1.mayus()}`
+    let texto = ``
     mostrar(texto,"#visualizado")
   },false)
-}
-// Funcion para rellenar el array de objetos Cadenita
-function rellenarCadenas() {
-  let arrCadenitas = []
-  // Bucle pidiendo textos hasta que escriba '0'
-  let aux = true
-  while (aux) {
-    let objIntroducido = prompt("Introduce un texto, '0' para salir")
-    if (objIntroducido==0) {
-      aux = 0
-    }else{
-      arrCadenitas.push(new Cadenita(objIntroducido))
-    }
-  }
-  return arrCadenitas
-}
-
-// Añadir las opciones al Select
-function optionsSel(arrCadenitas) {
-  // Añadimos la opciones
-  let opciones = ``
-  for (var i = 0; i < arrCadenitas.length; i++) {
-    opciones += `<option value='${i+1}'>${i+1}</option>`
-  }
-  document.querySelector("#selObjetos").innerHTML= opciones
 }
 
 // Visualiza la respuesta en el HTML
@@ -57,33 +24,24 @@ function mostrar(texto,objetivo) {
 
 
 // La clase (dentro del mismo JS por bloqueo debido a CORS)
-class Cadenita {
-  constructor(texto) {
-    this.texto = texto
-    this.longitud = texto.length
+class Fechita {
+  constructor(fecha) {
+    this.fecha = fecha
+    this.año = fecha.getYear()
+    this.mes = fecha.getMonth()
+    this.dia = fecha.getDay()
   }
 
-  ristra() {
-    let arrPalabras = this.texto.split(' ')
-    return arrPalabras
+  sumadias(num) {
+    let fecha = this.fecha
+    return fecha
   }
 
-  reves() {
-    let arrPalabrasReves = this.texto.split(' ')
-    return arrPalabrasReves.reverse()
-  }
+  restaMeses() {
 
-  buscar(string) {
-    let arrPalabras = this.texto.split(' ')
-    return arrPalabras.includes(string)
-  }
-
-  mayus() {
-    let arrPalabras = this.texto.split(' ')
-    return arrPalabras.map((item) => item.replace(/^\w/, (c) => c.toUpperCase())).join('-')
   }
 
   toString() {
-    return `El texto: '${this.texto}' de ${this.longitud} carácteres.`
+    return `Fecha: ${this.fecha}\n Día ${this.dia} del mes ${this.mes} del año ${this.año}`
   }
 }
