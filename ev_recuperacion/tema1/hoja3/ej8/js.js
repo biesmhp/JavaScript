@@ -34,14 +34,28 @@ class Fechita {
 
   sumadias(num) {
     let fecha = this.fecha
+    fecha = new Date(fecha+daysToMilliseconds(num))
     return fecha
   }
 
-  restaMeses() {
-
+  restaMeses(num) {
+    let fecha = this.fecha
+    fecha = new Date(fecha-monthsToMilliseconds(num))
+    return fecha
   }
 
-  toString() {
+  // Convertir días en milisegundos
+  daysToMilliseconds(days) {
+    // 👇️        hour  min  sec  ms
+    return days * 24 * 60 * 60 * 1000;
+  }
+  // Convertir meses en milisegundos
+  monthsToMilliseconds(meses) {
+    // 👇️       months hour  min  sec  ms
+    return meses * 12 * 24 * 60 * 60 * 1000;
+  }
+
+  ver() {
     return `Fecha: ${this.fecha}\n Día ${this.dia} del mes ${this.mes} del año ${this.año}`
   }
 }
