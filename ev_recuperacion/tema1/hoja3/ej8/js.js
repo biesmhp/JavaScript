@@ -5,7 +5,10 @@ function inicio() {
   // Mostrar
   evento = document.querySelector("#btnMostrar")
   evento.addEventListener('click',function (e) {
+    let fecha1 = new Fechita(new Date(53252636373747))
     let texto = ``
+    texto += fecha1
+    texto += `\n ${fecha1.sumadias(5)}`
     mostrar(texto,"#visualizado")
   },false)
 }
@@ -42,6 +45,6 @@ class Fechita {
   }
 
   toString() {
-    return `Fecha: ${this.fecha}\n Día ${this.dia} del mes ${this.mes} del año ${this.año}`
+    return `Fecha: ${this.fecha}\n Día ${this.dia} del mes ${this.mes+1} del año ${this.año}`
   }
 }
