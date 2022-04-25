@@ -41,12 +41,60 @@ function inicio() {
     }
   },false)
 
+  let shuffled = botones
+  .map(value => ({ value, sort: Math.random() }))
+  .sort((a, b) => a.sort - b.sort)
+  .map(({ value }) => value)
+  evento = document.querySelector(`#btn${shuffled[0]}`)
+  evento.addEventListener('click',function () {
+    if (encendida) {
+      alert('perdida de tiempo')
+      mostrar(`Perdida de tiempo`,"#visualizar")
+    }
+  })
+  evento = document.querySelector(`#btn${shuffled[1]}`)
+  evento.addEventListener('click',function () {
+    if (encendida) {
+      temporizador = temporizador+5
+      mostrar(`¡Ganas 5 segundos!`,"#visualizar")
+    }
+  })
+  evento = document.querySelector(`#btn${shuffled[2]}`)
+  evento.addEventListener('click',function () {
+    if (encendida) {
+      temporizador = 0
+      mostrar(`¡Boom!`,"#visualizar")
+    }
+  })
+  evento = document.querySelector(`#btn${shuffled[3]}`)
+  evento.addEventListener('click',function () {
+    if (encendida) {
+      mostrar(`El botón: ${shuffled[4]} no explota ni desactiva`,"#visualizar")
+    }
+  })
+  evento = document.querySelector(`#btn${shuffled[4]}`)
+  evento.addEventListener('click',function () {
+    if (encendida) {
+      mostrar(`Prueba con otro`,"#visualizar")
+    }
+  })
+  evento = document.querySelector(`#btn${shuffled[5]}`)
+  evento.addEventListener('click',function () {
+    if (encendida) {
+      localStorage.setItem('mejorTiempo',temporizador)
+      encendida = false
+      clearInterval(timer)
+      document.querySelector("#btnIniciar").hidden = true
+      mostrar(`¡Lo lograste! Bomba neutralizada.`,"#visualizar")
+    }
+  })
+
 }
 
 function mostrarBotones(arrBotones) {
   let aMostrar = ``
   for (let i = 0; i < arrBotones.length; i++) {
-    aMostrar += `<button type="button" id="${arrBotones[i]}"><img src="img/${arrBotones[i]}.png" width="50"></button>`
+    aMostrar += `<button type="button" id="btn${arrBotones[i]}"><img src="img/${arrBotones[i]}.png" width="50"></button>`
   }
   return aMostrar
 }
