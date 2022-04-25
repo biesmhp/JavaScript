@@ -29,7 +29,7 @@ class Fechita {
     this.fecha = fecha
     this.año = fecha.getYear()
     this.mes = fecha.getMonth()
-    this.dia = fecha.getDay()
+    this.dia = fecha.getDate()
   }
 
   sumadias(num) {
