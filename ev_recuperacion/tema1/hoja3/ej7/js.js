@@ -15,7 +15,22 @@ function inicio() {
       En orden inverso: ${cadenita1.reves()}\n
       Con la primera mayúscula y separado por guiones: ${cadenita1.mayus()}`
     mostrar(texto,"#visualizado")
+    document.querySelector("#inpPalabra").value = ''
+    document.querySelector("#divBuscaPalabra").hidden = false;
   },false)
+
+  // Mostrar
+  evento = document.querySelector("#btnBuscar")
+  evento.addEventListener('click',function (e) {
+    let palabra = document.querySelector("#inpPalabra")
+    let nodoSel = document.querySelector("#selObjetos")
+    let cadenita1 = arrCadenitas[nodoSel.value-1]
+    if (arrCadenitas[nodoSel.value-1].buscar(palabra.value)) {
+      mostrar(`La palabra "${palabra.value}" si está en el texto.`,"#visualizado")
+    }else{
+      mostrar(`La palabra "${palabra.value}" NO está en el texto.`,"#visualizado")
+    }
+  })
 }
 // Funcion para rellenar el array de objetos Cadenita
 function rellenarCadenas() {
