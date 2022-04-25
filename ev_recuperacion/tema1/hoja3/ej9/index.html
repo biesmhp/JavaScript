@@ -10,11 +10,32 @@
   </head>
   <body>
     <form method="post">
-      <fieldset>
-        <legend>Auto</legend>
-        <button type="button" id="btnMostrar">Mostrar</button>
-      </fieldset>
+      <div id="divAutos">
+        <fieldset>
+          <legend>Registra auto</legend>
+          <input type="text" id="inpModelo" placeholder="seat leon">
+          <input type="text" id="inpColor" placeholder="red">
+          <input type="text" id="inpVelMax" placeholder="300">
+          <input type="text" id="inpImagen" placeholder="--imagen--">
+          <div class="lateral">
+            <button type="button" id="btnAddAuto">Añadir</button>
+            <button type="button" id="btnMostrarAutos">Mostrar autos</button>
+          </div>
+        </fieldset>
+      </div>
+      <div id="divAuto" hidden=true>
+        <fieldset>
+          <legend>Auto</legend>
+          <input type="text" id="inpVelocidad" placeholder="17">
+          <button type="button" id="btnAcelerar">Acelera</button>
+          <button type="button" id="btnFrenar">Frena</button>
+          <button type="button" id="btnMostrar">Mostrar</button>
+        </fieldset>
+      </div>
     </form>
     <span id="visualizado"></span>
+    <span id="visAutos">
+      
+    </span>
   </body>
 </html>

@@ -24,6 +24,15 @@ body {
 }
 span {
   margin: 10px;
+  display: flex;
+  flex-flow: row;
+}
+span div{
+  padding: 15px;
+  border-radius: 14px;
+  background-color: var(--bg-primary);
+  margin: 10px;
+
 }
 main {
   background-color: var(--bg-primary);
@@ -44,11 +53,13 @@ form {
 }
 .lateral {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-flow: row;
 }
 fieldset {
   display: flex;
-  flex-flow: row;
+  flex-flow: column;
   margin-bottom: 30px;
   color: var(--text-primary);
   border-top-left-radius: 14px;
@@ -69,6 +80,12 @@ input {
   transition: 0.25s;
   box-sizing: border-box;
   background-color: var(--bg-terciary);
+}
+input[type="color"]{
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  padding: none;
 }
 input:focus{
   /* width: 100%; */
