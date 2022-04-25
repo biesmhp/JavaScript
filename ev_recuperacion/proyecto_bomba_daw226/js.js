@@ -63,7 +63,9 @@ function inicio() {
   evento.addEventListener('click',function () {
     if (encendida) {
       temporizador = 0
-      mostrar(`¡Boom!`,"#visualizar")
+      encendida = false
+      clearInterval(timer)
+      perdiste()
     }
   })
   evento = document.querySelector(`#btn${shuffled[3]}`)
@@ -85,7 +87,7 @@ function inicio() {
       encendida = false
       clearInterval(timer)
       document.querySelector("#btnIniciar").hidden = true
-      mostrar(`¡Lo lograste! Bomba neutralizada.`,"#visualizar")
+      mostrar(`¡Lo lograste! Bomba neutralizada, mejor tiempo registrado: ${localStorage.getItem('mejorTiempo')}`,"#visualizar")
     }
   })
 
@@ -101,7 +103,8 @@ function mostrarBotones(arrBotones) {
 
 function perdiste() {
   document.querySelector("#idBomb").src = "img/explosion.png"
-  alert('Ha!')
+  mostrar(`¡Boom!`,"#visualizar")
+  document.querySelector("#btnIniciar").hidden = true
 }
 
 // Visualiza la respuesta en el HTML
