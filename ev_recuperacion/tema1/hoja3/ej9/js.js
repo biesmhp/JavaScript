@@ -26,28 +26,56 @@ function inicio() {
   evento = document.querySelector("#btnMostrarAutos")
   evento.addEventListener('click',function (e) {
     mostrar(autos,"#visualizado")
-    let cardAuto = ``
-    for (var i = 0; i < autos.length; i++) {
-      cardAuto += `
-        <div id="${i}">
-          <input type="radio" name="autos" value="${i}">
-          <input type="text" value="${autos[i].modelo}" readonly>
-          <input type="text" value="${autos[i].color}" readonly>
-          <input type="text" value="${autos[i].varVelocidad()}" readonly>
-          <div class="lateral">
-            <button type="button" class="btnArrancar">Arrancar</button>
-            <button type="button" class="btnAcelerar">Acelerar</button>
-            <button type="button" class="btnFrenar">Frenar</button>
-          </div>
-        </div>
-      `
+    // let cardAuto = ``
+    // for (var i = 0; i < autos.length; i++) {
+    //   cardAuto += `
+    //     <div id="${i}">
+    //       <input type="radio" name="autos" value="${i}">
+    //       <input type="text" value="${autos[i].modelo}" readonly>
+    //       <input type="text" value="${autos[i].color}" readonly>
+    //       <input type="text" value="${autos[i].varVelocidad()}" readonly>
+    //       <div class="lateral">
+    //         <button type="button" class="btnArrancar">Arrancar</button>
+    //         <button type="button" class="btnAcelerar">Acelerar</button>
+    //         <button type="button" class="btnFrenar">Frenar</button>
+    //       </div>
+    //     </div>
+    //   `
+    // }
+    // cardAuto += `</span>`
+    let container = document.querySelector("#visAutos");
+    while (container.hasChildNodes()) {
+      container.removeChild(container.firstChild);
     }
-    cardAuto += `</span>`
-    mostrar(cardAuto,"#visAutos")
+    // Visualiza las tarjetas (cards) de cada auto
+    autos.forEach(res => {
+      container = document.querySelector("#visAutos");
+      let card = document.createElement("div");
+      card.setAttribute("class","card")
+      // Modelo
+      let model = document.createElement('p');
+      model.setAttribute("class","modelo")
+      let modelContent = document.createTextNode('Modelo:' + res.modelo + ', ')
+      model.appendChild(modelContent)
+      card.appendChild(model);
+      // Color
+      let color = document.createElement('p');
+      color.setAttribute("class","color")
+      let colorDesc = document.createTextNode('Color:' + res.color + ', ');
+      color.appendChild(colorDesc)
+      card.appendChild(color);
+
+      let date = document.createTextNode('velocidad:' + res.varVelocidad());
+      card.appendChild(date);
+
+      container.appendChild(card);
+    });
+    // mostrar(cardAuto,"#visAutos")
   },false)
 
   // WIP
   evento = document.querySelectorAll(".btnArrancar")
+  console.log(evento);
   for (var i = 0; i < evento.length; i++) {
     evento[i].addEventListener('click',function (e) {
       let elegido = document.querySelectorAll("input[type=radio]")

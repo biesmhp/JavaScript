@@ -27,12 +27,14 @@ span {
   display: flex;
   flex-flow: row;
 }
-span div{
-  padding: 15px;
-  border-radius: 14px;
+div div {
+  display: flex;
+  flex-flow: row;
+}
+div.card {
   background-color: var(--bg-primary);
-  margin: 10px;
-
+  display: flex;
+  flex-flow: row;
 }
 main {
   background-color: var(--bg-primary);
