@@ -11,13 +11,20 @@
   <body>
       <fieldset>
         <input type="text" id="inpNombre" placeholder="Nombre del cliente" title="Nombre del cliente">
-        <input type="text" id="inpCantidad" placeholder="Cantidad a ingresar o extraer" title="Cantidad">
-        <button type="button" id="btnMostrar">Mostrar cuentas</button>
         <button type="button" id="btnAddCuenta">Añadir cuenta</button>
+      </fieldset>
+      <fieldset>
+        <select id="selClientes">
+          
+        </select>
+        <input type="text" id="inpCantidad" placeholder="Cantidad a ingresar o extraer" title="Cantidad">
         <button type="button" id="btnIngresar">Ingresar</button>
         <button type="button" id="btnRetirar">Retirar</button>
+        <button type="button" id="btnInteres">Aplicar intereses</button>
+        <button type="button" id="btnPenalizacion">Aplicar penalizaciones</button>
       </fieldset>
-    <span id="visualizado"></span>
+      <button type="button" id="btnMostrar">Mostrar cuentas🔃</button>
+    <span id="visualizado" class="visErrors"></span>
     <div id="tablaVis"></div>
     <!-- <table>
       <thead>

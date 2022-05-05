@@ -122,8 +122,12 @@ select {
   margin: 10px;
 }
 .acreedor {
-  background-color: green;
+  color: var(--color-1);
 }
 .deudor {
-  background-color: red;
+  color: var(--color-6);
+}
+.visErrors {
+  color: var(--color-5);
+  font-weight: bold;
 }
