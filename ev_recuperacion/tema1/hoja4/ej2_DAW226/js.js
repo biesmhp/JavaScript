@@ -3,7 +3,7 @@ addEventListener('load',inicio,false)
 
 function inicio() {
   // Crea un hospital de 3 plantas y 6 habitaciones por planta
-  let arrHospital = crearHospital(3,6)
+  let arrHospital = crearHospital(3,12)
   // console.log(arrHospital);
   mostrarHospital(arrHospital)
 
@@ -11,13 +11,59 @@ function inicio() {
   evento = document.querySelectorAll("button")
   for (let ev of evento) {
     ev.addEventListener('mouseover',function (e) {
-      console.log(e.srcElement);
-      mostrar(e.srcElement.parentElement.id,"#visualizado")
+      console.log(e.srcElement.parentElement.id);
+      // mostrar(e.srcElement.parentElement.id,"#visualizado")
     },false)
     ev.addEventListener('click',function (e) {
       e.srcElement.className == 'libre' ? e.srcElement.className = 'ocupado' : e.srcElement.className = 'libre'
+      // Obtengo los dos números en un array
+      let eID = e.srcElement.parentElement.id.replace(/\D/g,'-').split('-').filter(element => element != '')
+      // console.log(`Planta: ${eID[0]}, Habitación: ${eID[1]}`);
+      createFormulario(eID[0],eID[1])
     },false)
   }
+
+
+}
+
+function createFormulario(planta,habitacion) {
+  // Eliminamos lo anterior si lo hubiese
+  let nodo = document.querySelector("#cajaFormulario")
+  // let child = nodo.lastElementChild
+  // while (child) {
+  //   nodo.removeChild(child)
+  //   child = nodo.lastElementChild
+  // }
+  // Generamos el formulario (en realidad es solo un fieldset porque no queremos que se envie a ningún sitio)
+  let fieldset = document.createElement("fieldset")
+  // Le añadimos una leyenda
+  let legend = document.createElement("legend")
+  legend.innerText = `pla${planta}hab${habitacion}`
+  fieldset.appendChild(legend)
+  // Creamos los inputs del fieldset
+  // ### input Codigo de paciente
+  let inputCodigo = document.createElement("input")
+  inputCodigo.setAttribute('type','text')
+  inputCodigo.setAttribute('placeholder','Código del paciente')
+  // ### input Foto
+  // ### boton Enviar
+  let botonEnviar = document.createElement("button")
+  botonEnviar.setAttribute('id',`${planta},${habitacion}`)
+  // evento del botón
+  botonEnviar.addEventListener('click',function (e) {
+    // console.log(e.srcElement.id);
+    let nodoHabitacion = document.querySelector(`#pla${planta}hab${habitacion}`).firstChild
+    console.log(nodoHabitacion);
+    nodoHabitacion.className == 'ocupado' ? nodoHabitacion.className == 'libre' : nodoHabitacion.className == 'ocupado'
+  })
+  let botonText = document.createTextNode('Asignar')
+  botonEnviar.appendChild(botonText)
+  fieldset.appendChild(botonEnviar)
+  // Añadimos los inputs al fieldset
+  fieldset.appendChild(inputCodigo)
+  // Añadimos el 'formulario' al HTML
+  nodo.appendChild(fieldset)
+  return false
 }
 
 function crearHospital(plantas,habitaciones) {
