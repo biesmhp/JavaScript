@@ -11,29 +11,32 @@ function inicio() {
   evento = document.querySelectorAll("button")
   for (let ev of evento) {
     ev.addEventListener('mouseover',function (e) {
-      console.log(e.srcElement.parentElement.id);
-      // mostrar(e.srcElement.parentElement.id,"#visualizado")
+      let eID = e.srcElement.parentElement.id.replace(/\D/g,'-').split('-').filter(element => element != '')
+      if (arrHospital[eID[0]][eID[1]]) {
+        mostrar(arrHospital[eID[0]][eID[1]],"#visualizado")
+      } else {
+        mostrar('Habitación libre',"#visualizado")
+      }
     },false)
     ev.addEventListener('click',function (e) {
-      e.srcElement.className == 'libre' ? e.srcElement.className = 'ocupado' : e.srcElement.className = 'libre'
       // Obtengo los dos números en un array
       let eID = e.srcElement.parentElement.id.replace(/\D/g,'-').split('-').filter(element => element != '')
       // console.log(`Planta: ${eID[0]}, Habitación: ${eID[1]}`);
-      createFormulario(eID[0],eID[1])
+      createFormulario(eID[0],eID[1],arrHospital)
     },false)
   }
 
 
 }
 
-function createFormulario(planta,habitacion) {
+function createFormulario(planta,habitacion,hospital) {
   // Eliminamos lo anterior si lo hubiese
   let nodo = document.querySelector("#cajaFormulario")
-  // let child = nodo.lastElementChild
-  // while (child) {
-  //   nodo.removeChild(child)
-  //   child = nodo.lastElementChild
-  // }
+  let child = nodo.lastElementChild
+  while (child) {
+    nodo.removeChild(child)
+    child = nodo.lastElementChild
+  }
   // Generamos el formulario (en realidad es solo un fieldset porque no queremos que se envie a ningún sitio)
   let fieldset = document.createElement("fieldset")
   // Le añadimos una leyenda
@@ -44,6 +47,7 @@ function createFormulario(planta,habitacion) {
   // ### input Codigo de paciente
   let inputCodigo = document.createElement("input")
   inputCodigo.setAttribute('type','text')
+  inputCodigo.setAttribute('id',`inpCodigo`)
   inputCodigo.setAttribute('placeholder','Código del paciente')
   // ### input Foto
   // ### boton Enviar
@@ -51,10 +55,14 @@ function createFormulario(planta,habitacion) {
   botonEnviar.setAttribute('id',`${planta},${habitacion}`)
   // evento del botón
   botonEnviar.addEventListener('click',function (e) {
-    // console.log(e.srcElement.id);
-    let nodoHabitacion = document.querySelector(`#pla${planta}hab${habitacion}`).firstChild
-    console.log(nodoHabitacion);
-    nodoHabitacion.className == 'ocupado' ? nodoHabitacion.className == 'libre' : nodoHabitacion.className == 'ocupado'
+    if (!hospital[planta][habitacion]) {
+      // console.log(e.srcElement.id);
+      let nodoHabitacion = document.querySelector(`#pla${planta}hab${habitacion}`).firstChild
+      nodoHabitacion.className == 'libre' ? nodoHabitacion.className = 'ocupado' : nodoHabitacion.className = 'libre'
+      hospital[planta][habitacion] = document.querySelector("#inpCodigo").value
+    } else {
+      mostrar('Habitación ocupada',"#visualizado")
+    }
   })
   let botonText = document.createTextNode('Asignar')
   botonEnviar.appendChild(botonText)
