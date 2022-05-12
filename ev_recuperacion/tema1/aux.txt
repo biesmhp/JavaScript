@@ -1,0 +1,4 @@
+# Estantería de libros
+Select con las filas (8 baldas)
+Select con las columnas (7)
+Cada dato contiene un libro
