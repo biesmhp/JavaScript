@@ -26,12 +26,21 @@ function inicio() {
     .map((element,index) => `<button class='palabra' id='btn${element}'>${element}</button>`)
     // Mostrar las palabras entremezcladas
     mostrar(shuffledPalabras,"#visPalabras")
-    // ### WIP### Mostrar el botón de solución
+
+    // Mostrar el botón de solución
     let fraseNode = document.querySelector("#visFrase")
-    let botonCorregir = document.createElement("button")
-    botonCorregir.setAttribute('innerText','hola')
+    let botonCorregir = document.createElement("input")
+    botonCorregir.setAttribute('type','button')
+    botonCorregir.setAttribute('value','Comprobar')
+    botonCorregir.setAttribute('id','btnComprobar')
+    botonCorregir.setAttribute('class','button')
     fraseNode.appendChild(botonCorregir)
-    // #######
+      botonCorregir.addEventListener('click',function (e) {
+        let nodosBotones = document.querySelectorAll(".hueco")
+        let objetoMateria = arrMaterias.find(element => element.materia == selectNode.value)
+        nodosBotones.forEach((element,index) => element.innerText == objetoMateria.palabras[index] ? element.className = "hueco bien" : element.className = "hueco mal")
+      },false)
+
     // Evento para colocar las palabras en los huecos
     evento = document.querySelectorAll(".palabra")
     for (var palabra of evento) {

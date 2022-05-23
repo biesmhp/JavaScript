@@ -122,6 +122,11 @@ select {
   vertical-align: middle;
   margin: 10px;
 }
+.hueco {
+  background-color: inherit;
+  color: var(--text-primary);
+  font-weight: bold;
+}
 .mal {
   background-color: var(--color-5);
   color: var(--text-primary);
@@ -132,11 +137,12 @@ select {
   color: var(--text-primary);
   font-weight: bold;
 }
-.hueco {
-  background-color: inherit;
-  color: var(--text-primary);
-  font-weight: bold;
-}
 .palabra {
   background-color: var(--color-2)
+}
+.button {
+  background-color: var(--color-4);
+  color: var(--text-primary);
+  font-weight: bold;
+  border-color: var(--text-primary);
 }
