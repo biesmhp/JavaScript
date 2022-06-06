@@ -76,11 +76,11 @@ input:focus{
   border-color: var(--color-1);
   border-width: thin;
 }
-input#inpVis{
-  width: 20%;
+input[type="text"]{
+  width: 70%;
 }
-input#inpVis:focus{
-  width: 30%;
+input[type="text"]:focus{
+  width: 100%;
 }
 button {
   margin-bottom: 5px;
@@ -91,7 +91,7 @@ p {
   flex-flow: row;
 }
 button, input[type="button"] {
-  width: 50%;
+  width: 100%;
   padding: 5px;
   background-color: var(--color-3);
   border-radius: 6px;
@@ -122,4 +122,10 @@ select {
   text-align: center;
   vertical-align: middle;
   margin: 10px;
+}
+#error {
+  color: var(--color-6);
+}
+#visualizado {
+  color: var(--color-7);
 }
