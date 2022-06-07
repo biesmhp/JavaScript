@@ -116,12 +116,20 @@ select {
   border-radius: 6px;
   border-style: none;
   outline: none;
-  width: 50%;
+  width: 100%;
   font-size: 16px;
   align-self: center;
   text-align: center;
   vertical-align: middle;
   margin: 10px;
+}
+.casillas {
+   display: grid;
+   column-gap: 50px;
+   gap: 50px 100px;
+}
+#cajaGestion {
+  margin-top: 300px;
 }
 #error {
   color: var(--color-6);

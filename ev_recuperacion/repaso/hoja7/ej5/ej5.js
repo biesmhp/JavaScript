@@ -105,7 +105,7 @@ function addSelect(arr,objetivo) {
   for (let i = 0; i < arr.length; i++) {
     let opcion = document.createElement("option")
     opcion.setAttribute("value",i)
-    opcion.setAttribute("label",i+1)
+    opcion.setAttribute("label",`Jaula: ${i}`)
     opcion.setAttribute("class","jaulas")
     objetivo.appendChild(opcion)
   }
@@ -114,10 +114,10 @@ function addSelect(arr,objetivo) {
 
 function addRadio(arr,objetivo) {
   for (let i = 0; i < arr.length; i++) {
-    let opcion = document.createElement("option")
-    opcion.setAttribute("value",i)
-    opcion.setAttribute("label",i+1)
-    opcion.setAttribute("class","jaulas")
+    let opcion = document.createElement("input")
+    opcion.setAttribute("type","radio")
+    opcion.setAttribute("name","jaulaRadio")
+    opcion.setAttribute("id",`jaula${i}`)
     objetivo.appendChild(opcion)
   }
   return objetivo ? true : false
@@ -188,6 +188,6 @@ class Jaula {
   }
 
   toString() {
-    return `Especie: ${this.especie == "" ? "ninguna" : this.especie}. Número de aniamles en la jaula: ${this.numAnimales}/${this.maxAnimales}`
+    return `Especie: ${this.especie == "" ? "ninguna" : this.especie}. Número de animales en la jaula: ${this.numAnimales}/${this.maxAnimales}`
   }
 }
