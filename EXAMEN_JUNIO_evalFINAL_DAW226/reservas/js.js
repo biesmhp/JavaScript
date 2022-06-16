@@ -1,0 +1,1 @@
+addEventListener('load',inicio,false)

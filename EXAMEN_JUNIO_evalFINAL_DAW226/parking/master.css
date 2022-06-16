@@ -1,0 +1,99 @@
+:root {
+  font-size: 16px;
+  font-family: 'Open Sans';
+  --text-primary: #eceff4;
+  --text-secondary: #d8dee9;
+  --bg-primary: #2e3440;
+  --bg-secondary: #3b4252;
+  --bg-terciary: #434c5e;
+  --color-1: #5e81ac;
+  --color-2: #81a1c1;
+  --color-3: #88c0d0;
+  --color-4: #b48ead;
+  --color-5: #d08770;
+  --color-6: #bf616a;
+}
+html {
+  height: 100%;
+  overflow: auto;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+body {
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
+  /*flexbox*/
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+main {
+  margin-left: 20%;
+  padding: 1rem;
+}
+nav {
+  position: fixed;
+  background-color: var(--bg-primary);
+  /* transition: width 600ms ease; */
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 100%;
+}
+ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  overflow: scroll;
+}
+li {
+  margin: 1rem 0 1rem 0;
+  overflow: scroll;
+}
+nav input[type="button"] {
+  background-color: inherit;
+  color: inherit;
+  font: inherit;
+  border: none;
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0 0.5rem 0;
+  overflow: inherit;
+  background-color: var(--color-2);
+}
+nav input[type="button"]:hover {
+  background-color: var(--color-1);
+  color: #FFF;
+}
+nav span {
+  display: flex;
+  padding: 1rem;
+  overflow: scroll;
+}
+#inpDatos>* {
+  margin: 1rem;
+}
+#visualizado {
+  padding-left: 3rem;
+}
+.lineaDatos:hover {
+  margin: 0px;
+  padding: 0px;
+  color: var(--text-secondary);
+  background-color: var(--bg-terciary);
+}
+.calendario {
+  background-color: var(--bg-terciary);
+}
+.accent {
+  color: var(--color-3);
+  font-weight: bold;
+}
+.contenedor {
+  margin: 1rem;
+  padding: 1rem;
+  /* background-color: var(--bg-primary); */
+}
